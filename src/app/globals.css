@@ -12,3 +12,9 @@ html {
 body {
   max-height: 100vh;
 }
+
+.hero-role-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25em;
+}
