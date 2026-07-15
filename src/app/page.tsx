@@ -60,6 +60,20 @@ export default function Home() {
             <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
             <button><a href="/work/talentora-ai" target="_blank" rel="noopener noreferrer">View Project</a></button>
           </div>
+
+          <img></img>
+          <div>
+            <p>Talentora AI</p>
+            <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
+            <button><a href="/work/talentora-ai" target="_blank" rel="noopener noreferrer">View Project</a></button>
+          </div>
+
+          <img></img>
+          <div>
+            <p>Talentora AI</p>
+            <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
+            <button><a href="/work/talentora-ai" target="_blank" rel="noopener noreferrer">View Project</a></button>
+          </div>
         </div>
 
         
