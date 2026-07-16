@@ -1,3 +1,5 @@
+
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -5,7 +7,12 @@ export default function Navbar() {
     <header>
       <nav>
         <Link href="/" title="Go to homepage">
-          Logo
+          <Image
+            src="/logo-plaeceholder.svg"
+            alt="Ruby Chen Logo"
+            width={50}
+            height={50}
+          />
         </Link>
 
         <ul>
