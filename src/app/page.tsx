@@ -65,14 +65,21 @@ export default function Home() {
 
           <Image src="/placeholder-phone-mockup.png" alt="Talentora AI" width={400} height={300} />
           <div>
-            <p>Talentora AI</p>
+            <p>Smata</p>
             <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
             <button><a href="/work/talentora-ai" target="_blank" rel="noopener noreferrer">View Project</a></button>
           </div>
 
           <Image src="/placeholder-phone-mockup.png" alt="Talentora AI" width={400} height={300} />
           <div>
-            <p>Talentora AI</p>
+            <p>Via</p>
+            <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
+            <button><a href="/work/talentora-ai" target="_blank" rel="noopener noreferrer">View Project</a></button>
+          </div>
+
+          <Image src="/placeholder-phone-mockup.png" alt="Talentora AI" width={400} height={300} />
+          <div>
+            <p>Thrival</p>
             <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
             <button><a href="/work/talentora-ai" target="_blank" rel="noopener noreferrer">View Project</a></button>
           </div>
