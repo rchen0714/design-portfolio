@@ -13,32 +13,34 @@ export default function Navbar() {
             alt="Ruby Chen Logo"
             width={50}
             height={50}
+            priority
           />
         </Link>
 
         <ul id="navbar-menu">
           <li>
             <Link className="navbar-links" href="/work" title="Go to work page">
-              Work
+              work
             </Link>
           </li>
           <li>
             <Link className="navbar-links" href="/play" title="Go to play page">
-              Play
+              play
             </Link>
           </li>
           <li>
             <Link className="navbar-links" href="/about" title="Go to about page">
-              About
+              about
             </Link>
           </li> 
           <li>
             <a
+              className="navbar-links"
               href="/ruby-resume-STUDYABROAD.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Resume
+              resume
             </a>
           </li>
         </ul>

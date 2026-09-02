@@ -6,86 +6,146 @@ export default function Home() {
   return (
     <main>
       <section id="hero">
-        <div>
-          <div>
-            <h1>HI I&apos;M RUBY</h1>
-            <span className="hero-role-line">
-              <TextType
-                as="h1"
-                text={[
-                  "A PRODUCT DESIGNER",
-                  "A WEB DEVELOPER",
-                  "AN ILLUSTRATOR",
-                  "A CREATIVE TECHNOLOGIST",
-                ]}
-                typingSpeed={75}
-                deletingSpeed={40}
-                pauseDuration={1800}
-                showCursor={true}
-                cursorCharacter="|"
-                loop={true}
-              />
-            </span>
+        <div className="hero-container">
+          <div className="hero-content">
+            <div className="hero-heading">
+              <div className="hero-heading-text">
+                <h1>HI! IM RUBY</h1>
+                <span className="hero-role-line" suppressHydrationWarning>
+                  <TextType
+                    as="span"
+                    text={[
+                      "A PRODUCT DESIGNER",
+                      "A WEB DEVELOPER",
+                      "A GRAPHIC DESIGNER",
+                      "A CREATIVE TECHNOLOGIST",
+                    ]}
+                    typingSpeed={75}
+                    deletingSpeed={40}
+                    pauseDuration={1800}
+                    showCursor={true}
+                    cursorCharacter="|"
+                    loop={true}
+                  />
+                </span>
+              </div>
+              <div className="hero-image-placeholder" aria-hidden="true" />
+            </div>
+
+            <div className="hero-experience">
+              <div className="hero-experience-group">
+                <p className="hero-experience-label">Currently</p>
+                <p>Founding Designer @ <a href="" target="_blank" rel="noopener noreferrer">Smata</a></p>
+                <p>Lead Product Designer @ <a href="" target="_blank" rel="noopener noreferrer">Thrival</a></p>
+              </div>
+
+              <div className="hero-experience-group">
+                <p className="hero-experience-label">Previously</p>
+                <p>Operations and AI solutions Intern @ <a href="" target="_blank" rel="noopener noreferrer">Caidya</a></p>
+                <p>Founding Designer @ <a href="" target="_blank" rel="noopener noreferrer">TalentoraAI</a></p>
+              </div>
+            </div>
+
+            <div className="hero-cta">
+              <a href="#selected-works" className="hero-cta-button">
+                View works
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rchen0714"
+                className="hero-cta-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
-
-          <div>
-            <p>Currently</p>
-            <p>Product Designer @ <a href="" target="_blank" rel="noopener noreferrer">Smata</a></p>
-            <p>Product Designer @ <a href="" target="_blank" rel="noopener noreferrer">Thrival</a></p>
-
-            <p>Previously</p>
-            <p>Founding Designer @ <a href="" target="_blank" rel="noopener noreferrer">TalentoraAI</a></p>
-            <p>HR Intern @ <a href="" target="_blank" rel="noopener noreferrer">Caidya</a></p>
-          </div>
-
-          <div>
-            <p><a href="#selected-works" target="_blank" rel="noopener noreferrer">
-              View work
-            </a></p>
-            <p><a href="https://www.linkedin.com/in/rchen0714" target="_blank" rel="noopener noreferrer">
-              Linkedin
-            </a></p>
-          </div>
-
         </div>
-
-
       </section>
 
       <section id="selected-works">
-        <h1>Selected Works</h1>
-        
-        <div>
-          <Image src="/placeholder-computer-mockup.png" alt="Talentora AI" width={400} height={300} />
-          <div>
-            <p>Talentora AI</p>
-            <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
-            <button><a href="/work/talentora-ai" target="_blank" rel="noopener noreferrer">View Project</a></button>
-          </div>
+        <div className="selected-works-container">
+          <h2 className="selected-works-title">selected works.</h2>
 
-          <Image src="/placeholder-phone-mockup.png" alt="Talentora AI" width={400} height={300} />
-          <div>
-            <p>Smata</p>
-            <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
-            <button><a href="/work/talentora-ai" target="_blank" rel="noopener noreferrer">View Project</a></button>
-          </div>
+          <div className="selected-works-list">
+            <article className="work-card work-card--media-left">
+              <div className="work-card-media">
+                <Image
+                  src="/placeholder-phone-mockup.png"
+                  alt="Talentora AI"
+                  width={260}
+                  height={520}
+                />
+              </div>
+              <div className="work-card-content">
+                <h3>Talentora AI</h3>
+                <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
+                <a href="/work/talentora-ai" className="work-card-button" target="_blank" rel="noopener noreferrer">
+                  View Project
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
 
-          <Image src="/placeholder-phone-mockup.png" alt="Talentora AI" width={400} height={300} />
-          <div>
-            <p>Via</p>
-            <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
-            <button><a href="/work/talentora-ai" target="_blank" rel="noopener noreferrer">View Project</a></button>
-          </div>
+            <article className="work-card work-card--media-right">
+              <div className="work-card-content">
+                <h3>Smata</h3>
+                <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
+                <a href="/work/talentora-ai" className="work-card-button" target="_blank" rel="noopener noreferrer">
+                  View Project
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <div className="work-card-media">
+                <Image
+                  src="/placeholder-computer-mockup.png"
+                  alt="Smata"
+                  width={560}
+                  height={360}
+                />
+              </div>
+            </article>
 
-          <Image src="/placeholder-phone-mockup.png" alt="Talentora AI" width={400} height={300} />
-          <div>
-            <p>Thrival</p>
-            <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
-            <button><a href="/work/talentora-ai" target="_blank" rel="noopener noreferrer">View Project</a></button>
+            <article className="work-card work-card--media-left">
+              <div className="work-card-media">
+                <Image
+                  src="/placeholder-phone-mockup.png"
+                  alt="Via"
+                  width={260}
+                  height={520}
+                />
+              </div>
+              <div className="work-card-content">
+                <h3>Via</h3>
+                <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
+                <a href="/work/talentora-ai" className="work-card-button" target="_blank" rel="noopener noreferrer">
+                  View Project
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <article className="work-card work-card--media-right">
+              <div className="work-card-content">
+                <h3>Thrival</h3>
+                <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
+                <a href="/work/talentora-ai" className="work-card-button" target="_blank" rel="noopener noreferrer">
+                  View Project
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <div className="work-card-media">
+                <Image
+                  src="/placeholder-computer-mockup.png"
+                  alt="Thrival"
+                  width={560}
+                  height={360}
+                />
+              </div>
+            </article>
           </div>
         </div>
-
-        
       </section>
       
     </main>
