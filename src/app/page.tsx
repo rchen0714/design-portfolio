@@ -1,6 +1,7 @@
 
 import TextType from "@/components/TextType";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -74,10 +75,10 @@ export default function Home() {
               <div className="work-card-content">
                 <h3>Smata</h3>
                 <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
-                <a href="/work/talentora-ai" className="work-card-button" target="_blank" rel="noopener noreferrer">
+                <Link href="/work/smata" className="work-card-button">
                   View Project
                   <span aria-hidden="true">↗</span>
-                </a>
+                </Link>
               </div>
               <div className="work-card-media">
                 <Image
@@ -93,10 +94,10 @@ export default function Home() {
               <div className="work-card-content">
                 <h3>Thrival</h3>
                 <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
-                <a href="/work/talentora-ai" className="work-card-button" target="_blank" rel="noopener noreferrer">
+                <Link href="/work/thrival" className="work-card-button">
                   View Project
                   <span aria-hidden="true">↗</span>
-                </a>
+                </Link>
               </div>
               <div className="work-card-media">
                 <Image
@@ -120,10 +121,10 @@ export default function Home() {
               <div className="work-card-content">
                 <h3>Talentora AI</h3>
                 <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
-                <a href="/work/talentora-ai" className="work-card-button" target="_blank" rel="noopener noreferrer">
+                <Link href="/work/talentora-ai" className="work-card-button">
                   View Project
                   <span aria-hidden="true">↗</span>
-                </a>
+                </Link>
               </div>
             </article>
 
@@ -140,10 +141,10 @@ export default function Home() {
               <div className="work-card-content">
                 <h3>Via</h3>
                 <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
-                <a href="/work/talentora-ai" className="work-card-button" target="_blank" rel="noopener noreferrer">
+                <Link href="/work/via" className="work-card-button">
                   View Project
                   <span aria-hidden="true">↗</span>
-                </a>
+                </Link>
               </div>
             </article>
 

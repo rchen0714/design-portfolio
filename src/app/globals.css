@@ -361,6 +361,93 @@ img {
 }
 
 /* ==========================
+   CASE STUDY
+========================== */
+
+#case-study-page {
+  padding: clamp(2rem, 4vw, 3rem) 2rem 6rem;
+}
+
+.case-study-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.case-study-back {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.case-study-back:hover {
+  opacity: 0.6;
+}
+
+.case-study-header {
+  max-width: 42rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.case-study-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.1;
+  text-transform: lowercase;
+  margin-bottom: 1.25rem;
+}
+
+.case-study-description {
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+.case-study-meta {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.case-study-hero {
+  display: flex;
+  justify-content: center;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.case-study-hero-image {
+  width: min(100%, 40rem);
+  height: auto;
+}
+
+.case-study-sections {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 3.5rem);
+  max-width: 42rem;
+}
+
+.case-study-section h2 {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.2;
+  text-transform: lowercase;
+  margin-bottom: 0.75rem;
+}
+
+.case-study-section p {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 700px) {
+  #case-study-page {
+    padding-bottom: 4rem;
+  }
+}
+
+/* ==========================
    ABOUT PAGE
 ========================== */
 
