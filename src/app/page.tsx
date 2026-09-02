@@ -69,26 +69,8 @@ export default function Home() {
           <h2 className="selected-works-title">selected works.</h2>
 
           <div className="selected-works-list">
-            <article className="work-card work-card--media-left">
-              <div className="work-card-media">
-                <Image
-                  src="/placeholder-phone-mockup.png"
-                  alt="Talentora AI"
-                  width={260}
-                  height={520}
-                />
-              </div>
-              <div className="work-card-content">
-                <h3>Talentora AI</h3>
-                <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
-                <a href="/work/talentora-ai" className="work-card-button" target="_blank" rel="noopener noreferrer">
-                  View Project
-                  <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </article>
 
-            <article className="work-card work-card--media-right">
+          <article className="work-card work-card--media-right">
               <div className="work-card-content">
                 <h3>Smata</h3>
                 <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
@@ -104,25 +86,6 @@ export default function Home() {
                   width={560}
                   height={360}
                 />
-              </div>
-            </article>
-
-            <article className="work-card work-card--media-left">
-              <div className="work-card-media">
-                <Image
-                  src="/placeholder-phone-mockup.png"
-                  alt="Via"
-                  width={260}
-                  height={520}
-                />
-              </div>
-              <div className="work-card-content">
-                <h3>Via</h3>
-                <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
-                <a href="/work/talentora-ai" className="work-card-button" target="_blank" rel="noopener noreferrer">
-                  View Project
-                  <span aria-hidden="true">↗</span>
-                </a>
               </div>
             </article>
 
@@ -144,6 +107,46 @@ export default function Home() {
                 />
               </div>
             </article>
+
+            <article className="work-card work-card--media-left">
+              <div className="work-card-media">
+                <Image
+                  src="/placeholder-phone-mockup.png"
+                  alt="Talentora AI"
+                  width={260}
+                  height={520}
+                />
+              </div>
+              <div className="work-card-content">
+                <h3>Talentora AI</h3>
+                <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
+                <a href="/work/talentora-ai" className="work-card-button" target="_blank" rel="noopener noreferrer">
+                  View Project
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+
+            <article className="work-card work-card--media-left">
+              <div className="work-card-media">
+                <Image
+                  src="/placeholder-phone-mockup.png"
+                  alt="Via"
+                  width={260}
+                  height={520}
+                />
+              </div>
+              <div className="work-card-content">
+                <h3>Via</h3>
+                <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
+                <a href="/work/talentora-ai" className="work-card-button" target="_blank" rel="noopener noreferrer">
+                  View Project
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
           </div>
         </div>
       </section>
