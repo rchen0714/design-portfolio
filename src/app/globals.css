@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+:root {
+  --text-body: #4b5563;
+  --text-body-size: 0.93rem;
+  --text-body-line-height: 1.6;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -11,6 +17,31 @@ html {
 
 body {
   min-height: 100vh;
+}
+
+p {
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line-height);
+  color: var(--text-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
+}
+
+#site-footer p,
+#site-footer h1,
+#site-footer h2,
+#site-footer h3,
+#site-footer h4,
+#site-footer h5,
+#site-footer h6 {
+  color: inherit;
 }
 
 .poppins-style {
@@ -118,6 +149,7 @@ img {
   line-height: 1.05;
   letter-spacing: -0.02em;
   text-transform: uppercase;
+  color: #000;
 }
 
 .hero-role-line .text-type {
@@ -132,13 +164,12 @@ img {
   flex-direction: column;
   gap: 1.5rem;
   margin-top: 2.5rem;
-  font-size: 1rem;
-  line-height: 1.6;
 }
 
 .hero-experience-label {
   font-weight: 600;
   margin-bottom: 0.25rem;
+  color: #000;
 }
 
 .hero-cta {
@@ -218,6 +249,7 @@ img {
   font-style: italic;
   line-height: 1.1;
   text-transform: lowercase;
+  color: #000;
   margin-bottom: clamp(3rem, 6vw, 5rem);
 }
 
@@ -260,12 +292,11 @@ img {
   font-weight: 700;
   font-style: italic;
   line-height: 1.2;
+  color: #000;
   margin-bottom: 1rem;
 }
 
 .work-card-content p {
-  font-size: 0.95rem;
-  line-height: 1.65;
   margin-bottom: 1.75rem;
 }
 
@@ -323,6 +354,7 @@ img {
   font-style: italic;
   line-height: 1.1;
   text-transform: lowercase;
+  color: #000;
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
@@ -395,18 +427,18 @@ img {
   font-style: italic;
   line-height: 1.1;
   text-transform: lowercase;
+  color: #000;
   margin-bottom: 1.25rem;
 }
 
 .case-study-description {
-  font-size: 1rem;
-  line-height: 1.65;
   margin-bottom: 0.75rem;
 }
 
 .case-study-meta {
   font-size: 0.95rem;
   font-weight: 600;
+  color: #000;
 }
 
 .case-study-hero {
@@ -433,12 +465,8 @@ img {
   font-style: italic;
   line-height: 1.2;
   text-transform: lowercase;
+  color: #000;
   margin-bottom: 0.75rem;
-}
-
-.case-study-section p {
-  font-size: 1rem;
-  line-height: 1.75;
 }
 
 @media (max-width: 700px) {
@@ -454,7 +482,7 @@ img {
 #thrival-case-study {
   --cs-teal: #1d85ac;
   --cs-cyan: #00aeef;
-  --cs-text: #4b5563;
+  --cs-text: var(--text-body);
   --cs-heading: #111827;
   --cs-label: #9ca3af;
   --cs-surface: #f9fafb;
@@ -462,7 +490,6 @@ img {
 
   padding: clamp(2.5rem, 5vw, 4.65rem) clamp(1.5rem, 10vw, 9.3rem)
     clamp(4rem, 7vw, 7rem);
-  color: var(--cs-text);
 }
 
 .cs-page-container {
@@ -587,9 +614,9 @@ img {
 }
 
 .cs-body {
-  font-size: 0.93rem;
-  line-height: 1.6;
-  color: var(--cs-text);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line-height);
+  color: var(--text-body);
 }
 
 .cs-placeholder {
@@ -1022,13 +1049,12 @@ img {
   font-style: italic;
   line-height: 1.1;
   text-transform: lowercase;
+  color: #000;
   margin-bottom: 1.5rem;
 }
 
 .about-intro {
   max-width: 40rem;
-  font-size: 1rem;
-  line-height: 1.6;
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
@@ -1060,8 +1086,6 @@ img {
 
 .about-body {
   max-width: 52rem;
-  font-size: 1rem;
-  line-height: 1.75;
 }
 
 @media (max-width: 700px) {
@@ -1117,6 +1141,7 @@ img {
 .footer-intro p {
   font-size: 1rem;
   line-height: 1.5;
+  color: inherit;
 }
 
 .footer-contact {
