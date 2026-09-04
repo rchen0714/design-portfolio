@@ -119,7 +119,7 @@ export default function ThrivalCaseStudy() {
           </p>
 
           <div className="cs-visual-block">
-            <div className="cs-before-after cs-before-overview">
+            <div className="cs-before-overview">
               <Image
                 src="/thrival/thrival-before-overview.png"
                 alt="Original Thrival app screens showing category selection, exercise detail, and step-by-step instructions"
