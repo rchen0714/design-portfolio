@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 function Placeholder({
@@ -58,10 +59,14 @@ export default function ThrivalCaseStudy() {
           </Link>
 
           <div className="cs-hero-phones">
-            <Placeholder className="cs-placeholder--phone" label="Thrival screen 1" />
-            <Placeholder className="cs-placeholder--phone" label="Thrival screen 2" />
-            <Placeholder className="cs-placeholder--phone" label="Thrival screen 3" />
-            <Placeholder className="cs-placeholder--phone" label="Thrival screen 4" />
+            <Image
+              src="/thrival/thrival-hero.png"
+              alt="Thrival app screens showing fitness routines, favorites, exercise detail, and an active workout"
+              width={3024}
+              height={1833}
+              className="cs-hero-image"
+              priority
+            />
           </div>
 
           <dl className="cs-meta-table">
@@ -114,10 +119,14 @@ export default function ThrivalCaseStudy() {
           </p>
 
           <div className="cs-visual-block">
-            <div className="cs-before-after">
-              <Placeholder className="cs-placeholder--phone" label="Before app screen" />
-              <Placeholder className="cs-placeholder--phone" label="Before app screen detail" />
-              <Placeholder className="cs-placeholder--phone-tall" label="Before app screen expanded" />
+            <div className="cs-before-after cs-before-overview">
+              <Image
+                src="/thrival/thrival-before-overview.png"
+                alt="Original Thrival app screens showing category selection, exercise detail, and step-by-step instructions"
+                width={2430}
+                height={1111}
+                className="cs-before-overview-image"
+              />
             </div>
             <div className="cs-experience-banner">
               <h3>The Original Experience</h3>

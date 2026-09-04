@@ -529,12 +529,17 @@ img {
 
 .cs-hero-phones {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: clamp(1.5rem, 4vw, 3.95rem);
-  padding: clamp(1rem, 2vw, 1.55rem);
+  overflow: hidden;
   border-radius: 1.18rem;
+}
+
+.cs-hero-image {
+  width: 100%;
+  height: auto;
+  transform: scale(1.22);
+  transform-origin: center center;
 }
 
 .cs-hero-phones .cs-placeholder--phone {
@@ -677,6 +682,20 @@ img {
 .cs-before-after .cs-placeholder--phone,
 .cs-before-after .cs-placeholder--phone-tall {
   width: clamp(8rem, 16vw, 14rem);
+}
+
+.cs-before-overview {
+  background: #f9fafb;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.cs-before-overview-image {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .cs-experience-banner {
