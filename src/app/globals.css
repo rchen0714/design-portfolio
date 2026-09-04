@@ -801,6 +801,78 @@ img {
   min-width: 16rem;
 }
 
+.cs-three-col--stretch {
+  display: grid;
+  grid-template-columns: minmax(0, 23.75rem) minmax(0, 1fr);
+  align-items: stretch;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.cs-three-col--stretch .cs-three-col-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 100%;
+}
+
+.cs-onboarding-image-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-onboarding-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cs-homepage-comparison {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 11%;
+  row-gap: 0.625rem;
+  width: 100%;
+  padding-inline: 4%;
+  box-sizing: border-box;
+  margin-top: 0.25rem;
+}
+
+#thrival-case-study .cs-homepage-comparison-label {
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--cs-teal);
+  text-align: center;
+  margin: 0;
+}
+
+.cs-homepage-comparison-image {
+  grid-column: 1 / -1;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cs-homepage-rightcol-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cs-creators-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .cs-split {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -1011,6 +1083,19 @@ img {
 
   .cs-three-col-left {
     flex-basis: 100%;
+  }
+
+  .cs-three-col--stretch {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-onboarding-image-wrap {
+    height: auto;
+  }
+
+  .cs-onboarding-image {
+    width: 100%;
+    max-height: none;
   }
 
   .cs-iteration-row {

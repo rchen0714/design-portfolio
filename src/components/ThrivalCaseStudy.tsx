@@ -119,11 +119,12 @@ export default function ThrivalCaseStudy() {
           </p>
 
           <div className="cs-visual-block">
-            <div className="cs-before-after">
-              <Placeholder className="cs-placeholder--phone" label="Before app screen" />
-              <Placeholder className="cs-placeholder--phone" label="Before app screen detail" />
-              <Placeholder className="cs-placeholder--phone-tall" label="Before app screen expanded" />
-            </div>
+            <Image
+              src="/thrival/overview-before.png"
+              alt="Original Thrival app screens showing category selection, exercise detail, and step-by-step instructions"
+              width={1646}
+              height={1110}
+            />
             <div className="cs-experience-banner">
               <h3>The Original Experience</h3>
               <p>
@@ -181,7 +182,7 @@ export default function ThrivalCaseStudy() {
             <h2 className="cs-section-title">Personalization starts before the homepage</h2>
           </div>
 
-          <div className="cs-three-col">
+          <div className="cs-three-col cs-three-col--stretch">
             <div className="cs-three-col-left">
               <div className="cs-split-text">
                 <p className="cs-body">
@@ -216,8 +217,16 @@ export default function ThrivalCaseStudy() {
             </div>
 
             <div className="cs-three-col-right">
-              <Placeholder className="cs-placeholder--phone" label="Login screen" />
-              <Placeholder className="cs-placeholder--wide" label="Onboarding flow screens" />
+              <div className="cs-onboarding-image-wrap">
+                <Image
+                  src="/thrival/thrival-onboarding.png"
+                  alt="Thrival onboarding flow screens"
+                  width={2658}
+                  height={1700}
+                  className="cs-onboarding-image"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -258,11 +267,27 @@ export default function ThrivalCaseStudy() {
                 need without overwhelming the primary experience.
               </p>
 
-              <Placeholder className="cs-placeholder--phone" label="Onboarding step screen" />
+              <div className="cs-homepage-comparison">
+                <p className="cs-homepage-comparison-label">Thrival Routines</p>
+                <p className="cs-homepage-comparison-label">Fitness Routines</p>
+                <Image
+                  src="/thrival/thrival-homepage-comparison.png"
+                  alt="Side-by-side comparison of a Thrival recovery routine screen and a fitness routine screen"
+                  width={835}
+                  height={811}
+                  className="cs-homepage-comparison-image"
+                />
+              </div>
             </div>
 
             <div className="cs-three-col-right">
-              <Placeholder className="cs-placeholder--phone" label="Homepage screen with annotations" />
+              <Image
+                src="/thrival/thrival-homepage-rightcol.png"
+                alt="Thrival homepage with annotation callouts for co-existing libraries, compatibility cues, and personalized relevance"
+                width={1298}
+                height={1428}
+                className="cs-homepage-rightcol-image"
+              />
             </div>
           </div>
         </section>
@@ -419,11 +444,13 @@ export default function ThrivalCaseStudy() {
             need to focus on recruiting and partnering with creators first.
           </p>
 
-          <div className="cs-phone-row cs-phone-row--centered">
-            <Placeholder className="cs-placeholder--phone" label="Creator profile screen" />
-            <Placeholder className="cs-placeholder--phone" label="Creator content screen" />
-            <Placeholder className="cs-placeholder--phone" label="Creator discovery screen" />
-          </div>
+          <Image
+            src="/thrival/thrival-social-media.png"
+            alt="Thrival creator profile and social media content screens"
+            width={1584}
+            height={970}
+            className="cs-creators-image"
+          />
         </section>
 
         <hr className="cs-divider" />
