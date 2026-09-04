@@ -119,14 +119,10 @@ export default function ThrivalCaseStudy() {
           </p>
 
           <div className="cs-visual-block">
-            <div className="cs-before-overview">
-              <Image
-                src="/thrival/thrival-before-overview.png"
-                alt="Original Thrival app screens showing category selection, exercise detail, and step-by-step instructions"
-                width={2430}
-                height={1111}
-                className="cs-before-overview-image"
-              />
+            <div className="cs-before-after">
+              <Placeholder className="cs-placeholder--phone" label="Before app screen" />
+              <Placeholder className="cs-placeholder--phone" label="Before app screen detail" />
+              <Placeholder className="cs-placeholder--phone-tall" label="Before app screen expanded" />
             </div>
             <div className="cs-experience-banner">
               <h3>The Original Experience</h3>
