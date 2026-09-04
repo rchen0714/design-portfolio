@@ -444,11 +444,13 @@ export default function ThrivalCaseStudy() {
             need to focus on recruiting and partnering with creators first.
           </p>
 
-          <div className="cs-phone-row cs-phone-row--centered">
-            <Placeholder className="cs-placeholder--phone" label="Creator profile screen" />
-            <Placeholder className="cs-placeholder--phone" label="Creator content screen" />
-            <Placeholder className="cs-placeholder--phone" label="Creator discovery screen" />
-          </div>
+          <Image
+            src="/thrival/thrival-social-media.png"
+            alt="Thrival creator profile and social media content screens"
+            width={1584}
+            height={970}
+            className="cs-creators-image"
+          />
         </section>
 
         <hr className="cs-divider" />

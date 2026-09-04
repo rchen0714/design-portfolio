@@ -867,6 +867,12 @@ img {
   height: auto;
 }
 
+.cs-creators-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .cs-split {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
