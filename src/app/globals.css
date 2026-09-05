@@ -663,17 +663,23 @@ img {
 }
 
 
-.cs-before-after {
+.cs-visual-block {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-end;
-  gap: clamp(1rem, 3vw, 2.5rem);
+  flex-direction: column;
+  gap: 1.25rem;
 }
 
-.cs-before-after .cs-placeholder--phone,
-.cs-before-after .cs-placeholder--phone-tall {
-  width: clamp(8rem, 16vw, 14rem);
+.cs-before-after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cs-before-overview-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  outline: none;
 }
 
 
@@ -895,6 +901,12 @@ img {
 
 .cs-split-visual .cs-placeholder--phone {
   width: clamp(9rem, 16vw, 14rem);
+}
+
+.cs-subscription-image {
+  display: block;
+  width: clamp(9rem, 16vw, 14rem);
+  height: auto;
 }
 
 .cs-split--reverse .cs-split-text {

@@ -119,11 +119,6 @@ export default function ThrivalCaseStudy() {
           </p>
 
           <div className="cs-visual-block">
-            <div className="cs-before-after">
-              <Placeholder className="cs-placeholder--phone" label="Before app screen" />
-              <Placeholder className="cs-placeholder--phone" label="Before app screen detail" />
-              <Placeholder className="cs-placeholder--phone-tall" label="Before app screen expanded" />
-            </div>
             <div className="cs-experience-banner">
               <h3>The Original Experience</h3>
               <p>
@@ -486,7 +481,13 @@ export default function ThrivalCaseStudy() {
             </div>
 
             <div className="cs-split-visual">
-              <Placeholder className="cs-placeholder--phone-tall" label="Monetization flow screen" />
+              <Image
+                src="/thrival/thrival-subscription.png"
+                alt="Thrival subscription paywall screen"
+                width={718}
+                height={1492}
+                className="cs-subscription-image"
+              />
             </div>
           </div>
         </section>
