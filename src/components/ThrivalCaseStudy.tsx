@@ -58,17 +58,6 @@ export default function ThrivalCaseStudy() {
             ← Back to selected works
           </Link>
 
-          <div className="cs-hero-phones">
-            <Image
-              src="/thrival/thrival-hero.png"
-              alt="Thrival app screens showing fitness routines, favorites, exercise detail, and an active workout"
-              width={3024}
-              height={1833}
-              className="cs-hero-image"
-              priority
-            />
-          </div>
-
           <dl className="cs-meta-table">
             <div className="cs-meta-item">
               <dt>Role</dt>
@@ -120,6 +109,13 @@ export default function ThrivalCaseStudy() {
 
           <div className="cs-visual-block">
             <div className="cs-experience-banner">
+              <Image
+                src="/thrival/new-overviewagain.png"
+                alt="Original Thrival app screens showing body-part categories, an expanded exercise card, and a step-by-step guided recovery player"
+                width={1684}
+                height={981}
+                className="cs-overview-image"
+              />
               <h3>The Original Experience</h3>
               <p>
                 The initial version of Thrival Muscle Recovery was organized around
@@ -332,17 +328,49 @@ export default function ThrivalCaseStudy() {
           <div className="cs-iteration-block">
             <div className="cs-iteration-row">
               <div className="cs-iteration-item">
-                <Placeholder className="cs-placeholder--phone" label="Initial design" />
+                <Image
+                  src="/thrival/thrival-iteration1.png"
+                  alt="Initial design of the Thrival guided recovery routine"
+                  width={387}
+                  height={782}
+                  className="cs-iteration-image"
+                />
                 <p>Initial Design</p>
               </div>
-              <span className="cs-iteration-arrow" aria-hidden="true">→</span>
+              <Image
+                src="/thrival/arrow-vector.svg"
+                alt=""
+                width={12}
+                height={20}
+                className="cs-iteration-arrow"
+                aria-hidden="true"
+              />
               <div className="cs-iteration-item">
-                <Placeholder className="cs-placeholder--phone" label="Iteration 1" />
+                <Image
+                  src="/thrival/thrival-iteration2.png"
+                  alt="First iteration of the Thrival guided recovery routine"
+                  width={387}
+                  height={782}
+                  className="cs-iteration-image"
+                />
                 <p>Iteration 1</p>
               </div>
-              <span className="cs-iteration-arrow" aria-hidden="true">→</span>
+              <Image
+                src="/thrival/arrow-vector.svg"
+                alt=""
+                width={12}
+                height={20}
+                className="cs-iteration-arrow"
+                aria-hidden="true"
+              />
               <div className="cs-iteration-item">
-                <Placeholder className="cs-placeholder--phone" label="Iteration 2" />
+                <Image
+                  src="/thrival/thrival-iteration3.png"
+                  alt="Second iteration of the Thrival guided recovery routine"
+                  width={387}
+                  height={782}
+                  className="cs-iteration-image"
+                />
                 <p>Iteration 2</p>
               </div>
             </div>

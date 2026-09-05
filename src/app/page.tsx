@@ -90,7 +90,7 @@ export default function Home() {
               </div>
             </article>
 
-            <article className="work-card work-card--media-right">
+            <article className="work-card">
               <div className="work-card-content">
                 <h3>Thrival</h3>
                 <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
@@ -109,7 +109,7 @@ export default function Home() {
               </div>
             </article>
 
-            <article className="work-card work-card--media-left">
+            {/* <article className="work-card work-card--media-left">
               <div className="work-card-media">
                 <Image
                   src="/placeholder-phone-mockup.png"
@@ -126,10 +126,10 @@ export default function Home() {
                   <span aria-hidden="true">↗</span>
                 </Link>
               </div>
-            </article>
+            </article> */}
 
 
-            <article className="work-card work-card--media-left">
+            {/* <article className="work-card work-card--media-left">
               <div className="work-card-media">
                 <Image
                   src="/placeholder-phone-mockup.png"
@@ -146,7 +146,7 @@ export default function Home() {
                   <span aria-hidden="true">↗</span>
                 </Link>
               </div>
-            </article>
+            </article> */}
 
           </div>
         </div>
