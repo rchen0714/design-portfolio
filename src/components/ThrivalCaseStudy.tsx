@@ -58,6 +58,53 @@ export default function ThrivalCaseStudy() {
             ← Back to selected works
           </Link>
 
+          <div className="cs-hero-phones">
+            <div className="cs-hero-phone-wrap">
+              <Image
+                src="/thrival/thrival-hero1.png"
+                alt="Thrival home discovery screen with fitness routines and How To Thrival content"
+                width={526}
+                height={1062}
+                className="cs-hero-phone"
+                priority
+                sizes="25vw"
+              />
+            </div>
+            <div className="cs-hero-phone-wrap">
+              <Image
+                src="/thrival/thrival-hero2.png"
+                alt="Thrival favorites screen filtered to Hips and Glutes routines"
+                width={526}
+                height={1062}
+                className="cs-hero-phone"
+                priority
+                sizes="25vw"
+              />
+            </div>
+            <div className="cs-hero-phone-wrap">
+              <Image
+                src="/thrival/thrival-hero3.png"
+                alt="Thrival routine detail screen for Iliacus with Wave"
+                width={526}
+                height={1062}
+                className="cs-hero-phone"
+                priority
+                sizes="25vw"
+              />
+            </div>
+            <div className="cs-hero-phone-wrap">
+              <Image
+                src="/thrival/thrival-hero4.png"
+                alt="Thrival guided recovery session with step-by-step instructions"
+                width={263}
+                height={531}
+                className="cs-hero-phone"
+                priority
+                sizes="25vw"
+              />
+            </div>
+          </div>
+
           <dl className="cs-meta-table">
             <div className="cs-meta-item">
               <dt>Role</dt>
@@ -109,6 +156,12 @@ export default function ThrivalCaseStudy() {
 
           <div className="cs-visual-block">
             <div className="cs-experience-banner">
+              <h3>The Original Experience</h3>
+                <p>
+                  The initial version of Thrival Muscle Recovery was organized around
+                  discovering and following individual Thrival exercises. However, it was very simple and not
+                  as immersive as the stakeholders wanted it to be.
+                </p>
               <Image
                 src="/thrival/new-overviewagain.png"
                 alt="Original Thrival app screens showing body-part categories, an expanded exercise card, and a step-by-step guided recovery player"
@@ -116,11 +169,6 @@ export default function ThrivalCaseStudy() {
                 height={981}
                 className="cs-overview-image"
               />
-              <h3>The Original Experience</h3>
-              <p>
-                The initial version of Thrival Muscle Recovery was organized around
-                discovering and following individual Thrival exercises.
-              </p>
             </div>
           </div>
         </section>
