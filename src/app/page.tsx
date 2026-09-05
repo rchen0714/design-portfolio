@@ -43,14 +43,20 @@ export default function Home() {
               <div className="hero-experience-group">
                 <p className="hero-experience-label">Previously</p>
                 <p>Operations and AI solutions Intern @ <a href="" target="_blank" rel="noopener noreferrer">Caidya</a></p>
-                <p>Founding Designer @ <a href="" target="_blank" rel="noopener noreferrer">TalentoraAI</a></p>
               </div>
             </div>
 
             <div className="hero-cta">
               <a href="#selected-works" className="hero-cta-button">
                 View works
-                <span aria-hidden="true">↗</span>
+                <Image
+                  src="/thrival/right-arrow-icon.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="button-arrow"
+                  aria-hidden="true"
+                />
               </a>
               <a
                 href="https://www.linkedin.com/in/rchen0714"
@@ -77,7 +83,14 @@ export default function Home() {
                 <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
                 <Link href="/work/smata" className="work-card-button">
                   View Project
-                  <span aria-hidden="true">↗</span>
+                  <Image
+                    src="/thrival/right-arrow-icon.svg"
+                    alt=""
+                    width={12}
+                    height={12}
+                    className="button-arrow"
+                    aria-hidden="true"
+                  />
                 </Link>
               </div>
               <div className="work-card-media">
@@ -96,7 +109,14 @@ export default function Home() {
                 <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
                 <Link href="/work/thrival" className="work-card-button">
                   View Project
-                  <span aria-hidden="true">↗</span>
+                  <Image
+                    src="/thrival/right-arrow-icon.svg"
+                    alt=""
+                    width={12}
+                    height={12}
+                    className="button-arrow"
+                    aria-hidden="true"
+                  />
                 </Link>
               </div>
               <div className="work-card-media">
@@ -123,7 +143,14 @@ export default function Home() {
                 <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
                 <Link href="/work/talentora-ai" className="work-card-button">
                   View Project
-                  <span aria-hidden="true">↗</span>
+                  <Image
+                    src="/thrival/right-arrow-icon.svg"
+                    alt=""
+                    width={12}
+                    height={12}
+                    className="button-arrow"
+                    aria-hidden="true"
+                  />
                 </Link>
               </div>
             </article> */}
@@ -143,7 +170,14 @@ export default function Home() {
                 <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
                 <Link href="/work/via" className="work-card-button">
                   View Project
-                  <span aria-hidden="true">↗</span>
+                  <Image
+                    src="/thrival/right-arrow-icon.svg"
+                    alt=""
+                    width={12}
+                    height={12}
+                    className="button-arrow"
+                    aria-hidden="true"
+                  />
                 </Link>
               </div>
             </article> */}
