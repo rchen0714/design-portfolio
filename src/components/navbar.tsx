@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header id="navbar-header">
+    <header id="navbar-header" className="sticky top-0 z-50 w-full bg-white">
       <nav id="navbar">
         <Link className="navbar-links" href="/" title="Go to homepage">
           <Image

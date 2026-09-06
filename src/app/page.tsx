@@ -54,6 +54,8 @@ export default function Home() {
                       "A WEB DEVELOPER",
                       "A GRAPHIC DESIGNER",
                       "A CREATIVE TECHNOLOGIST",
+                      "A FOODIE",
+                      "A BLIND-BOX ENTHUSIAST",
                     ]}
                     typingSpeed={75}
                     deletingSpeed={40}
