@@ -122,7 +122,15 @@ export default function ThrivalCaseStudy() {
               <dt>Status</dt>
               <dd>
                 <span className="cs-live-link">
-                  Live Product <span aria-hidden="true">↗</span>
+                  Live Product
+                  <Image
+                    src="/thrival/right-arrow-icon.svg"
+                    alt=""
+                    width={12}
+                    height={12}
+                    className="button-arrow"
+                    aria-hidden="true"
+                  />
                 </span>
               </dd>
             </div>

@@ -622,12 +622,12 @@ img.hero-hover-doodle {
   --cs-surface: #f9fafb;
   --cs-border: #e5e7eb;
 
-  padding: clamp(2.5rem, 5vw, 4.65rem) clamp(1.5rem, 10vw, 9.3rem)
+  padding: clamp(2.5rem, 5vw, 4.65rem) clamp(2rem, 14vw, 13rem)
     clamp(4rem, 7vw, 7rem);
 }
 
 .cs-page-container {
-  max-width: 75.9rem;
+  max-width: 64rem;
   margin: 0 auto;
 }
 
@@ -699,10 +699,14 @@ img.hero-hover-doodle {
 .cs-live-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.15rem;
+  gap: 0.35rem;
   font-weight: 500;
   text-decoration: underline;
   color: var(--cs-heading);
+}
+
+.cs-live-link .button-arrow {
+  filter: invert(1);
 }
 
 .cs-divider {
@@ -1426,7 +1430,7 @@ img.hero-hover-doodle {
   --sm-callout-border: #1d85ac;
   --sm-border: #e5e7eb;
 
-  padding: clamp(2.5rem, 5vw, 4.65rem) clamp(1.5rem, 10vw, 9.3rem)
+  padding: clamp(2.5rem, 5vw, 4.65rem) clamp(2rem, 14vw, 13rem)
     clamp(4rem, 7vw, 7rem);
 }
 
@@ -1451,7 +1455,7 @@ img.hero-hover-doodle {
 }
 
 .sm-page-container {
-  max-width: 75.9rem;
+  max-width: 64rem;
   margin: 0 auto;
 }
 
