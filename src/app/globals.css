@@ -16,6 +16,9 @@
   --case-small-size: 0.875rem;
   --case-section-gap: 2.3rem;
   --case-header-gap: 0.95rem;
+  --nav-pad-y: clamp(0.75rem, 1.8vw, 1.35rem);
+  --nav-logo-size: clamp(3.5rem, 4vw, 4.75rem);
+  --nav-height: calc(var(--nav-pad-y) * 2 + var(--nav-logo-size));
 }
 
 html {
@@ -93,12 +96,16 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: clamp(1.25rem, 3vw, 2.5rem) var(--page-pad-x);
+  padding: var(--nav-pad-y) var(--page-pad-x);
 }
 
 #nav-logo {
-  width: clamp(2.5rem, 3.2vw, 3.75rem);
+  display: block;
+  position: relative;
+  width: var(--nav-logo-size);
+  aspect-ratio: 1;
   height: auto;
+  overflow: visible;
 }
 
 #navbar-menu {
@@ -138,6 +145,7 @@ img {
 }
 
 .hero-content {
+  position: relative;
   gap: 0;
 }
 
@@ -275,20 +283,55 @@ img {
   }
 }
 
-.hero-image-placeholder {
+.hero-heading,
+.hero-content,
+.hero-image-wrap {
+  overflow: visible;
+}
+
+.hero-image-wrap {
+  position: relative;
   flex-shrink: 0;
-  width: clamp(5.5rem, 14vw, 16rem);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #d9d9d9;
+  width: clamp(7rem, 16vw, 14rem);
   margin-top: 0.15rem;
+}
+
+img.hero-hover-doodle {
+  position: absolute;
+  top: clamp(6.5rem, 12vw, 9.5rem);
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  width: min(35%, 28rem);
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: right bottom;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-content:has(.hero-image-wrap:hover) img.hero-hover-doodle {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.hero-image-wrap .hero-image {
+  width: 100%;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
 }
 
 /* ==========================
    SELECTED WORKS
 ========================== */
 
-#selected-works {
+.selected-works-section {
   padding: clamp(2.5rem, 5vw, 4rem) var(--page-pad-x) clamp(5rem, 10vw, 8rem);
 }
 
@@ -297,6 +340,7 @@ img {
 }
 
 .selected-works-title {
+  scroll-margin-top: calc(var(--nav-height) + 2rem);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   font-style: italic;
@@ -371,11 +415,11 @@ img {
     margin-top: 2.5rem;
   }
 
-  .hero-image-placeholder {
-    width: clamp(4.5rem, 22vw, 7rem);
+  .hero-image-wrap {
+    width: clamp(5.5rem, 24vw, 8.5rem);
   }
 
-  #selected-works {
+  .selected-works-section {
     padding-top: 2.5rem;
     padding-bottom: 5rem;
   }
@@ -414,7 +458,7 @@ img {
     padding-bottom: 4rem;
   }
 
-  #selected-works {
+  .selected-works-section {
     padding-top: 3.5rem;
   }
 }

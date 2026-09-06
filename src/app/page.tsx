@@ -42,7 +42,7 @@ export default function Home() {
     <main>
       <section id="hero">
         <div className="hero-container">
-          <div className="hero-content">
+          <div className="hero-content relative [&:has(.hero-image-wrap:hover)_img.hero-hover-doodle]:visible [&:has(.hero-image-wrap:hover)_img.hero-hover-doodle]:opacity-100">
             <div className="hero-heading">
               <div className="hero-heading-text">
                 <h1>HI! IM RUBY</h1>
@@ -66,7 +66,16 @@ export default function Home() {
                   />
                 </span>
               </div>
-              <div className="hero-image-placeholder" aria-hidden="true" />
+              <div className="hero-image-wrap group relative">
+                <Image
+                  src="/new-hero-image.png"
+                  alt="Ruby Chen"
+                  width={512}
+                  height={512}
+                  className="hero-image h-auto w-full max-w-none object-contain transition-opacity duration-200 group-hover:opacity-0"
+                  priority
+                />
+              </div>
             </div>
 
             <div className="hero-experience">
@@ -149,13 +158,21 @@ export default function Home() {
                 </svg>
               </a>
             </div>
+            <Image
+              src="/hero-image.png"
+              alt=""
+              width={1240}
+              height={1140}
+              className="hero-hover-doodle pointer-events-none invisible absolute top-[clamp(6.5rem,12vw,9.5rem)] right-0 bottom-0 z-[5] h-auto w-[min(35%,28rem)] max-w-none object-contain object-right-bottom opacity-0"
+              aria-hidden
+            />
           </div>
         </div>
       </section>
 
-      <section id="selected-works">
+      <section className="selected-works-section">
         <div className="selected-works-container">
-          <h2 className="selected-works-title">selected works.</h2>
+          <h2 id="selected-works" className="selected-works-title scroll-mt-[calc(var(--nav-height)+2rem)]">selected works.</h2>
 
           <div className="selected-works-list">
 
