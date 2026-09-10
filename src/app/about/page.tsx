@@ -120,25 +120,9 @@ export default function AboutPage() {
                   className="about-chat-button"
                 >
                   LinkedIn
-                  <Image
-                    src="/thrival/right-arrow-icon.svg"
-                    alt=""
-                    width={12}
-                    height={12}
-                    className="about-chat-button-arrow"
-                    aria-hidden="true"
-                  />
                 </a>
                 <a href="mailto:rc071404@bu.edu" className="about-chat-button">
                   rc071404@bu.edu
-                  <Image
-                    src="/thrival/right-arrow-icon.svg"
-                    alt=""
-                    width={12}
-                    height={12}
-                    className="about-chat-button-arrow"
-                    aria-hidden="true"
-                  />
                 </a>
               </div>
             </div>
