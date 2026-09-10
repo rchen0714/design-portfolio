@@ -1402,8 +1402,8 @@ img.hero-hover-doodle {
   padding: 0.55rem 1.25rem;
   border: 2px solid #000;
   border-radius: 40px;
-  background: transparent;
-  color: #000;
+  background: #000;
+  color: #fff;
   font-size: var(--text-body-size);
   font-weight: 400;
   line-height: var(--text-body-line-height);
@@ -1414,8 +1414,8 @@ img.hero-hover-doodle {
 
 @media (hover: hover) and (pointer: fine) {
   .about-chat-button:hover {
-    background: #000;
-    color: #fff;
+    background: transparent;
+    color: #000;
   }
 }
 
