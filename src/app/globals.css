@@ -1581,6 +1581,7 @@ img.hero-hover-doodle {
   display: flex;
   gap: clamp(1.5rem, 3vw, 3rem);
   flex-shrink: 0;
+  padding-right: clamp(1.5rem, 3vw, 3rem);
 }
 
 .about-carousel-item {
