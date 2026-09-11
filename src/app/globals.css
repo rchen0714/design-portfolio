@@ -1307,26 +1307,95 @@ img.hero-hover-doodle {
   margin-bottom: clamp(6rem, 12vw, 10rem);
 }
 
-.about-polaroids {
+.about-polaroid-stack {
+  --polaroid-w: clamp(9rem, 16vw, 12.5rem);
+  --polaroid-h: calc(var(--polaroid-w) * 1.21);
+  --polaroid-gap: 0.75rem;
   position: relative;
   flex: 0 0 min(42%, 28rem);
-  min-height: clamp(18rem, 34vw, 28rem);
+  width: clamp(11rem, 22vw, 16rem);
+  height: clamp(13rem, 24vw, 18rem);
+  cursor: pointer;
+  outline: none;
+  transition:
+    width 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-polaroid-stack-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.about-polaroid-stack-image {
+  display: block;
+  width: var(--polaroid-w);
+  height: auto;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.14));
+}
+
+.about-polaroid-stack-item--1 {
+  z-index: 4;
+  transform: translate(0, 25) rotate(-5deg);
+}
+
+.about-polaroid-stack-item--2 {
+  z-index: 3;
+  transform: translate(3rem, 1.65rem) rotate(10deg);
+}
+
+.about-polaroid-stack-item--3 {
+  z-index: 2;
+  transform: translate(0.45rem, 0) rotate(-7deg);
+}
+
+.about-polaroid-stack-item--4 {
+  z-index: 1;
+  transform: translate(0.85rem, 1rem) rotate(6deg);
+}
+
+.about-polaroid-stack:hover,
+.about-polaroid-stack.is-expanded {
+  width: calc(var(--polaroid-w) * 2 + var(--polaroid-gap));
+  height: calc(var(--polaroid-h) * 2 + var(--polaroid-gap));
+}
+
+.about-polaroid-stack:hover .about-polaroid-stack-item--1,
+.about-polaroid-stack.is-expanded .about-polaroid-stack-item--1 {
+  transform: translate(0, 0) rotate(-4deg);
+}
+
+.about-polaroid-stack:hover .about-polaroid-stack-item--2,
+.about-polaroid-stack.is-expanded .about-polaroid-stack-item--2 {
+  transform: translate(calc(var(--polaroid-w) + var(--polaroid-gap)), 0) rotate(5deg);
+}
+
+.about-polaroid-stack:hover .about-polaroid-stack-item--3,
+.about-polaroid-stack.is-expanded .about-polaroid-stack-item--3 {
+  transform: translate(0, calc(var(--polaroid-h) + var(--polaroid-gap))) rotate(-5deg);
+}
+
+.about-polaroid-stack:hover .about-polaroid-stack-item--4,
+.about-polaroid-stack.is-expanded .about-polaroid-stack-item--4 {
+  transform: translate(
+      calc(var(--polaroid-w) + var(--polaroid-gap)),
+      calc(var(--polaroid-h) + var(--polaroid-gap))
+    )
+    rotate(4deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-polaroid-stack-item {
+    transition: none;
+  }
 }
 
 .about-polaroid {
-  position: absolute;
-}
-
-.about-polaroid--back {
-  top: 0;
-  left: 0;
-  transform: rotate(-7deg);
-}
-
-.about-polaroid--front {
-  top: clamp(4rem, 8vw, 7rem);
-  left: clamp(3rem, 8vw, 7rem);
-  transform: rotate(24deg);
+  position: relative;
 }
 
 .about-polaroid-frame {
@@ -1625,23 +1694,24 @@ img.hero-hover-doodle {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  height: clamp(5rem, 7.5vw, 7rem);
 }
 
 .about-tool-logo {
-  width: 100%;
+  width: auto;
   height: 100%;
   object-fit: contain;
   mix-blend-mode: luminosity;
 }
 
-.about-life-item .about-polaroid {
-  position: relative;
-  transform: none;
+.about-carousel--slow .about-carousel-marquee-content {
+  animation-duration: 90s;
 }
 
-.about-life-item .about-polaroid-frame {
+.about-life-polaroid-image {
+  display: block;
   width: clamp(10rem, 16vw, 13rem);
+  height: auto;
 }
 
 @media (max-width: 900px) {
@@ -1649,9 +1719,15 @@ img.hero-hover-doodle {
     flex-direction: column;
   }
 
-  .about-polaroids {
-    width: 100%;
-    min-height: clamp(16rem, 55vw, 22rem);
+  .about-polaroid-stack {
+    flex: none;
+    width: min(100%, clamp(11rem, 55vw, 16rem));
+    margin: 0 auto;
+  }
+
+  .about-polaroid-stack:hover,
+  .about-polaroid-stack.is-expanded {
+    width: min(100%, calc(var(--polaroid-w) * 2 + var(--polaroid-gap)));
   }
 
   .about-doodles {
@@ -1665,9 +1741,6 @@ img.hero-hover-doodle {
     padding-bottom: 4rem;
   }
 
-  .about-polaroid--front {
-    left: clamp(2rem, 12vw, 4rem);
-  }
 }
 
 /* ==========================

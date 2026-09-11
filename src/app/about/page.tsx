@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AboutPolaroidStack from "@/components/AboutPolaroidStack";
 import HorizontalCarousel from "@/components/HorizontalCarousel";
 
 const experience = [
@@ -43,35 +44,37 @@ const experience = [
 ];
 
 const tools = [
-  { name: "HTML5", src: "/about/tools/html5.png", width: 219, height: 219 },
-  { name: "Microsoft Teams", src: "/about/tools/teams.png", width: 155, height: 219 },
-  { name: "Figma", src: "/about/tools/figma.png", width: 169, height: 219 },
-  { name: "Adobe Creative Cloud", src: "/about/tools/adobe.png", width: 207, height: 219 },
-  { name: "Webflow", src: "/about/tools/webflow.png", width: 219, height: 219 },
-  { name: "Procreate", src: "/about/tools/procreate.png", width: 225, height: 219 },
-  { name: "Spotify", src: "/about/tools/spotify.png", width: 219, height: 219 },
-  { name: "Notion", src: "/about/tools/notion.png", width: 219, height: 219 },
-  { name: "Framer", src: "/about/tools/framer.svg", width: 213, height: 213 },
-  { name: "Slack", src: "/about/tools/slack.png", width: 219, height: 219 },
-  { name: "Canva", src: "/about/tools/canva.png", width: 219, height: 219 },
+  { name: "HTML", src: "/logos/htmllogo.png", width: 169, height: 220 },
+  { name: "CSS", src: "/logos/csslogo.png", width: 156, height: 219 },
+  { name: "Figma", src: "/logos/figma.png", width: 220, height: 220 },
+  { name: "Adobe Creative Cloud", src: "/logos/adobecloud.png", width: 225, height: 220 },
+  { name: "Webflow", src: "/logos/webflow.png", width: 219, height: 219 },
+  { name: "Next.js", src: "/logos/nextjs.png", width: 220, height: 220 },
+  { name: "Procreate", src: "/logos/procreate.png", width: 220, height: 220 },
+  { name: "Spotify", src: "/logos/spotify.png", width: 213, height: 214 },
+  { name: "Pinterest", src: "/logos/pinterest.png", width: 220, height: 220 },
+  { name: "Slack", src: "/logos/slack.png", width: 220, height: 220 },
+  { name: "Microsoft Teams", src: "/logos/teams.png", width: 208, height: 219 },
 ];
 
-function PolaroidPlaceholder({
-  className = "",
-  label = "Photo placeholder",
-}: {
-  className?: string;
-  label?: string;
-}) {
-  return (
-    <div className={`about-polaroid ${className}`.trim()} aria-hidden="true">
-      <div className="about-polaroid-frame">
-        <div className="about-polaroid-photo" />
-      </div>
-      <span className="sr-only">{label}</span>
-    </div>
-  );
-}
+const lifePhotos = [
+  "Frame 1000003238.png",
+  "Frame 1000003239.png",
+  "Frame 1000003242.png",
+  "Frame 1000003243.png",
+  "Frame 1000003245.png",
+  "Frame 1000003246.png",
+  "Frame 1000003247.png",
+  "Frame 1000003248.png",
+  "Frame 1000003249.png",
+  "Frame 1000003250.png",
+  "Frame 1000003251.png",
+  "Frame 1000003252.png",
+  "Frame 1000003253.png",
+  "Frame 1000003254.png",
+  "Frame 1000003255.png",
+  "Frame 1000003256.png",
+].map((file) => `/polaroid-pictures/${encodeURIComponent(file)}`);
 
 export default function AboutPage() {
   return (
@@ -83,10 +86,7 @@ export default function AboutPage() {
         </header>
 
         <section className="about-intro-section" aria-label="Introduction">
-          <div className="about-polaroids">
-            <PolaroidPlaceholder className="about-polaroid--back" />
-            <PolaroidPlaceholder className="about-polaroid--front" />
-          </div>
+          <AboutPolaroidStack />
 
           <div className="about-intro-content">
             <div className="about-bio">
@@ -183,10 +183,7 @@ export default function AboutPage() {
           <HorizontalCarousel ariaLabel="Tools carousel">
             {tools.map((tool) => (
               <div key={tool.name} className="about-carousel-item about-tool-item">
-                <div
-                  className="about-tool-logo-wrap"
-                  style={{ width: tool.width, height: tool.height }}
-                >
+                <div className="about-tool-logo-wrap">
                   <Image
                     src={tool.src}
                     alt={tool.name}
@@ -208,10 +205,20 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <HorizontalCarousel ariaLabel="Life photos carousel">
-            {Array.from({ length: 6 }).map((_, index) => (
-              <div key={index} className="about-carousel-item about-life-item">
-                <PolaroidPlaceholder label={`Life photo placeholder ${index + 1}`} />
+          <HorizontalCarousel
+            ariaLabel="Life photos carousel"
+            className="about-carousel--slow"
+          >
+            {lifePhotos.map((src) => (
+              <div key={src} className="about-carousel-item about-life-item">
+                <Image
+                  src={src}
+                  alt=""
+                  width={654}
+                  height={1056}
+                  className="about-life-polaroid-image"
+                  aria-hidden="true"
+                />
               </div>
             ))}
           </HorizontalCarousel>
