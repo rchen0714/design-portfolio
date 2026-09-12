@@ -66,6 +66,15 @@ function wrapAxis(value: number, period: number) {
   return mod - period;
 }
 
+function shuffleItems(items: PlayGalleryItem[]) {
+  const shuffled = [...items];
+  for (let i = shuffled.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 function PlayMasonryItem({ item }: { item: PlayGalleryItem }) {
   return (
     <article
@@ -74,7 +83,7 @@ function PlayMasonryItem({ item }: { item: PlayGalleryItem }) {
     >
       {item.src ? (
         <Image
-          src={item.src}
+          src={encodeURI(item.src)}
           alt={item.alt}
           fill
           unoptimized
@@ -117,6 +126,7 @@ function PlayMasonry({
 
 export default function PlayCanvas({ items }: PlayCanvasProps) {
   const columnCount = useColumnCount();
+  const displayItems = useMemo(() => shuffleItems(items), [items]);
   const tileMeasureRef = useRef<HTMLDivElement>(null);
   const [tileSize, setTileSize] = useState<TileSize>({ width: 0, height: 0 });
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -145,7 +155,7 @@ export default function PlayCanvas({ items }: PlayCanvasProps) {
     observer.observe(node);
 
     return () => observer.disconnect();
-  }, [items.length]);
+  }, [displayItems.length]);
 
   const applyOffset = useCallback(
     (x: number, y: number) => {
@@ -242,7 +252,7 @@ export default function PlayCanvas({ items }: PlayCanvasProps) {
                   aria-hidden={!isMeasureTile}
                 >
                   <PlayMasonry
-                    items={items}
+                    items={displayItems}
                     tileId={tileId}
                     columnCount={columnCount}
                   />
