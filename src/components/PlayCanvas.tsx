@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { PlayGalleryItem } from "@/data/play-gallery";
 
 type PlayCanvasProps = {
@@ -15,45 +15,108 @@ type TileSize = {
 
 const TILE_RING = [-1, 0, 1] as const;
 
+function parseAspectRatio(ratio: string) {
+  const [width, height] = ratio.split("/").map((part) => Number(part.trim()));
+  if (!width || !height) return 4 / 5;
+  return width / height;
+}
+
+function distributeToColumns(items: PlayGalleryItem[], columnCount: number) {
+  const columns = Array.from({ length: columnCount }, () => [] as PlayGalleryItem[]);
+  const heights = Array(columnCount).fill(0);
+
+  for (const item of items) {
+    const shortestColumn = heights.indexOf(Math.min(...heights));
+    columns[shortestColumn].push(item);
+    heights[shortestColumn] += 1 / parseAspectRatio(item.aspectRatio ?? "4 / 5");
+  }
+
+  return columns;
+}
+
+function useColumnCount() {
+  const [columnCount, setColumnCount] = useState(5);
+
+  useEffect(() => {
+    const wide = window.matchMedia("(min-width: 1101px)");
+    const medium = window.matchMedia("(min-width: 701px)");
+
+    const update = () => {
+      if (wide.matches) setColumnCount(5);
+      else if (medium.matches) setColumnCount(4);
+      else setColumnCount(3);
+    };
+
+    update();
+    wide.addEventListener("change", update);
+    medium.addEventListener("change", update);
+
+    return () => {
+      wide.removeEventListener("change", update);
+      medium.removeEventListener("change", update);
+    };
+  }, []);
+
+  return columnCount;
+}
+
 function wrapAxis(value: number, period: number) {
   if (period <= 0) return value;
   const mod = ((value % period) + period) % period;
   return mod - period;
 }
 
+function PlayMasonryItem({ item }: { item: PlayGalleryItem }) {
+  return (
+    <article
+      className="play-masonry-item"
+      style={{ aspectRatio: item.aspectRatio ?? "4 / 5" }}
+    >
+      {item.src ? (
+        <Image
+          src={item.src}
+          alt={item.alt}
+          fill
+          unoptimized
+          sizes="(max-width: 700px) 30vw, (max-width: 1100px) 22vw, 18vw"
+          className="play-masonry-image"
+        />
+      ) : (
+        <div className="play-masonry-placeholder" aria-hidden="true" />
+      )}
+    </article>
+  );
+}
+
 function PlayMasonry({
   items,
   tileId,
+  columnCount,
 }: {
   items: PlayGalleryItem[];
   tileId: string;
+  columnCount: number;
 }) {
+  const columns = useMemo(
+    () => distributeToColumns(items, columnCount),
+    [columnCount, items],
+  );
+
   return (
     <div className="play-masonry">
-      {items.map((item) => (
-        <article
-          key={`${tileId}-${item.id}`}
-          className="play-masonry-item"
-          style={{ aspectRatio: item.aspectRatio ?? "4 / 5" }}
-        >
-          {item.src ? (
-            <Image
-              src={item.src}
-              alt={item.alt}
-              fill
-              sizes="(max-width: 700px) 30vw, (max-width: 1100px) 22vw, 18vw"
-              className="play-masonry-image"
-            />
-          ) : (
-            <div className="play-masonry-placeholder" aria-label={item.alt} />
-          )}
-        </article>
+      {columns.map((columnItems, columnIndex) => (
+        <div key={`${tileId}-col-${columnIndex}`} className="play-masonry-column">
+          {columnItems.map((item) => (
+            <PlayMasonryItem key={`${tileId}-${item.id}`} item={item} />
+          ))}
+        </div>
       ))}
     </div>
   );
 }
 
 export default function PlayCanvas({ items }: PlayCanvasProps) {
+  const columnCount = useColumnCount();
   const tileMeasureRef = useRef<HTMLDivElement>(null);
   const [tileSize, setTileSize] = useState<TileSize>({ width: 0, height: 0 });
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -178,7 +241,11 @@ export default function PlayCanvas({ items }: PlayCanvasProps) {
                   }}
                   aria-hidden={!isMeasureTile}
                 >
-                  <PlayMasonry items={items} tileId={tileId} />
+                  <PlayMasonry
+                    items={items}
+                    tileId={tileId}
+                    columnCount={columnCount}
+                  />
                 </div>
               );
             }),
