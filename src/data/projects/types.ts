@@ -9,6 +9,16 @@ export type Project = {
   outcome: string;
 };
 
+export type WorkCardTagVariant = "ui-ux" | "product-design" | "web-dev";
+
+export type ProjectTag = {
+  label: string;
+  variant: WorkCardTagVariant;
+};
+
 export type ProjectLink = Project & {
   href: string;
+  /** Cover image for the work index card; omit to show a placeholder */
+  cardImage?: string;
+  tags: ProjectTag[];
 };

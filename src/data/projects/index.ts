@@ -4,11 +4,45 @@ import { thrival } from "./thrival";
 import type { ProjectLink } from "./types";
 import { via } from "./via";
 
+const defaultCardImage = "/placeholder-computer-mockup.png";
+
 export const projects: ProjectLink[] = [
-  { ...talentoraAi, href: "/work/talentora-ai" },
-  { ...smata, href: "/work/smata" },
-  { ...via, href: "/work/via" },
-  { ...thrival, href: "/work/thrival" },
+  {
+    ...talentoraAi,
+    href: "/work/talentora-ai",
+    cardImage: defaultCardImage,
+    tags: [
+      { label: "UI/UX", variant: "ui-ux" },
+      { label: "Product Design", variant: "product-design" },
+    ],
+  },
+  {
+    ...smata,
+    href: "/work/smata",
+    cardImage: defaultCardImage,
+    tags: [
+      { label: "UI/UX", variant: "ui-ux" },
+      { label: "Product Design", variant: "product-design" },
+    ],
+  },
+  {
+    ...via,
+    href: "/work/via",
+    cardImage: defaultCardImage,
+    tags: [
+      { label: "UI/UX", variant: "ui-ux" },
+      { label: "Product Design", variant: "product-design" },
+    ],
+  },
+  {
+    ...thrival,
+    href: "/work/thrival",
+    cardImage: defaultCardImage,
+    tags: [
+      { label: "UI/UX", variant: "ui-ux" },
+      { label: "Product Design", variant: "product-design" },
+    ],
+  },
 ];
 
 export { smata, talentoraAi, thrival, via };
