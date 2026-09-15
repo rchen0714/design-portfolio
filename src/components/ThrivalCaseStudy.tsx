@@ -35,16 +35,16 @@ const productResponses = [
 
 const keyTakeaways = [
   {
-    title: "Strategy shapes the interface",
-    body: "Broad business goals only become usable when translated into clear product structures, flows, and information hierarchy.",
+    title: "More isn't always better",
+    body: "My first guided-routine redesign made more information visible, but it also created more competition on the screen. The final direction taught me to prioritize the active task and move secondary information into on-demand views.",
   },
   {
-    title: "Iteration reveals priorities",
-    body: "Stakeholder feedback helped clarify what should stay visible during a routine versus what belongs on demand.",
+    title: "Iteration and understanding is crucial",
+    body: "The project reinforced that an early direction does not have to be perfect. Feedback helped me identify where my first ideas were too dense or too close to the original experience and gave me a clearer path forward.",
   },
   {
-    title: "Ship, then refine",
-    body: "Moving from prototype to a live App Store product created real feedback loops that shaped later design decisions.",
+    title: "Design doesn't stop in Figma",
+    body: "Working in a continuous review and handoff cycle with developers and stakeholders has shown me how design decisions carry into a live product. I learned to think more about consistency, implementation, and how each feature fits into the larger system.",
   },
 ];
 
@@ -148,8 +148,7 @@ export default function ThrivalCaseStudy() {
           <div className="cs-section-header">
             <p className="cs-section-label">Overview</p>
             <h2 className="cs-section-title">
-              How can we expand a simple instructional app into a fitness and recovery
-              platform
+              Transforming a simple instructional app into a full fitness and recovery platform
             </h2>
           </div>
           <p className="cs-body">
@@ -164,12 +163,13 @@ export default function ThrivalCaseStudy() {
 
           <div className="cs-visual-block">
             <div className="cs-experience-banner">
-              <h3>The Original Experience</h3>
-                <p>
-                  The initial version of Thrival Muscle Recovery was organized around
-                  discovering and following individual Thrival exercises. However, it was very simple and not
-                  as immersive as the stakeholders wanted it to be.
-                </p>
+              <h3 className="cs-experience-banner-title">The Original Experience</h3>
+              <p className="cs-experience-banner-text">
+                The initial version of Thrival Muscle Recovery was only organized around
+                discovering and following individual Thrival exercises.
+              </p>
+            </div>
+            <div className="cs-experience-media">
               <Image
                 src="/thrival/new-overviewagain.png"
                 alt="Original Thrival app screens showing body-part categories, an expanded exercise card, and a step-by-step guided recovery player"
@@ -197,25 +197,30 @@ export default function ThrivalCaseStudy() {
             personalization, content discovery, and future revenue opportunities.
           </p>
 
-          <div className="cs-goal-map-headers">
-            <p>Business Goals</p>
-            <p>My Solution</p>
-          </div>
+          <h3 className="cs-subsection-title">We wanted the Thrival app to do more than just explain how to use its products
+          </h3>
+          
           <div className="cs-goal-map">
-            <ul>
-              {businessGoals.map((goal) => (
-                <li className="cs-goal-item cs-goal-item--goal" key={goal}>
-                  {goal}
-                </li>
-              ))}
-            </ul>
-            <ul>
-              {productResponses.map((response) => (
-                <li className="cs-goal-item cs-goal-item--solution" key={response}>
-                  {response}
-                </li>
-              ))}
-            </ul>
+            <div className="cs-goal-map-column">
+              <h3 className="cs-goal-map-heading">Business Goals</h3>
+              <div className="cs-goal-map-panel cs-goal-map-panel--goals">
+                <ul>
+                  {businessGoals.map((goal) => (
+                    <li key={goal}>{goal}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="cs-goal-map-column">
+              <h3 className="cs-goal-map-heading">My Solution</h3>
+              <div className="cs-goal-map-panel cs-goal-map-panel--solution">
+                <ul>
+                  {productResponses.map((response) => (
+                    <li key={response}>{response}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -225,38 +230,36 @@ export default function ThrivalCaseStudy() {
         <section className="cs-section">
           <div className="cs-section-header">
             <p className="cs-section-label">01 / Onboarding</p>
-            <h2 className="cs-section-title">Personalization starts before the homepage</h2>
+            <h2 className="cs-section-title">Using onboarding to find routines that match each user's personal needs</h2>
           </div>
 
           <div className="cs-three-col cs-three-col--stretch">
             <div className="cs-three-col-left">
               <div className="cs-split-text">
                 <p className="cs-body">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Before users
-                  reach the homepage, Thrival needs to understand their goals, equipment,
-                  and recovery preferences.
+                  I was initially instructed to create a simple onboarding experience to
+                  allow users to sign up and collect data.
                 </p>
                 <p className="cs-body">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. The onboarding
-                  flow collects the inputs needed to personalize recommendations and
-                  tailor the library experience from the first session.
+                  Because one of Thrival&apos;s business goals was to deliver more
+                  personalized exercises, I expanded that scope by asking: what
+                  information could we collect during onboarding that would meaningfully
+                  shape the experience afterward?
                 </p>
               </div>
 
               <div className="cs-callout-stack">
                 <div className="cs-callout">
-                  <h3>Fitness goals &amp; recovery focus</h3>
+                  <h3>What Thrival equipment does the user already own?</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Users
-                    select the areas and routines most relevant to their needs.
+                    Knowing which attachments a user has helped the app highlight the
+                    routines relevant to them.
                   </p>
                 </div>
                 <div className="cs-callout">
-                  <h3>Account creation &amp; profile setup</h3>
+                  <h3>Where does the user commonly experience soreness?</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sign-up,
-                    login, and profile flows establish a foundation for saved content
-                    and personalized recommendations.
+                    Thrival will recommend the areas and muscles relevant to the user.
                   </p>
                 </div>
               </div>
@@ -284,33 +287,47 @@ export default function ThrivalCaseStudy() {
           <div className="cs-section-header">
             <p className="cs-section-label">02 / Homepage/Library Architecture</p>
             <h2 className="cs-section-title">
-              Turning the homepage into a fitness discovery hub
+              Making it easier to discover relevant exercises and routines
             </h2>
           </div>
 
           <div className="cs-three-col">
             <div className="cs-three-col-left">
               <p className="cs-body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. The homepage
-                needed to balance personalized recommendations with broader discovery
-                across Thrival and creator content.
+                As Thrival&apos;s app expanded, the home screen needed to support more
+                than a static library of recovery exercises. We wanted users to
+                discover two different types of content:
               </p>
 
               <ul className="cs-numbered-list">
                 <li>
                   <span>1</span>
-                  <p>Personalized sections surface routines based on onboarding inputs.</p>
+                  <p>A personalized Thrival recovery exercise guide library</p>
                 </li>
                 <li>
                   <span>2</span>
-                  <p>A broader library supports exploration beyond initial recommendations.</p>
+                  <p>Broader creator-led fitness content library</p>
                 </li>
               </ul>
 
               <p className="cs-body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Annotation
-                callouts highlight how each homepage module supports a distinct user
-                need without overwhelming the primary experience.
+                That meant the experience needed to balance personalization with
+                discovery.
+              </p>
+
+              <p className="cs-body">
+                Instead of hiding exercises that required equipment a user did not own,
+                I highlighted compatible routines while keeping the larger library
+                visible. This helped users quickly find what was relevant to them while
+                still exposing them to more of Thrival&apos;s product ecosystem.
+              </p>
+
+              <h3 className="cs-subsection-title">Information Architecture</h3>
+              <p className="cs-body">
+                I also separated Thrival recovery content from creator-led workouts at
+                the structural level. Thrival routines are step-based and self-paced,
+                while creator workouts are better suited to a long-form viewing
+                experience.
               </p>
 
               <div className="cs-homepage-comparison">
@@ -345,7 +362,7 @@ export default function ThrivalCaseStudy() {
           <div className="cs-section-header">
             <p className="cs-section-label">03 / Design Iterations</p>
             <h2 className="cs-section-title">
-              Redesigning Thrival&apos;s guided recovery routines
+              Improving Thrival's guided recovery routines
             </h2>
           </div>
 
@@ -368,17 +385,19 @@ export default function ThrivalCaseStudy() {
             </div>
 
             <div className="cs-callout cs-callout--tip">
-              <h3>Design challenge</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. The original
-                guided recovery experience lacked hierarchy, making it difficult for
-                users to understand what step they were on or what to do next.
-              </p>
+              <h3>Key limitations</h3>
+              <ul className="cs-callout-list">
+                <li>Upcoming steps were too small thumbnails to understand</li>
+                <li>The main exercise visual had limited screen space</li>
+                <li>Users had little control over the looping media</li>
+                <li>Recommended hold times were unclear</li>
+                <li>The full routine sequence was not easy to inspect</li>
+              </ul>
             </div>
           </div>
 
           <h3 className="cs-subsection-title">
-            Learning the importance of Design Hierarchy and Information Architecture
+            The first few iterations gave users too much information at once
           </h3>
 
           <div className="cs-iteration-block">
@@ -432,11 +451,12 @@ export default function ThrivalCaseStudy() {
             </div>
 
             <div className="cs-split-text">
+              <h4 className="cs-iteration-kicker">Iteration and Refinement</h4>
               <p className="cs-body">
-                Iteration and Refinement: My first redesign focused on making more
-                information available. I introduced a scrollable routine list, readable
-                step descriptions, recommended timing, video controls, timer access, and
-                additional exercise information.
+                My first redesign focused on making more information available. I
+                introduced a scrollable routine list, readable step descriptions,
+                recommended timing, video controls, timer access, and additional exercise
+                information.
               </p>
               <p className="cs-body">
                 This addressed some of the original gaps, but during stakeholder review,
@@ -444,14 +464,17 @@ export default function ThrivalCaseStudy() {
                 the full routine alongside timer and extra info created unnecessary
                 redundancy.
               </p>
+              <h4 className="cs-iteration-kicker">Prioritizing User Needs</h4>
               <p className="cs-body">
-                Prioritizing User Needs: I gave the active exercise substantially more
-                visual priority and kept only the most important information visible
-                during the movement.
+                I gave the active exercise substantially more visual priority and kept
+                only the most important information visible during the movement.
               </p>
             </div>
           </div>
 
+          <h3 className="cs-subsection-title">
+                    I simplified the experience so users could focus on the immersive exercise
+          </h3>
           <div className="cs-split">
             <div className="cs-split-text">
               <div className="cs-feature-columns">
@@ -487,9 +510,10 @@ export default function ThrivalCaseStudy() {
               <div className="cs-callout">
                 <h3>Key insight</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Progressive
-                  disclosure helped reduce clutter while preserving access to deeper
-                  guidance when users needed it.
+                  Adding more information did not automatically create a better
+                  experience. I stopped showing every piece of information at once and
+                  focused on the design hierarchy to organize the experience around what
+                  users needed in the moment.
                 </p>
               </div>
             </div>
@@ -507,9 +531,12 @@ export default function ThrivalCaseStudy() {
         {/* Creators */}
         <section className="cs-section">
           <div className="cs-section-header">
-            <p className="cs-section-label">06 / Creators</p>
-            <h2 className="cs-section-title">Creating a foundation for creator content</h2>
+            <p className="cs-section-label">06 / Business Growth</p>
+            <h2 className="cs-section-title">Designing new ways for Thrival to grow beyond product sales</h2>
           </div>
+          <h3 className="cs-subsection-title">
+            Creating a foundation for creator content
+          </h3>
           <p className="cs-body">
             Thrival also wanted to explore a future model where fitness creators could
             contribute content to the platform and participate in a business relationship
@@ -529,17 +556,10 @@ export default function ThrivalCaseStudy() {
             height={970}
             className="cs-creators-image"
           />
-        </section>
 
-        <hr className="cs-divider" />
-
-        {/* Monetization */}
-        <section className="cs-section">
-          <div className="cs-section-header">
-            <p className="cs-section-label">07 / monetization</p>
-            <h2 className="cs-section-title">Exploring subscription monetization</h2>
-          </div>
-
+          <h3 className="cs-subsection-title">
+            Exploring subscription monetization
+          </h3>
           <div className="cs-split">
             <div className="cs-split-text">
               <p className="cs-body">
@@ -582,20 +602,48 @@ export default function ThrivalCaseStudy() {
         <section className="cs-section">
           <div className="cs-section-header">
             <p className="cs-section-label">Outcomes &amp; Reception</p>
-            <h2 className="cs-section-title">From Figma to the App Store</h2>
+            <h2 className="cs-section-title">Launching the redesign in the app store</h2>
           </div>
 
           <div className="cs-split">
             <div className="cs-split-text">
               <p className="cs-body">
-                The strongest outcome so far is that the redesign has moved beyond
-                prototype stage into a live product available in the App Store. Early
-                public feedback has been positive.
+                The product evolved through a continuous review and handoff process
+                rather than one final design presentation.
               </p>
-              <div className="cs-metric-card">
-                <p className="cs-metric-value">5.0</p>
-                <p className="cs-metric-label">across 3 ratings at time of writing</p>
+              <p className="cs-process-line">
+                Design → Stakeholder review → Revision → Approved frames → Developer
+                handoff → Product update
+              </p>
+              <p className="cs-body">
+                Once a feature was approved, I moved the latest high-fidelity screens into
+                a dedicated final frame library in Figma. That library served as a
+                reference for the developer and was updated as new revisions were
+                approved.
+              </p>
+
+              <h3 className="cs-subsection-title">Early outcomes and metrics</h3>
+              <p className="cs-body">
+                Thrival Muscle Recovery is now live in the App Store and continues to
+                evolve through ongoing releases.
+              </p>
+              <p className="cs-body">Since launch, the app has reached:</p>
+              <div className="cs-metric-row">
+                <div className="cs-metric-card">
+                  <p className="cs-metric-value">1.44K</p>
+                  <p className="cs-metric-label">first-time downloads</p>
+                  <p className="cs-metric-date">May 29–Aug 26</p>
+                </div>
+                <div className="cs-metric-card">
+                  <p className="cs-metric-value">5.0</p>
+                  <p className="cs-metric-label">across 3 ratings at time of writing</p>
+                </div>
               </div>
+              <p className="cs-body">
+                The app also currently holds a 5.0 rating across 3 ratings, with early
+                reviews mentioning the usefulness of the instructional videos,
+                organization by body area, and ability to favorite routines.
+              </p>
             </div>
 
             <div className="cs-quote-stack">
