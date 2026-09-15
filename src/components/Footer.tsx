@@ -1,3 +1,4 @@
+import EmailCopyButton from "@/components/EmailCopyButton";
 import Link from "next/link";
 
 export default function Footer() {
@@ -16,7 +17,7 @@ export default function Footer() {
               >
                 LinkedIn
               </a>
-              <a href="mailto:rc071404@bu.edu">rc071404@bu.edu</a>
+              <EmailCopyButton variant="footer" />
             </div>
           </div>
 

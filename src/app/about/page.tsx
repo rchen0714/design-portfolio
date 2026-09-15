@@ -1,5 +1,6 @@
 import Image from "next/image";
 import AboutPolaroidStack from "@/components/AboutPolaroidStack";
+import EmailCopyButton from "@/components/EmailCopyButton";
 import HorizontalCarousel from "@/components/HorizontalCarousel";
 
 const experience = [
@@ -121,9 +122,7 @@ export default function AboutPage() {
                 >
                   LinkedIn
                 </a>
-                <a href="mailto:rc071404@bu.edu" className="about-chat-button">
-                  rc071404@bu.edu
-                </a>
+                <EmailCopyButton variant="about" className="about-chat-button" />
               </div>
             </div>
           </div>
@@ -165,7 +164,7 @@ export default function AboutPage() {
                 className="about-doodle about-doodle--sparkles"
               />
               <Image
-                src="/about/doodles/clover.png"
+                src="/about/doodles/clovernew.png"
                 alt=""
                 width={506}
                 height={500}

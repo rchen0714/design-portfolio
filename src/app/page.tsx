@@ -137,12 +137,7 @@ export default function Home() {
                   />
                 </HandwrittenSwap>
               </a>
-              <a
-                href="https://www.linkedin.com/in/rchen0714"
-                className="hero-cta-link group"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="#site-footer" className="hero-cta-link group">
                 Contact me
                 <svg className="hero-cta-link-ring" aria-hidden="true">
                   <rect
