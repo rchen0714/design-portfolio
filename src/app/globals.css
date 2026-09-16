@@ -380,6 +380,12 @@ img.hero-hover-doodle {
   height: auto;
 }
 
+.work-card-media img.work-card-media-phones {
+  width: min(100%, 30rem);
+  max-width: 30rem;
+  height: auto;
+}
+
 .work-card-content {
   flex: 1 1 40%;
   max-width: 40.625rem;
@@ -565,6 +571,18 @@ img.hero-hover-doodle {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+}
+
+.works-case-card-media--cover {
+  position: relative;
+  display: block;
+  padding: 0;
+  background: #fff;
+}
+
+.works-case-card-image--cover {
+  object-fit: cover;
+  object-position: center;
 }
 
 .works-case-card-media-placeholder {

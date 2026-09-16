@@ -12,15 +12,30 @@ export default function WorkPage() {
           {projects.map((project) => (
             <li key={project.href} className="works-page-list-item">
               <Link href={project.href} className="works-case-card">
-                <div className="works-case-card-media">
+                <div
+                  className={`works-case-card-media${
+                    project.cardImageFit === "cover" ? " works-case-card-media--cover" : ""
+                  }`}
+                >
                   {project.cardImage ? (
-                    <Image
-                      src={project.cardImage}
-                      alt=""
-                      width={560}
-                      height={360}
-                      className="works-case-card-image"
-                    />
+                    project.cardImageFit === "cover" ? (
+                      <Image
+                        src={project.cardImage}
+                        alt=""
+                        fill
+                        className="works-case-card-image--cover"
+                        sizes="(max-width: 700px) 100vw, 50vw"
+                      />
+                    ) : (
+                      <Image
+                        src={project.cardImage}
+                        alt=""
+                        width={project.cardImageWidth ?? 560}
+                        height={project.cardImageHeight ?? 360}
+                        className="works-case-card-image"
+                        sizes="(max-width: 700px) 100vw, 50vw"
+                      />
+                    )
                   ) : (
                     <div className="works-case-card-media-placeholder" aria-hidden="true" />
                   )}

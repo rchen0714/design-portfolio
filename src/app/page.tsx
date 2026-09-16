@@ -174,7 +174,7 @@ export default function Home() {
           <article className="work-card work-card--media-right">
               <div className="work-card-content">
                 <h3>Smata</h3>
-                <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
+                <p>A collaborative study app that helps students stay focused, connected, and motivated. Study Smata and making learning a fun, shared experience!</p>
                 <Link href="/work/smata" className="work-card-button group relative">
                   <HandwrittenSwap
                     src="/handwritten-text/view-project-handwritten.png"
@@ -196,18 +196,19 @@ export default function Home() {
               </div>
               <div className="work-card-media">
                 <Image
-                  src="/placeholder-computer-mockup.png"
-                  alt="Smata"
-                  width={560}
-                  height={360}
+                  src="/casebanners/smataphones.png"
+                  alt="Smata app screens"
+                  width={2655}
+                  height={2722}
+                  className="work-card-media-phones"
                 />
               </div>
             </article>
 
             <article className="work-card">
               <div className="work-card-content">
-                <h3>Thrival</h3>
-                <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
+                <h3>Thrival Muscle Recovery</h3>
+                <p>A fitness and recovery platform that helps Thrival users discover guided workouts, mobility routines, and product education tailored to their needs.</p>
                 <Link href="/work/thrival" className="work-card-button group relative">
                   <HandwrittenSwap
                     src="/handwritten-text/view-project-handwritten.png"
@@ -229,10 +230,11 @@ export default function Home() {
               </div>
               <div className="work-card-media">
                 <Image
-                  src="/placeholder-computer-mockup.png"
-                  alt="Thrival"
-                  width={560}
-                  height={360}
+                  src="/casebanners/thrivalphonesagain.png"
+                  alt="Thrival Muscle Recovery app screens showing the fitness library and a guided recovery routine"
+                  width={1044}
+                  height={1070}
+                  className="work-card-media-phones"
                 />
               </div>
             </article>

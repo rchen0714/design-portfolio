@@ -8,15 +8,6 @@ const defaultCardImage = "/placeholder-computer-mockup.png";
 
 export const projects: ProjectLink[] = [
   {
-    ...talentoraAi,
-    href: "/work/talentora-ai",
-    cardImage: defaultCardImage,
-    tags: [
-      { label: "UI/UX", variant: "ui-ux" },
-      { label: "Product Design", variant: "product-design" },
-    ],
-  },
-  {
     ...smata,
     href: "/work/smata",
     cardImage: defaultCardImage,
@@ -26,8 +17,20 @@ export const projects: ProjectLink[] = [
     ],
   },
   {
-    ...via,
-    href: "/work/via",
+    ...thrival,
+    href: "/work/thrival",
+    cardImage: "/casebanners/thrivalbanner.png",
+    cardImageWidth: 7524,
+    cardImageHeight: 4800,
+    cardImageFit: "cover",
+    tags: [
+      { label: "UI/UX", variant: "ui-ux" },
+      { label: "Product Design", variant: "product-design" },
+    ],
+  },
+  {
+    ...talentoraAi,
+    href: "/work/talentora-ai",
     cardImage: defaultCardImage,
     tags: [
       { label: "UI/UX", variant: "ui-ux" },
@@ -35,8 +38,8 @@ export const projects: ProjectLink[] = [
     ],
   },
   {
-    ...thrival,
-    href: "/work/thrival",
+    ...via,
+    href: "/work/via",
     cardImage: defaultCardImage,
     tags: [
       { label: "UI/UX", variant: "ui-ux" },

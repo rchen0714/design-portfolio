@@ -20,5 +20,10 @@ export type ProjectLink = Project & {
   href: string;
   /** Cover image for the work index card; omit to show a placeholder */
   cardImage?: string;
+  /** Intrinsic width/height for the card image (defaults to 560×360) */
+  cardImageWidth?: number;
+  cardImageHeight?: number;
+  /** Banner art fills the media area; mockups use contain + padding */
+  cardImageFit?: "contain" | "cover";
   tags: ProjectTag[];
 };

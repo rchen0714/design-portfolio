@@ -287,7 +287,7 @@ export default function ThrivalCaseStudy() {
           <div className="cs-section-header">
             <p className="cs-section-label">02 / Homepage/Library Architecture</p>
             <h2 className="cs-section-title">
-              Making it easier to discover relevant exercises and routines
+              Making it easier to discover relevant exercises and routines on the Homepage
             </h2>
           </div>
 
