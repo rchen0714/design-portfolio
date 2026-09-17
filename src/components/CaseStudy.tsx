@@ -20,7 +20,7 @@ const mockupImages = {
 };
 
 export default function CaseStudy({ project }: CaseStudyProps) {
-  const mockup = mockupImages[project.mockup];
+  const mockup = project.heroImage ?? mockupImages[project.mockup];
 
   return (
     <main id="case-study-page">

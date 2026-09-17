@@ -386,6 +386,12 @@ img.hero-hover-doodle {
   height: auto;
 }
 
+.work-card-media img.work-card-media-laptop {
+  width: min(100%, 48rem);
+  max-width: 48rem;
+  height: auto;
+}
+
 .work-card-content {
   flex: 1 1 40%;
   max-width: 40.625rem;

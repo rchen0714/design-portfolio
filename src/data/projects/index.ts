@@ -31,7 +31,9 @@ export const projects: ProjectLink[] = [
   {
     ...talentoraAi,
     href: "/work/talentora-ai",
-    cardImage: defaultCardImage,
+    cardImage: "/casebanners/talentoralaptop.png",
+    cardImageWidth: 3798,
+    cardImageHeight: 2202,
     tags: [
       { label: "UI/UX", variant: "ui-ux" },
       { label: "Product Design", variant: "product-design" },

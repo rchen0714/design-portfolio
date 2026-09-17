@@ -239,58 +239,80 @@ export default function Home() {
               </div>
             </article>
 
-            {/* <article className="work-card work-card--media-left">
-              <div className="work-card-media">
-                <Image
-                  src="/placeholder-phone-mockup.png"
-                  alt="Talentora AI"
-                  width={260}
-                  height={520}
-                />
-              </div>
+            <article className="work-card work-card--media-right">
               <div className="work-card-content">
                 <h3>Talentora AI</h3>
-                <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
-                <Link href="/work/talentora-ai" className="work-card-button">
-                  View Project
-                  <Image
-                    src="/thrival/right-arrow-icon.svg"
-                    alt=""
-                    width={12}
-                    height={12}
-                    className="button-arrow"
-                    aria-hidden="true"
-                  />
+                <p>
+                  Talentora is an AI-powered recruiting platform that helps HR teams streamline the hiring process through real-time interview analysis, sentiment insights, and
+                  ATS-integrated workflows.
+                </p>
+                <Link href="/work/talentora-ai" className="work-card-button group relative">
+                  <HandwrittenSwap
+                    src="/handwritten-text/view-project-handwritten.png"
+                    width={180}
+                    height={50}
+                    variant="button"
+                  >
+                    View Project
+                    <Image
+                      src="/thrival/right-arrow-icon.svg"
+                      alt=""
+                      width={12}
+                      height={12}
+                      className="button-arrow"
+                      aria-hidden="true"
+                    />
+                  </HandwrittenSwap>
                 </Link>
               </div>
-            </article> */}
-
-
-            {/* <article className="work-card work-card--media-left">
               <div className="work-card-media">
                 <Image
-                  src="/placeholder-phone-mockup.png"
-                  alt="Via"
-                  width={260}
-                  height={520}
+                  src="/casebanners/talentoralaptop.png"
+                  alt="Talentora AI platform screens"
+                  width={3798}
+                  height={2202}
+                  className="work-card-media-laptop"
                 />
               </div>
+            </article>
+
+            <article className="work-card">
               <div className="work-card-content">
-                <h3>Via</h3>
-                <p>Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.</p>
-                <Link href="/work/via" className="work-card-button">
-                  View Project
-                  <Image
-                    src="/thrival/right-arrow-icon.svg"
-                    alt=""
-                    width={12}
-                    height={12}
-                    className="button-arrow"
-                    aria-hidden="true"
-                  />
+                <h3>TerrierStudy</h3>
+                <p>
+                  Terrier Study is a web app that helps Boston University students find study spots
+                  around campus based on their individual needs, including noise level, outlet
+                  availability, location, and other study preferences.
+                </p>
+                <Link href="/work/terrierstudy" className="work-card-button group relative">
+                  <HandwrittenSwap
+                    src="/handwritten-text/view-project-handwritten.png"
+                    width={180}
+                    height={50}
+                    variant="button"
+                  >
+                    View Project
+                    <Image
+                      src="/thrival/right-arrow-icon.svg"
+                      alt=""
+                      width={12}
+                      height={12}
+                      className="button-arrow"
+                      aria-hidden="true"
+                    />
+                  </HandwrittenSwap>
                 </Link>
               </div>
-            </article> */}
+              <div className="work-card-media">
+                <Image
+                  src="/casebanners/terrierstudylaptop.png"
+                  alt="TerrierStudy web app showing study location filters and map"
+                  width={3798}
+                  height={2202}
+                  className="work-card-media-laptop"
+                />
+              </div>
+            </article>
 
           </div>
         </div>

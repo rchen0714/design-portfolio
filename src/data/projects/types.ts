@@ -1,8 +1,16 @@
+export type ProjectImage = {
+  src: string;
+  width: number;
+  height: number;
+};
+
 export type Project = {
   title: string;
   description: string;
   role: string;
   mockup: "phone" | "computer";
+  /** Overrides default mockup art on the case study hero */
+  heroImage?: ProjectImage;
   overview: string;
   problem: string;
   solution: string;

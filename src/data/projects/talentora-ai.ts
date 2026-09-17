@@ -3,9 +3,14 @@ import type { Project } from "./types";
 export const talentoraAi: Project = {
   title: "Talentora AI",
   description:
-    "Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.",
+    "Talentora is an AI-powered recruiting platform that helps hiring teams evaluate candidates through real-time interview analysis, sentiment insights, and ATS-integrated workflows.",
   role: "Founding Designer",
-  mockup: "phone",
+  mockup: "computer",
+  heroImage: {
+    src: "/casebanners/talentoralaptop.png",
+    width: 3798,
+    height: 2202,
+  },
   overview:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Talentora AI helps recruiting teams move faster with AI-assisted screening, scheduling, and workflow automation.",
   problem:
