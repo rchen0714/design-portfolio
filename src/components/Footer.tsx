@@ -34,7 +34,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/ruby-resume-STUDYABROAD.pdf"
+                  href="/designresumeruby.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

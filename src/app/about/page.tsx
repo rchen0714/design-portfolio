@@ -3,44 +3,62 @@ import AboutPolaroidStack from "@/components/AboutPolaroidStack";
 import EmailCopyButton from "@/components/EmailCopyButton";
 import HorizontalCarousel from "@/components/HorizontalCarousel";
 
-const experience = [
+type AboutExperienceItem = {
+  company: string;
+  role: string;
+  dates: string;
+  description: string;
+};
+
+const experience: AboutExperienceItem[] = [
   {
-    company: "Homestead Funding",
-    role: "Marketing Coordinator",
+    company: "Thrival",
+    role: "Contract Product Designer",
+    dates: "Feb 2026 — Present",
     description:
-      "Leading campaign execution and creative asset coordination across channels.",
-    dates: "Aug 2026 — Present",
+      "Sole designer for a B2B2C fitness app. Redesigned discovery, onboarding, guided sessions, and a scalable mobile design system with engineers and stakeholders. Supported product strategy and launch growth, contributing to 1.58K first-time downloads and 10.4K App Store impressions.",
   },
   {
-    company: "Outloud Talent",
-    role: "Social Media Marketing Intern",
-    description: "Supporting content planning, scheduling, and analytics reporting.",
-    dates: "Mar 2025 — Present",
-  },
-  {
-    company: "Gemi Beauty",
-    role: "Freelance Graphic Designer",
-    description: "Designed promotional assets for a limited campaign.",
-    dates: "July 2026 — July 2026",
-  },
-  {
-    company: "Emerging Technology Studio",
-    role: "Design Specialist",
-    description: "Contributed to visual design and design systems work.",
-    dates: "May 2025 — May 2026",
-  },
-  {
-    company: "Happy Medium",
-    role: "Blueprint Layout Designer",
+    company: "Smata",
+    role: "Founding Designer",
+    dates: "Dec 2025 — Present",
     description:
-      "Focused on layout and composition for print and digital blueprints.",
-    dates: "Mar 2025 — May 2025",
+      "Led end-to-end mobile design from flows through launch, including brand identity, a component system, and 50+ screens across core product areas. Partnered on launch marketing and strategy, helping drive 181 downloads from 403 page views (42.6% conversion).",
   },
   {
-    company: "BOWIE",
-    role: "Marketing Intern",
-    description: "Assisted with campaign support and marketing operations.",
-    dates: "Jun 2024 — Aug 2024",
+    company: "Caidya",
+    role: "HR Operations and AI Solutions Intern",
+    dates: "Jul 2026 — Aug 2026",
+    description:
+      "Built an AI-assisted CV review workflow to automate formatting and compliance checks, reducing manual review time per candidate. Supported HR and business teams through workflow design, prompt development, and cross-functional stakeholder communication.",
+  },
+  {
+    company: "Boston University",
+    role: "Teaching Assistant, DS280 — Spark! UX Design Workshop",
+    dates: "Jan 2025 — May 2026",
+    description:
+      "Led UX lectures, demos, and hands-on workshops for 20–30 students each semester. Taught research methods, design thinking, and interface design in Spark! UX Design Workshop.",
+  },
+  {
+    company: "Talentora AI",
+    role: "Co-Founder & Head of Design",
+    dates: "Sept 2024 — Sept 2025",
+    description:
+      "Co-founded an HR tech platform with LLM-based assessments and ATS integrations; led UX, branding, and user research on a 7-person team. Raised $1K and participated in Innovate@BU Innovation Pathway, Launch Lab, and Spark! Demo Day.",
+  },
+  {
+    company: "BostonHacks",
+    role: "Design Head",
+    dates: "Jan 2023 — Dec 2025",
+    description:
+      "Led a 7-person design team across three annual BostonHacks events. Owned branding, merchandise, and promotional graphics with directors and 50+ org members.",
+  },
+  {
+    company: "Chinese Student Association",
+    role: "GD Chair, PR Chair, Upperclassmen Advisor",
+    dates: "Dec 2022 — May 2026",
+    description:
+      "Directed design, PR, and branding for 10+ cultural and networking events each year. Mentored members and supported engagement across a 150+ person student organization.",
   },
 ];
 
@@ -93,16 +111,16 @@ export default function AboutPage() {
             <div className="about-bio">
               <p>Hi I&apos;m Ruby!</p>
               <p>
-                I&apos;m a recent Boston University grad who&apos;s passionate about
-                creating innovative and user-centered solutions to complex problems
-                I&apos;m passionate about creating. My goal is to lorem ipsum
+                I&apos;m a recent Boston University graduate who&apos;s passionate about
+                creating innovative and multi-disciplinary design solutions to complex problems. 
+                My goal is to help businesses by building products that are visually impactful while
+                being technologically advanced, intentional and functional.
               </p>
               <p>
-                When I&apos;m not designing, I&apos;m I&apos;m a I&apos;m passionate
-                about creating innovative and user-centered solutions to complex
-                problems I&apos;m passionate about creating
+                When I&apos;m not designing, I&apos;m probably exploring new restaurants around the city, 
+                cafe hopping, or doing fun little arts and crafts. 
               </p>
-              <p>Thanks!</p>
+              <p>Thanks for stopping by! ⋆𐙚 ̊.𝜗𝜚</p>
             </div>
 
             <div className="about-chat">
@@ -137,11 +155,10 @@ export default function AboutPage() {
                 <li key={`${item.company}-${item.dates}`} className="about-timeline-item">
                   <div className="about-timeline-marker" aria-hidden="true" />
                   <div className="about-timeline-content">
-                    <div className="about-timeline-meta">
-                      <p className="about-timeline-company">{item.company}</p>
-                      <p className="about-timeline-role">- {item.role}</p>
-                    </div>
-                    <p className="about-timeline-dates">{item.dates}</p>
+                    <p className="about-timeline-company">{item.company}</p>
+                    <p className="about-timeline-role-dates">
+                      {item.role} | {item.dates}
+                    </p>
                     <p className="about-timeline-description">{item.description}</p>
                   </div>
                 </li>

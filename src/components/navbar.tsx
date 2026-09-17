@@ -57,7 +57,7 @@ export default function Navbar() {
           <li>
             <a
               className="navbar-links"
-              href="/ruby-resume-STUDYABROAD.pdf"
+              href="/designresumeruby.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >

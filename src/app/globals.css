@@ -1674,10 +1674,15 @@ img.hero-hover-doodle {
   text-align: center;
 }
 
+.about-chat .about-section-heading--inline {
+  margin-bottom: 0;
+}
+
 .about-chat p {
-  font-size: 0.85rem;
-  line-height: 1.55;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line-height);
   color: #000;
+  margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
 
@@ -1845,25 +1850,21 @@ img.hero-hover-doodle {
   background: #000;
 }
 
-.about-timeline-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.5rem 1rem;
-  margin-bottom: 0.35rem;
-}
-
 .about-timeline-company {
   font-size: clamp(1.1rem, 1.8vw, 1.75rem);
   font-weight: 600;
   line-height: 1.2;
   color: #000;
+  margin-bottom: 0.35rem;
 }
 
-.about-timeline-role {
+.about-timeline-role-dates {
   font-size: 0.95rem;
   font-style: italic;
+  font-weight: 500;
+  line-height: 1.4;
   color: #7f7f7f;
+  margin-bottom: 0.75rem;
 }
 
 .about-timeline-description {
@@ -1871,13 +1872,6 @@ img.hero-hover-doodle {
   line-height: 1.6;
   color: #444;
   max-width: 38rem;
-}
-
-.about-timeline-dates {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #7f7f7f;
-  margin-bottom: 0.75rem;
 }
 
 .about-doodles {
