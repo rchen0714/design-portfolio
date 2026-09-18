@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Children, isValidElement, type ReactNode } from "react";
+import BackToWorksLink from "@/components/BackToWorksLink";
 
 function Placeholder({
   className = "",
@@ -14,6 +16,43 @@ function Placeholder({
       aria-hidden={label ? undefined : true}
       aria-label={label}
     />
+  );
+}
+
+function CalloutIcon({ src }: { src: string }) {
+  return (
+    <div className="cs-callout-icon-wrap" aria-hidden>
+      {/* Native img keeps the flex row intact (Next/Image wrapper is block-level). */}
+      <img src={src} alt="" className="cs-callout-icon" width={32} height={32} />
+    </div>
+  );
+}
+
+function CalloutWithIcon({
+  iconSrc,
+  className = "",
+  children,
+}: {
+  iconSrc: string;
+  className?: string;
+  children: ReactNode;
+}) {
+  const childArray = Children.toArray(children);
+  const title = childArray.find(
+    (child) => isValidElement(child) && child.type === "h3",
+  );
+  const body = childArray.filter(
+    (child) => !(isValidElement(child) && child.type === "h3"),
+  );
+
+  return (
+    <div className={`cs-callout ${className}`.trim()}>
+      <div className="cs-callout-block-layout">
+        <CalloutIcon src={iconSrc} />
+        {title}
+        {body}
+      </div>
+    </div>
   );
 }
 
@@ -32,6 +71,21 @@ const productResponses = [
   "Adding Creator Profiles",
   "Adding paywall-restricted content",
 ];
+
+const finalRoutineScreens = [
+  {
+    src: "/thrival/gifs/thrival1.gif",
+    alt: "Thrival guided recovery routine — exercise in progress with step progress and navigation",
+  },
+  {
+    src: "/thrival/gifs/thrival2.gif",
+    alt: "Thrival guided recovery routine — timer available on demand during the exercise",
+  },
+  {
+    src: "/thrival/gifs/thrival3.gif",
+    alt: "Thrival guided recovery routine — detailed step instructions on demand",
+  },
+] as const;
 
 const keyTakeaways = [
   {
@@ -54,9 +108,7 @@ export default function ThrivalCaseStudy() {
       <div className="cs-page-container">
         {/* Hero */}
         <section className="cs-hero">
-          <Link href="/#selected-works" className="cs-back-link">
-            ← Back to selected works
-          </Link>
+          <BackToWorksLink className="cs-back-link" />
 
           <div className="cs-hero-phones">
             <div className="cs-hero-phone-wrap">
@@ -121,7 +173,12 @@ export default function ThrivalCaseStudy() {
             <div className="cs-meta-item">
               <dt>Status</dt>
               <dd>
-                <span className="cs-live-link">
+                <a
+                  href="https://apps.apple.com/us/app/thrival-muscle-recovery/id6756892598"
+                  className="cs-live-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Live Product
                   <Image
                     src="/thrival/right-arrow-icon.svg"
@@ -131,7 +188,7 @@ export default function ThrivalCaseStudy() {
                     className="button-arrow"
                     aria-hidden="true"
                   />
-                </span>
+                </a>
               </dd>
             </div>
             <div className="cs-meta-item">
@@ -249,19 +306,19 @@ export default function ThrivalCaseStudy() {
               </div>
 
               <div className="cs-callout-stack">
-                <div className="cs-callout">
+                <CalloutWithIcon iconSrc="/thrival/equptmenticon.svg">
                   <h3>What Thrival equipment does the user already own?</h3>
                   <p>
                     Knowing which attachments a user has helped the app highlight the
                     routines relevant to them.
                   </p>
-                </div>
-                <div className="cs-callout">
+                </CalloutWithIcon>
+                <CalloutWithIcon iconSrc="/thrival/sorenessicon.svg">
                   <h3>Where does the user commonly experience soreness?</h3>
                   <p>
                     Thrival will recommend the areas and muscles relevant to the user.
                   </p>
-                </div>
+                </CalloutWithIcon>
               </div>
             </div>
 
@@ -321,26 +378,6 @@ export default function ThrivalCaseStudy() {
                 visible. This helped users quickly find what was relevant to them while
                 still exposing them to more of Thrival&apos;s product ecosystem.
               </p>
-
-              <h3 className="cs-subsection-title">Information Architecture</h3>
-              <p className="cs-body">
-                I also separated Thrival recovery content from creator-led workouts at
-                the structural level. Thrival routines are step-based and self-paced,
-                while creator workouts are better suited to a long-form viewing
-                experience.
-              </p>
-
-              <div className="cs-homepage-comparison">
-                <p className="cs-homepage-comparison-label">Thrival Routines</p>
-                <p className="cs-homepage-comparison-label">Fitness Routines</p>
-                <Image
-                  src="/thrival/thrival-homepage-comparison.png"
-                  alt="Side-by-side comparison of a Thrival recovery routine screen and a fitness routine screen"
-                  width={835}
-                  height={811}
-                  className="cs-homepage-comparison-image"
-                />
-              </div>
             </div>
 
             <div className="cs-three-col-right">
@@ -384,7 +421,10 @@ export default function ThrivalCaseStudy() {
               </p>
             </div>
 
-            <div className="cs-callout cs-callout--tip">
+            <CalloutWithIcon
+              iconSrc="/thrival/limitationsicon.svg"
+              className="cs-callout--tip"
+            >
               <h3>Key limitations</h3>
               <ul className="cs-callout-list">
                 <li>Upcoming steps were too small thumbnails to understand</li>
@@ -393,14 +433,14 @@ export default function ThrivalCaseStudy() {
                 <li>Recommended hold times were unclear</li>
                 <li>The full routine sequence was not easy to inspect</li>
               </ul>
-            </div>
+            </CalloutWithIcon>
           </div>
 
           <h3 className="cs-subsection-title">
             The first few iterations gave users too much information at once
           </h3>
 
-          <div className="cs-iteration-block">
+          <div className="cs-split cs-split--iteration-flow">
             <div className="cs-iteration-row">
               <div className="cs-iteration-item">
                 <Image
@@ -450,7 +490,7 @@ export default function ThrivalCaseStudy() {
               </div>
             </div>
 
-            <div className="cs-split-text">
+            <div className="cs-split-text cs-split-text--tight">
               <h4 className="cs-iteration-kicker">Iteration and Refinement</h4>
               <p className="cs-body">
                 My first redesign focused on making more information available. I
@@ -472,11 +512,12 @@ export default function ThrivalCaseStudy() {
             </div>
           </div>
 
-          <h3 className="cs-subsection-title">
-                    I simplified the experience so users could focus on the immersive exercise
-          </h3>
-          <div className="cs-split">
-            <div className="cs-split-text">
+          <div className="cs-hierarchy-block">
+            <h3 className="cs-subsection-title">
+              Learning the importance of Design Hierarchy and Information Architecture
+            </h3>
+            <div className="cs-split cs-split--routine-phones">
+              <div className="cs-split-text">
               <div className="cs-feature-columns">
                 <div>
                   <h3>Features always visible</h3>
@@ -506,22 +547,31 @@ export default function ThrivalCaseStudy() {
                 This kept the primary screen focused on the routine itself while still
                 giving users access to deeper guidance whenever they needed it.
               </p>
+              </div>
 
-              <div className="cs-callout">
-                <h3>Key insight</h3>
-                <p>
-                  Adding more information did not automatically create a better
-                  experience. I stopped showing every piece of information at once and
-                  focused on the design hierarchy to organize the experience around what
-                  users needed in the moment.
-                </p>
+              <div className="cs-phone-row">
+                {finalRoutineScreens.map((screen) => (
+                  <div key={screen.src} className="cs-phone-row-frame">
+                    <img
+                      src={screen.src}
+                      alt={screen.alt}
+                      width={1080}
+                      height={1920}
+                      className="cs-phone-row-image"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="cs-phone-row">
-              <Placeholder className="cs-placeholder--phone" label="Final routine screen 1" />
-              <Placeholder className="cs-placeholder--phone" label="Final routine screen 2" />
-              <Placeholder className="cs-placeholder--phone" label="Final routine screen 3" />
+            <div className="cs-experience-banner">
+              <h3 className="cs-experience-banner-title">Key Takeaway</h3>
+              <p className="cs-experience-banner-text">
+                Adding more information did not automatically create a better experience.
+                I stopped showing every piece of information at once and focused on the
+                design hierarchy to organize the experience around what users needed in
+                the moment.
+              </p>
             </div>
           </div>
         </section>
@@ -567,31 +617,36 @@ export default function ThrivalCaseStudy() {
                 beyond physical product sales.
               </p>
 
-              <div className="cs-callout">
-                <h3>Subscription strategy</h3>
+              <CalloutWithIcon iconSrc="/thrival/solution.svg">
+                <h3>My Solution</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Paywall-restricted
-                  content and premium creator routines were explored as future revenue
-                  opportunities.
+                  A tiered subscription structure with multiple billing intervals, informed
+                  by subscription patterns used across adjacent fitness products.
                 </p>
-              </div>
-
-              <div className="cs-image-grid">
-                <Placeholder className="cs-placeholder--card" label="Paywall screen 1" />
-                <Placeholder className="cs-placeholder--card" label="Paywall screen 2" />
-                <Placeholder className="cs-placeholder--card" label="Subscription screen 1" />
-                <Placeholder className="cs-placeholder--card" label="Subscription screen 2" />
-              </div>
+              </CalloutWithIcon>
             </div>
 
-            <div className="cs-split-visual">
-              <Image
-                src="/thrival/thrival-subscription.png"
-                alt="Thrival subscription paywall screen"
-                width={718}
-                height={1492}
-                className="cs-subscription-image"
-              />
+            <div className="cs-split-visual cs-split-visual--subscription">
+              <div className="cs-subscription-phones">
+                <div className="cs-subscription-phone-frame">
+                  <img
+                    src="/thrival/thrival-subscription.png"
+                    alt="Thrival subscription paywall screen"
+                    width={718}
+                    height={1492}
+                    className="cs-subscription-phone-image"
+                  />
+                </div>
+                <div className="cs-subscription-phone-frame cs-subscription-phone-frame--gif">
+                  <img
+                    src="/thrival/gifs/subscription.gif"
+                    alt="Thrival subscription flow animation"
+                    width={1080}
+                    height={1920}
+                    className="cs-subscription-phone-image"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -678,10 +733,10 @@ export default function ThrivalCaseStudy() {
           <h3 className="cs-subsection-title">Key Takeaways</h3>
           <div className="cs-takeaway-grid">
             {keyTakeaways.map((item) => (
-              <div className="cs-callout" key={item.title}>
+              <CalloutWithIcon iconSrc="/thrival/solution.svg" key={item.title}>
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
-              </div>
+              </CalloutWithIcon>
             ))}
           </div>
         </section>

@@ -81,40 +81,55 @@ export default function Home() {
             <div className="hero-experience">
               <div className="hero-experience-group">
                 <p className="hero-experience-label">Currently</p>
-                <p className="group relative inline-block">
+                <a
+                  href="https://smata.study/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-experience-link group relative inline-block"
+                >
                   <HandwrittenSwap
                     src="/handwritten-text/smata-role-handwritten.png"
                     width={360}
                     height={40}
                     variant="role"
                   >
-                    Founding Designer @ <a href="" target="_blank" rel="noopener noreferrer">Smata</a>
+                    Founding Designer @ Smata
                   </HandwrittenSwap>
-                </p>
-                <p className="group relative inline-block">
+                </a>
+                <a
+                  href="https://thrival.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-experience-link group relative inline-block"
+                >
                   <HandwrittenSwap
                     src="/handwritten-text/thrival-role-handwritten.png"
                     width={360}
                     height={40}
                     variant="role"
                   >
-                    Product Designer @ <a href="" target="_blank" rel="noopener noreferrer">Thrival</a>
+                    Product Designer @ Thrival
                   </HandwrittenSwap>
-                </p>
+                </a>
               </div>
 
               <div className="hero-experience-group">
                 <p className="hero-experience-label">Previously</p>
-                <p className="group relative inline-block">
+                <a
+                  href="https://www.caidya.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-experience-link group relative inline-block"
+                >
                   <HandwrittenSwap
                     src="/handwritten-text/caidya-role-handwritten.png"
                     width={360}
                     height={40}
                     variant="role"
                   >
-                    Operations and AI solutions Intern @ <a href="" target="_blank" rel="noopener noreferrer">Caidya</a>
+                    Operations and AI solutions Intern @ Caidya
                   </HandwrittenSwap>
-                </p>
+                </a>
               </div>
             </div>
 
@@ -239,7 +254,7 @@ export default function Home() {
               </div>
             </article>
 
-            <article className="work-card work-card--media-right">
+            {/* <article className="work-card work-card--media-right">
               <div className="work-card-content">
                 <h3>Talentora AI</h3>
                 <p>
@@ -312,7 +327,7 @@ export default function Home() {
                   className="work-card-media-laptop"
                 />
               </div>
-            </article>
+            </article> */}
 
           </div>
         </div>

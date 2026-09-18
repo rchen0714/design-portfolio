@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import BackToWorksLink from "@/components/BackToWorksLink";
 import type { Project } from "@/data/projects/types";
 
 type CaseStudyProps = {
@@ -25,9 +25,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
   return (
     <main id="case-study-page">
       <div className="case-study-container">
-        <Link href="/work" className="case-study-back">
-          ← all works
-        </Link>
+        <BackToWorksLink className="case-study-back" />
 
         <header className="case-study-header">
           <h1 className="case-study-title">{project.title.toLowerCase()}.</h1>

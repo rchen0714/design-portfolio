@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import BackToWorksLink from "@/components/BackToWorksLink";
 
 function Placeholder({
   className = "",
@@ -16,7 +18,31 @@ function Placeholder({
   );
 }
 
-function PhonePair({ labels }: { labels: [string, string] }) {
+function PhonePair({
+  labels,
+  screens,
+}: {
+  labels: [string, string];
+  screens?: [string, string];
+}) {
+  if (screens) {
+    return (
+      <div className="sm-phone-pair sm-phone-pair--side-by-side">
+        {screens.map((src, index) => (
+          <div key={src} className="sm-phone-pair-frame">
+            <img
+              src={src}
+              alt={labels[index]}
+              width={1080}
+              height={1920}
+              className="sm-phone-pair-image"
+            />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="sm-phone-pair">
       <Placeholder className="sm-placeholder--phone" label={labels[0]} />
@@ -36,7 +62,13 @@ function IterationFlow({
     <div className="sm-iteration-flow">
       <div className="sm-iteration-group">
         <p className="sm-iteration-label">{beforeLabel}</p>
-        <PhonePair labels={["Before screen 1", "Before screen 2"]} />
+        <PhonePair
+          labels={[
+            "Smata app before redesign — screen 1",
+            "Smata app before redesign — screen 2",
+          ]}
+          screens={["/smata/smatabefore.png", "/smata/smatabefore2.png"]}
+        />
       </div>
       <span className="sm-iteration-arrow" aria-hidden="true">
         →
@@ -76,6 +108,10 @@ const features = [
     title: "Start and track a study session",
     lead: "The timer is one of Smata's core interactions.",
     body: "Students can begin a study session, track their study time, and record the activity as part of their broader progress. Throughout the study flow, Marty is integrated into key screens to make the experience feel more encouraging, playful, and supportive rather than purely functional.",
+    screens: [
+      "/smata/gifs/smatafeature01-1.gif",
+      "/smata/gifs/smatafeature01-2.gif",
+    ] as [string, string],
   },
   {
     reverse: true,
@@ -83,6 +119,10 @@ const features = [
     title: "Protect focus with Lockdown Mode",
     lead: "Choose distracting apps to block while you study and keep your attention on the work in front of you.",
     body: "Lockdown Mode supports Smata's goal of encouraging healthier study habits instead of competing for more screen time.",
+    screens: [
+      "/smata/gifs/smatafeature02-1.png",
+      "/smata/gifs/smatafeature02-2.gif",
+    ] as [string, string],
   },
   {
     reverse: false,
@@ -90,6 +130,10 @@ const features = [
     title: "Turn study activity into something social",
     lead: "After finishing a session, users can turn their progress into a post by adding photos, captions, titles, and location details.",
     body: "The feed puts more emphasis on the people and moments behind studying, making progress something friends can celebrate together.",
+    screens: [
+      "/smata/gifs/smatafeature03-1.gif",
+      "/smata/gifs/smatafeature03-2.gif",
+    ] as [string, string],
   },
   {
     reverse: true,
@@ -97,6 +141,10 @@ const features = [
     title: "Make progress with a little competition",
     lead: "Compare your study activity with friends through Smata's leaderboard.",
     body: "The leaderboard lets users compare study activity with friends, introducing a layer of friendly competition and accountability. Future versions are intended to extend this concept to broader communities such as campuses.",
+    screens: [
+      "/smata/gifs/smatafeature04-1.png",
+      "/smata/gifs/smatafeature04-2.gif",
+    ] as [string, string],
   },
   {
     reverse: false,
@@ -104,6 +152,10 @@ const features = [
     title: "Creating a foundation for location-based studying",
     lead: "Use the map to see where friends are studying and discover opportunities to study together in-person.",
     body: "Location sharing is intended to remain optional, with privacy controls giving users more control over when and with whom their location is visible.",
+    screens: [
+      "/smata/gifs/smatafeature05-1.gif",
+      "/smata/gifs/smatafeature05-2.gif",
+    ] as [string, string],
   },
 ];
 
@@ -199,35 +251,18 @@ export default function SmataCaseStudy() {
       <div className="sm-page-container">
         {/* Hero */}
         <section className="sm-hero">
-          <Link href="/#selected-works" className="sm-back-link">
-            ← Back to selected works
-          </Link>
+          <BackToWorksLink className="sm-back-link" />
 
-          <div className="sm-hero-panel">
-            <div className="sm-hero-copy">
-              <Placeholder className="sm-placeholder--icon" label="Smata app icon" />
-              <h1 className="sm-hero-title">Smata: Study Smarter</h1>
-              <p className="sm-hero-description">
-                Smata is a collaborative study app that helps students stay focused,
-                connected, and motivated. Study Smata and making learning a shared
-                experience!
-              </p>
-            </div>
-
-            <div className="sm-hero-phones">
-              <Placeholder
-                className="sm-placeholder--phone sm-placeholder--phone-offset-up"
-                label="Smata feed screen"
-              />
-              <Placeholder
-                className="sm-placeholder--phone sm-placeholder--phone-center"
-                label="Smata session screen"
-              />
-              <Placeholder
-                className="sm-placeholder--phone sm-placeholder--phone-offset-down"
-                label="Smata map screen"
-              />
-            </div>
+          <div className="sm-hero-banner">
+            <Image
+              src="/smata/smatahero.png"
+              alt="Smata: Study Smarter — collaborative study app hero"
+              width={3818}
+              height={1796}
+              className="sm-hero-image"
+              priority
+              sizes="100vw"
+            />
           </div>
 
           <dl className="sm-meta-table">
@@ -245,7 +280,24 @@ export default function SmataCaseStudy() {
             </div>
             <div className="sm-meta-item">
               <dt>Status</dt>
-              <dd>Beta Test</dd>
+              <dd>
+                <a
+                  href="https://apps.apple.com/us/app/smata-study-smarter/id6775473971"
+                  className="cs-live-link sm-live-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Product
+                  <Image
+                    src="/thrival/right-arrow-icon.svg"
+                    alt=""
+                    width={12}
+                    height={12}
+                    className="button-arrow"
+                    aria-hidden="true"
+                  />
+                </a>
+              </dd>
             </div>
             <div className="sm-meta-item">
               <dt>Team</dt>
@@ -291,7 +343,22 @@ export default function SmataCaseStudy() {
           </div>
 
           <div className="sm-split">
-            <PhonePair labels={["Overview screen 1", "Overview screen 2"]} />
+            <div className="sm-phone-pair sm-phone-pair--side-by-side">
+              <Image
+                src="/smata/smataherophone1.png"
+                alt="Smata app overview screen"
+                width={1251}
+                height={2544}
+                className="sm-phone-pair-image"
+              />
+              <Image
+                src="/smata/smataherophone2.png"
+                alt="Smata app study session screen"
+                width={1251}
+                height={2544}
+                className="sm-phone-pair-image"
+              />
+            </div>
 
             <div className="sm-problem-column">
               <p className="sm-section-label">Background and problem</p>
@@ -308,25 +375,25 @@ export default function SmataCaseStudy() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
 
-              <div className="sm-callout-stack">
-                <div className="sm-inline-callout">
-                  <h3>The Problem</h3>
-                  <p>
-                    How can we help students stay focused, build healthier study habits,
-                    and make progress feel more motivating and social?
-                  </p>
-                </div>
-                <div className="sm-inline-callout">
-                  <h3>My Solution</h3>
-                  <p>
-                    Create a study tool that combines focus tools, study tracking, social
-                    accountability, progress sharing, and positive reinforcement to help
-                    students spend less time distracted and more time investing in their
-                    goals.
-                  </p>
-                </div>
-              </div>
+          <div className="sm-callout-row">
+            <div className="sm-inline-callout">
+              <h3>The Problem</h3>
+              <p>
+                How can we help students stay focused, build healthier study habits, and
+                make progress feel more motivating and social?
+              </p>
+            </div>
+            <div className="sm-inline-callout">
+              <h3>My Solution</h3>
+              <p>
+                Create a study tool that combines focus tools, study tracking, social
+                accountability, progress sharing, and positive reinforcement to help
+                students spend less time distracted and more time investing in their
+                goals.
+              </p>
             </div>
           </div>
         </section>
@@ -359,9 +426,17 @@ export default function SmataCaseStudy() {
             </p>
           </div>
 
-          <div className="sm-callout">
+          <div className="sm-callout sm-callout--design-challenge">
             <div className="sm-callout-header">
-              <span className="sm-callout-icon" aria-hidden="true" />
+              <div className="sm-callout-icon-wrap" aria-hidden>
+                <img
+                  src="/smata/solution-star.svg"
+                  alt=""
+                  width={44}
+                  height={44}
+                  className="sm-callout-star-icon"
+                />
+              </div>
               <h3>The Design Challenge</h3>
             </div>
             <p>
@@ -370,7 +445,16 @@ export default function SmataCaseStudy() {
             </p>
           </div>
 
-          <IterationFlow beforeLabel="Iteration 1" afterLabel="Iteration 2" />
+          <div className="sm-visual-identity-breakout">
+            <Image
+              src="/smata/smatavisualidentitynew.png"
+              alt="Smata visual identity evolution from early mockups to redesigned branding"
+              width={3818}
+              height={1279}
+              className="sm-visual-identity-image"
+              sizes="92vw"
+            />
+          </div>
 
           <h3 className="sm-section-kicker">SAY HI TO MARTY!</h3>
 
@@ -400,8 +484,6 @@ export default function SmataCaseStudy() {
               while allowing it to fit naturally into the evolving interface.
             </p>
           </div>
-
-          <Placeholder className="sm-placeholder--wide-block" label="Marty mascot artwork" />
         </section>
       </div>
 
@@ -441,6 +523,7 @@ export default function SmataCaseStudy() {
               </div>
               <PhonePair
                 labels={[`${feature.title} screen 1`, `${feature.title} screen 2`]}
+                screens={"screens" in feature ? feature.screens : undefined}
               />
             </div>
           ))}

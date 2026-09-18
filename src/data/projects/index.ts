@@ -10,7 +10,10 @@ export const projects: ProjectLink[] = [
   {
     ...smata,
     href: "/work/smata",
-    cardImage: defaultCardImage,
+    cardImage: "/casebanners/smatabanner.png",
+    cardImageWidth: 973,
+    cardImageHeight: 598,
+    cardImageFit: "cover",
     tags: [
       { label: "UI/UX", variant: "ui-ux" },
       { label: "Product Design", variant: "product-design" },
