@@ -3,7 +3,7 @@ import type { Project } from "./types";
 export const smata: Project = {
   title: "Smata",
   description:
-    "Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.",
+    "A collaborative study app that helps students stay focused, connected, and motivated. Study Smata and making learning a fun, shared experience!",
   role: "Founding Designer",
   mockup: "computer",
   overview:

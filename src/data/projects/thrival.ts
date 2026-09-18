@@ -3,7 +3,7 @@ import type { Project } from "./types";
 export const thrival: Project = {
   title: "Thrival",
   description:
-    "Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.",
+    "A fitness and recovery platform that helps Thrival users discover guided workouts, mobility routines, and product education tailored to their needs.",
   role: "Lead Product Designer",
   mockup: "computer",
   overview:

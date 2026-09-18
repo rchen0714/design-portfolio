@@ -23,7 +23,12 @@ export default function WorkPage() {
                         src={project.cardImage}
                         alt=""
                         fill
-                        className="works-case-card-image--cover"
+                        className={[
+                          "works-case-card-image--cover",
+                          project.cardImageCoverClass,
+                        ]
+                          .filter(Boolean)
+                          .join(" ")}
                         sizes="(max-width: 700px) 100vw, 50vw"
                       />
                     ) : (

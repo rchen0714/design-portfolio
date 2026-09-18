@@ -17,7 +17,13 @@ export type Project = {
   outcome: string;
 };
 
-export type WorkCardTagVariant = "ui-ux" | "product-design" | "web-dev";
+export type WorkCardTagVariant =
+  | "ui-ux"
+  | "product-design"
+  | "web-dev"
+  | "ai-project"
+  | "full-stack"
+  | "interface-design";
 
 export type ProjectTag = {
   label: string;
@@ -33,5 +39,7 @@ export type ProjectLink = Project & {
   cardImageHeight?: number;
   /** Banner art fills the media area; mockups use contain + padding */
   cardImageFit?: "contain" | "cover";
+  /** Optional class for cover-image tweaks (e.g. scale) on the work index card */
+  cardImageCoverClass?: string;
   tags: ProjectTag[];
 };

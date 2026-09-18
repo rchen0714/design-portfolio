@@ -242,9 +242,29 @@ img {
 
 @media (hover: hover) and (pointer: fine) {
   .hero-cta-button:hover,
-  .work-card-button:hover {
+  .work-card-button:hover:not(:disabled) {
     background: transparent;
     color: #000;
+  }
+}
+
+.work-card-button--coming-soon {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  transition: none;
+}
+
+.work-card-button--coming-soon:disabled {
+  cursor: default;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .work-card-button--coming-soon:hover,
+  .work-card-button--coming-soon:disabled:hover {
+    background: #fff;
+    color: #000;
+    border-color: #000;
   }
 }
 
@@ -602,6 +622,11 @@ img.hero-hover-doodle {
   object-position: center;
 }
 
+.works-case-card-image--zoom-out {
+  transform: scale(0.88);
+  transform-origin: center center;
+}
+
 .works-case-card-media-placeholder {
   width: 100%;
   height: 100%;
@@ -668,6 +693,18 @@ img.hero-hover-doodle {
 
 .works-case-card-tag--web-dev {
   background: #3b82f6;
+}
+
+.works-case-card-tag--ai-project {
+  background: #0d9488;
+}
+
+.works-case-card-tag--full-stack {
+  background: #7c3aed;
+}
+
+.works-case-card-tag--interface-design {
+  background: #ec4899;
 }
 
 @media (max-width: 700px) {
@@ -2557,6 +2594,7 @@ body:has(#play-page) #site-footer {
   --sm-light-green: #edffe3;
   --sm-label: #9ca3af;
   --sm-heading: #111827;
+  --cs-heading: var(--sm-heading);
   --sm-callout-border: #1d85ac;
   --sm-border: #e5e7eb;
   --sm-page-gutter: clamp(2rem, 14vw, 13rem);
@@ -2646,14 +2684,6 @@ body:has(#play-page) #site-footer {
   font-weight: 500;
   line-height: 1.35;
   color: var(--sm-heading);
-}
-
-#smata-case-study .sm-live-link {
-  color: var(--sm-heading);
-}
-
-#smata-case-study .sm-live-link .button-arrow {
-  filter: none;
 }
 
 .sm-divider {

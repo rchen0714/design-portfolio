@@ -254,31 +254,20 @@ export default function Home() {
               </div>
             </article>
 
-            {/* <article className="work-card work-card--media-right">
+            <article className="work-card work-card--media-right">
               <div className="work-card-content">
                 <h3>Talentora AI</h3>
                 <p>
                   Talentora is an AI-powered recruiting platform that helps HR teams streamline the hiring process through real-time interview analysis, sentiment insights, and
                   ATS-integrated workflows.
                 </p>
-                <Link href="/work/talentora-ai" className="work-card-button group relative">
-                  <HandwrittenSwap
-                    src="/handwritten-text/view-project-handwritten.png"
-                    width={180}
-                    height={50}
-                    variant="button"
-                  >
-                    View Project
-                    <Image
-                      src="/thrival/right-arrow-icon.svg"
-                      alt=""
-                      width={12}
-                      height={12}
-                      className="button-arrow"
-                      aria-hidden="true"
-                    />
-                  </HandwrittenSwap>
-                </Link>
+                <button
+                  type="button"
+                  className="work-card-button work-card-button--coming-soon"
+                  disabled
+                >
+                  Coming soon!
+                </button>
               </div>
               <div className="work-card-media">
                 <Image
@@ -299,24 +288,13 @@ export default function Home() {
                   around campus based on their individual needs, including noise level, outlet
                   availability, location, and other study preferences.
                 </p>
-                <Link href="/work/terrierstudy" className="work-card-button group relative">
-                  <HandwrittenSwap
-                    src="/handwritten-text/view-project-handwritten.png"
-                    width={180}
-                    height={50}
-                    variant="button"
-                  >
-                    View Project
-                    <Image
-                      src="/thrival/right-arrow-icon.svg"
-                      alt=""
-                      width={12}
-                      height={12}
-                      className="button-arrow"
-                      aria-hidden="true"
-                    />
-                  </HandwrittenSwap>
-                </Link>
+                <button
+                  type="button"
+                  className="work-card-button work-card-button--coming-soon"
+                  disabled
+                >
+                  Coming soon!
+                </button>
               </div>
               <div className="work-card-media">
                 <Image
@@ -327,7 +305,7 @@ export default function Home() {
                   className="work-card-media-laptop"
                 />
               </div>
-            </article> */}
+            </article>
 
           </div>
         </div>

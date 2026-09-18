@@ -283,7 +283,7 @@ export default function SmataCaseStudy() {
               <dd>
                 <a
                   href="https://apps.apple.com/us/app/smata-study-smarter/id6775473971"
-                  className="cs-live-link sm-live-link"
+                  className="cs-live-link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -535,7 +535,10 @@ export default function SmataCaseStudy() {
         <section className="sm-section">
           <div className="sm-section-header">
             <p className="sm-section-label">Visual Strategy</p>
-            <h2 className="sm-section-title">Iterations, Iterations, Iterations</h2>
+            <h2 className="sm-section-title">
+              Iterations and improvements that helped strengthen Smata&apos;s social
+              experience
+            </h2>
           </div>
 
           <p>
@@ -578,7 +581,9 @@ export default function SmataCaseStudy() {
         <section className="sm-section">
           <div className="sm-section-header">
             <p className="sm-section-label">Beta Insights</p>
-            <h2 className="sm-section-title">Beta brought real users into the process</h2>
+            <h2 className="sm-section-title">
+              Our beta testers guided us on what to improve next
+            </h2>
           </div>
 
           <div className="sm-beta-grid">
