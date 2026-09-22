@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export const PORTFOLIO_EMAIL = "rc071404@bu.edu";
+export const PORTFOLIO_EMAIL = "rubychen.0714@gmail.com";
 
 type EmailCopyButtonProps = {
   variant: "footer" | "about";

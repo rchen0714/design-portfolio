@@ -60,9 +60,9 @@ export const projects: ProjectLink[] = [
   {
     ...moodcast,
     href: "/work/moodcast",
-    cardImage: "/casebanners/moodcastbanner.png",
-    cardImageWidth: 7020,
-    cardImageHeight: 4467,
+    cardImage: "/moodcast/moodcasthero.png",
+    cardImageWidth: 3426,
+    cardImageHeight: 2019,
     cardImageFit: "cover",
     tags: [
       { label: "Web Dev", variant: "web-dev" },

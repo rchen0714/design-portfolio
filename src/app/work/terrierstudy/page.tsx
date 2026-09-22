@@ -1,4 +1,4 @@
-import CaseStudy from "@/components/CaseStudy";
+import TerrierStudyCaseStudy from "@/components/TerrierStudyCaseStudy";
 import { terrierStudy } from "@/data/projects/terrierstudy";
 
 export const metadata = {
@@ -7,5 +7,5 @@ export const metadata = {
 };
 
 export default function TerrierStudyPage() {
-  return <CaseStudy project={terrierStudy} />;
+  return <TerrierStudyCaseStudy />;
 }

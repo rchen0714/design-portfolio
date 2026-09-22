@@ -1,4 +1,4 @@
-import CaseStudy from "@/components/CaseStudy";
+import MoodcastCaseStudy from "@/components/MoodcastCaseStudy";
 import { moodcast } from "@/data/projects/moodcast";
 
 export const metadata = {
@@ -7,5 +7,5 @@ export const metadata = {
 };
 
 export default function MoodcastPage() {
-  return <CaseStudy project={moodcast} />;
+  return <MoodcastCaseStudy />;
 }

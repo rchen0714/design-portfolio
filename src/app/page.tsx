@@ -282,24 +282,34 @@ export default function Home() {
 
             <article className="work-card">
               <div className="work-card-content">
-                <h3>TerrierStudy</h3>
+                <h3>Moodcast</h3>
                 <p>
-                  Terrier Study is a web app that helps Boston University students find study spots
-                  around campus based on their individual needs, including noise level, outlet
-                  availability, location, and other study preferences.
+                  A weather-driven music web app that lets you enter a city and get a playlist
+                  matched to the local forecast.
                 </p>
-                <button
-                  type="button"
-                  className="work-card-button work-card-button--coming-soon"
-                  disabled
-                >
-                  Coming soon!
-                </button>
+                <Link href="/work/moodcast" className="work-card-button group relative">
+                  <HandwrittenSwap
+                    src="/handwritten-text/view-project-handwritten.png"
+                    width={180}
+                    height={50}
+                    variant="button"
+                  >
+                    View Project
+                    <Image
+                      src="/thrival/right-arrow-icon.svg"
+                      alt=""
+                      width={12}
+                      height={12}
+                      className="button-arrow"
+                      aria-hidden="true"
+                    />
+                  </HandwrittenSwap>
+                </Link>
               </div>
               <div className="work-card-media">
                 <Image
-                  src="/casebanners/terrierstudylaptop.png"
-                  alt="TerrierStudy web app showing study location filters and map"
+                  src="/casebanners/moodcastlaptop.png"
+                  alt="Moodcast web app on laptop mockup"
                   width={3798}
                   height={2202}
                   className="work-card-media-laptop"

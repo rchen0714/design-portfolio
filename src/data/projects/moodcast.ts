@@ -7,9 +7,9 @@ export const moodcast: Project = {
   role: "Designer & Developer",
   mockup: "computer",
   heroImage: {
-    src: "/casebanners/moodcastbanner.png",
-    width: 2948,
-    height: 1370,
+    src: "/moodcast/moodcasthero.png",
+    width: 3426,
+    height: 2019,
   },
   overview:
     "Moodcast connects live weather with mood-based playlists so listeners can discover music that fits the sky outside—sunny, rainy, or in between.",
