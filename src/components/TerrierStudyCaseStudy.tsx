@@ -1,38 +1,72 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function ScreenshotPlaceholder({ tall = false }: { tall?: boolean }) {
+function HighlightGif({
+  src,
+  alt,
+  width,
+  height,
+}: {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}) {
   return (
-    <div
-      className={`ts-highlight-media${tall ? " ts-highlight-media--tall" : ""}`.trim()}
-      aria-hidden="true"
-    >
-      <span className="ts-highlight-placeholder-label">Screenshot placeholder</span>
+    <div className="ts-highlight-media">
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className="ts-highlight-gif"
+        loading="lazy"
+      />
     </div>
   );
 }
 
 const featuredHighlight = {
   title: "Browse a space on the map",
-  body: "Contribute new study locations to the database so other students can discover them.",
+  body: "Interactive campus map showing available study locations with live status indicators.",
+  gif: "/terrierstudy/browse-map.gif",
+  gifWidth: 960,
+  gifHeight: 608,
+  gifAlt: "TerrierStudy map view showing study locations on the Boston University campus",
 } as const;
 
 const gridHighlights = [
   {
     title: "Add your own study location",
-    body: "Interactive campus map showing available study locations with live status indicators.",
+    body: "Contribute new study locations to the database so other students can discover them.",
+    gif: "/terrierstudy/create-new-spot.gif",
+    gifWidth: 1807,
+    gifHeight: 1147,
+    gifAlt: "TerrierStudy flow for creating and submitting a new study spot",
   },
   {
     title: "Filter by study needs",
     body: "Filter spaces by noise level, outlets, seating type, and hours of operation.",
+    gif: "/terrierstudy/filter-by-space.gif",
+    gifWidth: 960,
+    gifHeight: 608,
+    gifAlt: "TerrierStudy filters for narrowing study spaces by preferences",
   },
   {
     title: "Add preferred spots to your favorites",
     body: "Bookmark favorite study spaces for quick access during crunch time.",
+    gif: "/terrierstudy/favorite-location.gif",
+    gifWidth: 960,
+    gifHeight: 608,
+    gifAlt: "TerrierStudy favorites list with saved study locations",
   },
   {
     title: "Leave and read reviews",
     body: "Share your experience and read reviews from other students to find the best spots.",
+    gif: "/terrierstudy/writereviews.gif",
+    gifWidth: 960,
+    gifHeight: 608,
+    gifAlt: "TerrierStudy reviews for reading and writing spot feedback",
   },
 ] as const;
 
@@ -156,7 +190,12 @@ export default function TerrierStudyCaseStudy() {
             </div>
 
             <article className="ts-highlight-card ts-highlight-card--featured">
-              <ScreenshotPlaceholder tall />
+              <HighlightGif
+                src={featuredHighlight.gif}
+                alt={featuredHighlight.gifAlt}
+                width={featuredHighlight.gifWidth}
+                height={featuredHighlight.gifHeight}
+              />
               <h3 className="cs-subsection-title">{featuredHighlight.title}</h3>
               <p className="ts-highlight-body">{featuredHighlight.body}</p>
             </article>
@@ -164,7 +203,12 @@ export default function TerrierStudyCaseStudy() {
             <div className="ts-highlight-grid">
               {gridHighlights.map((item) => (
                 <article key={item.title} className="ts-highlight-card">
-                  <ScreenshotPlaceholder />
+                  <HighlightGif
+                    src={item.gif}
+                    alt={item.gifAlt}
+                    width={item.gifWidth}
+                    height={item.gifHeight}
+                  />
                   <h3 className="cs-subsection-title">{item.title}</h3>
                   <p className="ts-highlight-body">{item.body}</p>
                 </article>

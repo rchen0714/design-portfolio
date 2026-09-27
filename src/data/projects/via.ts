@@ -3,15 +3,15 @@ import type { Project } from "./types";
 export const via: Project = {
   title: "Via",
   description:
-    "Designed an AI-powered recruiting platform that streamlined candidate screening, interview scheduling, and recruiter workflows while improving the overall hiring experience.",
-  role: "Product Designer",
+    "Accessibility-focused navigation concept for BU Forge’s 2024 Catalyst Designathon—1st Place in the Accessibility Track.",
+  role: "UX/UI Designer, UX Researcher, Prototyper",
   mockup: "phone",
   overview:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Via explores mobile-first experiences for users who need quick access to essential product flows on the go.",
+    "Via helps people understand the accessibility of routes and destinations before and during a trip through ratings, live hazards, community updates, and accessible route planning.",
   problem:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Core tasks were difficult to complete on smaller screens due to dense layouts and unclear navigation.",
+    "Traditional navigation tools prioritize speed without surfacing construction, sidewalk conditions, inaccessible entrances, or temporary hazards that determine whether a route works for people with mobility needs.",
   solution:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. We simplified flows, increased touch targets, and used progressive disclosure to reduce cognitive load.",
+    "We designed navigation around accessibility—not just distance—building on familiar map patterns while making ratings, reporting, and route context primary to the experience.",
   outcome:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. The mobile experience became faster, more intuitive, and easier to use in real-world contexts.",
+    "A high-fidelity prototype and cohesive mobile concept developed in a two-day designathon sprint with research, personas, and iterative wireframing.",
 };

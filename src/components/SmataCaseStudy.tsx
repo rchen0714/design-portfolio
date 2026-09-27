@@ -21,13 +21,17 @@ function Placeholder({
 function PhonePair({
   labels,
   screens,
+  stacked,
 }: {
   labels: [string, string];
   screens?: [string, string];
+  stacked?: boolean;
 }) {
   if (screens) {
     return (
-      <div className="sm-phone-pair sm-phone-pair--side-by-side">
+      <div
+        className={`sm-phone-pair sm-phone-pair--side-by-side${stacked ? " sm-phone-pair--stacked" : ""}`.trim()}
+      >
         {screens.map((src, index) => (
           <div key={src} className="sm-phone-pair-frame">
             <img
@@ -51,36 +55,36 @@ function PhonePair({
   );
 }
 
+type IterationScreenPair = {
+  before: [string, string];
+  after: [string, string];
+  beforeAlt: [string, string];
+  afterAlt: [string, string];
+};
+
 function IterationFlow({
-  beforeLabel = "Iteration 1",
-  afterLabel = "Iteration 2",
+  beforeLabel = "Before",
+  afterLabel = "After",
+  screens,
+  widePair,
 }: {
   beforeLabel?: string;
   afterLabel?: string;
+  screens: IterationScreenPair;
+  widePair?: boolean;
 }) {
   return (
-    <div className="sm-iteration-flow">
+    <div className={`sm-iteration-flow${widePair ? " sm-iteration-flow--wide-pair" : ""}`.trim()}>
       <div className="sm-iteration-group">
         <p className="sm-iteration-label">{beforeLabel}</p>
-        <PhonePair
-          labels={[
-            "Smata app before redesign — screen 1",
-            "Smata app before redesign — screen 2",
-          ]}
-          screens={["/smata/smatabefore.png", "/smata/smatabefore2.png"]}
-        />
+        <PhonePair labels={screens.beforeAlt} screens={screens.before} stacked={widePair} />
       </div>
       <span className="sm-iteration-arrow" aria-hidden="true">
         →
       </span>
-      <div className="sm-iteration-group sm-iteration-group--wide">
+      <div className="sm-iteration-group">
         <p className="sm-iteration-label">{afterLabel}</p>
-        <div className="sm-phone-row">
-          <Placeholder className="sm-placeholder--phone-sm" label="After screen 1" />
-          <Placeholder className="sm-placeholder--phone-sm" label="After screen 2" />
-          <Placeholder className="sm-placeholder--phone-sm" label="After screen 3" />
-          <Placeholder className="sm-placeholder--phone-sm" label="After screen 4" />
-        </div>
+        <PhonePair labels={screens.afterAlt} screens={screens.after} stacked={widePair} />
       </div>
     </div>
   );
@@ -167,7 +171,25 @@ const iterationCards = [
       "We simplified the onboarding flow to reduce friction during signup and to identify whether a user was a student. This will help us connect them to their Campus Leaderboard.",
     changed:
       "We added a clearer way for users to sign up with student status. We also made the onboarding more visually appealing.",
-    why: "The goal was to reduce friction to get as many users on for testing and to enforce the branding more.",
+    why: "The goal was to reduce friction to get as many users on for testing and feedback so we decreased the amount of steps for regular email signup. We also added more visual graphics of Marty enforce the branding more.",
+    screens: {
+      before: ["/smata/iteration1before-1.png", "/smata/iteration1before-2.png"] as [
+        string,
+        string,
+      ],
+      after: ["/smata/iteration1after-1.png", "/smata/iteration1after-2.png"] as [
+        string,
+        string,
+      ],
+      beforeAlt: [
+        "Smata signup flow before redesign — screen 1",
+        "Smata signup flow before redesign — screen 2",
+      ] as [string, string],
+      afterAlt: [
+        "Smata signup flow after redesign — screen 1",
+        "Smata signup flow after redesign — screen 2",
+      ] as [string, string],
+    },
   },
   {
     badge: "02",
@@ -177,6 +199,24 @@ const iterationCards = [
     changed:
       "The photo became the dominant visual element within the feed card element. The map location information became a smaller visual component of the card.",
     why: "We felt that the documentation of the social aspect should be the primary focus of each post. Since Smata is centered around who students are studying with and the moments they share, we made photos more prominent and moved the map into a supporting role.",
+    screens: {
+      before: [
+        "/smata/iteration2cardbefore.png",
+        "/smata/iteration2card-before2.gif",
+      ] as [string, string],
+      after: [
+        "/smata/iteration2cardafter.png",
+        "/smata/iteration2card-after2.gif",
+      ] as [string, string],
+      beforeAlt: [
+        "Smata feed card before redesign",
+        "Smata feed experience before redesign",
+      ] as [string, string],
+      afterAlt: [
+        "Smata feed card after redesign",
+        "Smata feed experience after redesign",
+      ] as [string, string],
+    },
   },
 ];
 
@@ -375,6 +415,15 @@ export default function SmataCaseStudy() {
                   </div>
                 ))}
               </div>
+
+              <Image
+                src="/smata/smata-app-store-stats.png"
+                alt="App Store Connect metrics for Smata including first-time downloads, conversion rate, and retention"
+                width={1024}
+                height={650}
+                className="sm-app-store-stats"
+                sizes="(max-width: 1024px) 100vw, 32rem"
+              />
             </div>
           </div>
 
@@ -484,6 +533,30 @@ export default function SmataCaseStudy() {
               while allowing it to fit naturally into the evolving interface.
             </p>
           </div>
+
+          <div className="sm-marty-showcase sm-marty-showcase-breakout">
+            <div className="sm-marty-showcase-graphics">
+              <Image
+                src="/smata/martygraphics.png"
+                alt="Marty mascot illustrations and character graphics used across Smata"
+                width={13680}
+                height={7221}
+                className="sm-visual-identity-image"
+                sizes="(max-width: 900px) 92vw, 62vw"
+              />
+            </div>
+            <figure className="sm-marty-showcase-in-action">
+              <figcaption className="sm-marty-in-action-caption">Marty in action</figcaption>
+              <Image
+                src="/smata/marty-notifications.jpg"
+                alt="Smata push notifications featuring Marty encouraging users during study sessions"
+                width={905}
+                height={1024}
+                className="sm-marty-in-action-image"
+                sizes="(max-width: 900px) 72vw, 18rem"
+              />
+            </figure>
+          </div>
         </section>
       </div>
 
@@ -569,7 +642,7 @@ export default function SmataCaseStudy() {
                   </div>
                 </div>
 
-                <IterationFlow />
+                <IterationFlow screens={card.screens} widePair={card.badge === "02"} />
               </article>
             ))}
           </div>

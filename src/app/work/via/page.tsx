@@ -1,4 +1,4 @@
-import CaseStudy from "@/components/CaseStudy";
+import ViaCaseStudy from "@/components/ViaCaseStudy";
 import { via } from "@/data/projects/via";
 
 export const metadata = {
@@ -7,5 +7,5 @@ export const metadata = {
 };
 
 export default function ViaPage() {
-  return <CaseStudy project={via} />;
+  return <ViaCaseStudy />;
 }
