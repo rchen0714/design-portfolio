@@ -34,7 +34,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/designresumeruby.pdf"
+                  href="/rubychen-design-resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

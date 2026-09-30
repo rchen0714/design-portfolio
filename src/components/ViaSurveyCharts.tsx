@@ -5,25 +5,29 @@ type ChartSegment = {
   count: number;
 };
 
-const PIE_SLICE_COLORS = [
+/** Two-segment charts: light + dark purple only */
+const VIA_CHART_TWO_TONE = ["#c4b5fd", "#6b46c1"] as const;
+
+/** Three or more segments: varied palette */
+const VIA_CHART_MULTI_PALETTE = [
   "#9f7aea",
-  "#805ad5",
-  "#b794f4",
-  "#6b46c1",
-  "#d6bcfa",
+  "#1e40af",
+  "#ec4899",
+  "#dc2626",
+  "#0d9488",
+  "#f59e0b",
 ] as const;
+
+function chartColorsForSegmentCount(segmentCount: number): readonly string[] {
+  if (segmentCount <= 2) {
+    return VIA_CHART_TWO_TONE.slice(0, segmentCount);
+  }
+  return VIA_CHART_MULTI_PALETTE.slice(0, segmentCount);
+}
 
 function pct(count: number, total: number) {
   return Math.round((count / total) * 100);
 }
-
-const BAR_COLUMN_COLORS = [
-  "#9f7aea",
-  "#805ad5",
-  "#b794f4",
-  "#6b46c1",
-  "#d6bcfa",
-] as const;
 
 function yAxisScale(maxCount: number) {
   const step = maxCount <= 12 ? 2 : maxCount <= 25 ? 5 : 10;
@@ -48,6 +52,7 @@ function VerticalBarChart({
 }) {
   const maxCount = Math.max(...segments.map((s) => s.count), 1);
   const { top, ticks } = yAxisScale(maxCount);
+  const colors = chartColorsForSegmentCount(segments.length);
   const ariaLabel = segments
     .map((segment) => `${segment.label}: ${segment.count} responses (${pct(segment.count, total)}%)`)
     .join(", ");
@@ -84,7 +89,7 @@ function VerticalBarChart({
                       className="via-vbar-column"
                       style={{
                         height: `${(segment.count / top) * 100}%`,
-                        backgroundColor: BAR_COLUMN_COLORS[index % BAR_COLUMN_COLORS.length],
+                        backgroundColor: colors[index] ?? colors[colors.length - 1],
                       }}
                       title={`${segment.count} (${pct(segment.count, total)}%)`}
                     />
@@ -117,13 +122,14 @@ function PieChart({
   segments: ChartSegment[];
   total?: number;
 }) {
+  const colors = chartColorsForSegmentCount(segments.length);
   let cumulative = 0;
   const gradientStops = segments
     .map((segment, index) => {
       const startPct = (cumulative / total) * 100;
       cumulative += segment.count;
       const endPct = (cumulative / total) * 100;
-      const color = PIE_SLICE_COLORS[index % PIE_SLICE_COLORS.length];
+      const color = colors[index] ?? colors[colors.length - 1];
       return `${color} ${startPct}% ${endPct}%`;
     })
     .join(", ");
@@ -149,7 +155,7 @@ function PieChart({
               <span
                 className="via-pie-swatch"
                 style={{
-                  backgroundColor: PIE_SLICE_COLORS[index % PIE_SLICE_COLORS.length],
+                  backgroundColor: colors[index] ?? colors[colors.length - 1],
                 }}
                 aria-hidden="true"
               />

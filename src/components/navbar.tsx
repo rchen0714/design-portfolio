@@ -57,7 +57,7 @@ export default function Navbar() {
           <li>
             <a
               className="navbar-links"
-              href="/designresumeruby.pdf"
+              href="/rubychen-design-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >

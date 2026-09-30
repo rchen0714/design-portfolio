@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import ViaHighFidelityCarousel from "@/components/ViaHighFidelityCarousel";
+import ViaMidFidelityCarousel from "@/components/ViaMidFidelityCarousel";
+import ViaPersonaFlows from "@/components/ViaPersonaFlows";
 import ViaSurveyCharts from "@/components/ViaSurveyCharts";
 
 const surveyFindings = [
@@ -16,19 +19,14 @@ const initialExplorations = [
 ] as const;
 
 const focusedFeatures = [
-  "Live route hazards",
+  "Live route hazard reporting",
   "Accessibility ratings for destinations and routes",
   "Community-reported incidents",
   "Reviews and comments from other travelers",
 ] as const;
 
-const personaPriorities = [
-  "Lower-elevation routes",
-  "Reliable accessibility information",
-  "Accessible public transportation",
-  "Temporary obstacle awareness",
-  "Destination accessibility before arrival",
-] as const;
+const viaFigmaPrototypeEmbedUrl =
+  "https://embed.figma.com/proto/zKu9viLr1R7LCR8zyytfR0/Catalyst-2024-Wireframes?node-id=104-7538&scaling=scale-down&content-scaling=fixed&starting-point-node-id=104%3A7538&page-id=6%3A4&embed-host=share";
 
 type ViaFeatureScreen = {
   src: string;
@@ -246,7 +244,7 @@ export default function ViaCaseStudy() {
 
           <section className="via-section" aria-labelledby="via-intro-label">
             <div className="via-section-header">
-              <p id="via-intro-label" className="via-section-label">
+              <p id="via-intro-label" className="cs-section-label">
                 Introduction
               </p>
               <h2 className="via-section-title">Making everyday navigation more accessible</h2>
@@ -265,7 +263,7 @@ export default function ViaCaseStudy() {
 
               <div className="via-problem-grid">
                 <article className="via-problem-card via-problem-card--challenge">
-                  <p className="via-section-label">The Challenge</p>
+                  <p className="cs-section-label">The Challenge</p>
                   <h3 className="via-problem-heading">
                     Traditional navigation tools don&apos;t typically take into account people with
                     mobility needs
@@ -285,7 +283,7 @@ export default function ViaCaseStudy() {
                 </article>
 
                 <article className="via-problem-card via-problem-card--solution">
-                  <p className="via-section-label">The Solution</p>
+                  <p className="cs-section-label">The Solution</p>
                   <h3 className="via-problem-heading">
                     We designed a navigational tool centered around accessibility, not just distance
                   </h3>
@@ -312,7 +310,7 @@ export default function ViaCaseStudy() {
 
           <section className="via-section" aria-labelledby="via-core-label">
             <div className="via-section-header">
-              <p id="via-core-label" className="via-section-label">
+              <p id="via-core-label" className="cs-section-label">
                 Key Features
               </p>
               <h2 className="via-section-title">
@@ -347,7 +345,7 @@ export default function ViaCaseStudy() {
 
           <section className="via-section" aria-labelledby="via-research-label">
             <div className="via-section-header">
-              <p id="via-research-label" className="via-section-label">
+              <p id="via-research-label" className="cs-section-label">
                 Research
               </p>
               <h2 className="via-section-title">
@@ -382,21 +380,35 @@ export default function ViaCaseStudy() {
                   We identified opportunities existing navigation tools often overlook
                 </h2>
               </div>
-              <p className="cs-body">We initially explored features such as:</p>
-              <ul className="via-bullet-list">
-                {initialExplorations.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <p className="cs-body">
-                As the concept developed, we focused the product around four pieces of information
-                users could benefit from most:
-              </p>
-              <ul className="via-bullet-list">
-                {focusedFeatures.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              <div className="cs-goal-map via-focus-map">
+                <div className="cs-goal-map-column">
+                  <h3 className="cs-goal-map-heading">Brainstorming</h3>
+                  <div className="cs-goal-map-panel cs-goal-map-panel--goals">
+                    <p className="via-focus-map-lead">
+                      Based off the data from the surveys we looked into some features that we thought could solve 
+                      some of the pain points experienced by the users regarding accessibility and navigation.
+                    </p>
+                    <ul>
+                      {initialExplorations.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="cs-goal-map-column">
+                  <h3 className="cs-goal-map-heading">Key Features</h3>
+                  <div className="cs-goal-map-panel cs-goal-map-panel--solution">
+                    <p className="via-focus-map-lead">
+                      As the concepts developed, we transformed those pain points into key features that users could use.
+                    </p>
+                    <ul>
+                      {focusedFeatures.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
               <p className="cs-body">
                 Rather than reinventing navigation, we built on interaction patterns already
                 familiar from products like Google Maps and Apple Maps while making accessibility
@@ -409,75 +421,108 @@ export default function ViaCaseStudy() {
 
           <section className="via-section" aria-labelledby="via-defining-label">
             <div className="via-section-header">
-              <p id="via-defining-label" className="via-section-label">
+              <p id="via-defining-label" className="cs-section-label">
                 Defining the Experience
               </p>
               <h2 className="via-section-title">
-                User needs helped us prioritize what information mattered most
+                Each persona points to a different moment in the journey
               </h2>
             </div>
             <p className="cs-body">
-              We developed personas representing users with permanent, situational, and temporary
-              mobility needs.
+              We kept three mobility contexts—permanent, temporary, and situational—and tied each
+              one to a specific path through Via. Switch personas to see the story and the
+              highlighted flow.
             </p>
-            <p className="cs-body">
-              Their different circumstances helped us prioritize needs such as:
-            </p>
-            <ul className="via-bullet-list">
-              {personaPriorities.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <p className="cs-body">
-              These insights shaped our sitemap and helped determine where accessibility
-              information should appear throughout the journey.
-            </p>
+            <ViaPersonaFlows />
           </section>
 
           <hr className="via-divider" />
 
           <section className="via-section" aria-labelledby="via-process-label">
-            <p id="via-process-label" className="via-section-label">
-              Design Process
+            <div className="via-section-header">
+              <p id="via-process-label" className="cs-section-label">
+                Design Process
+              </p>
+              <h2 className="via-section-title">
+                A tight designathon timeline meant branding first, then low-fidelity exploration
+              </h2>
+            </div>
+            <p className="cs-body">
+              We locked name and type, then moved straight into sketches and wireframes on familiar
+              map patterns without overpolishing any single screen too early.
             </p>
 
-            <div className="via-stack">
-              <div>
-                <div className="via-section-header">
-                  <h2 className="via-section-title">
-                    A tight timeline pushed us to prioritize the core journey
-                  </h2>
+            <div className="via-process-flow" aria-label="Branding to low fidelity">
+              <figure className="via-process-flow-item">
+                <div className="via-process-figure">
+                  <Image
+                    src="/via/branding.png"
+                    alt="Via branding exploration: name options, typeface candidates, and selected Poppins and Avenir Next pairing"
+                    width={808}
+                    height={542}
+                    sizes="(max-width: 900px) 88vw, 42vw"
+                    className="via-process-figure-image"
+                  />
                 </div>
-                <p className="cs-body">
-                  Because the project was created during a designathon, we needed to move quickly
-                  from research to a testable product concept.
-                </p>
-                <p className="cs-body">
-                  We mapped the primary user journey, divided key screens across the team, and ran
-                  a rapid sketching session to explore multiple approaches.
-                </p>
-                <p className="cs-body">
-                  Rather than spending time perfecting individual screens early, we reviewed ideas
-                  together and selected the strongest interaction patterns to carry into our digital
-                  wireframes.
-                </p>
-              </div>
+                <figcaption className="via-process-flow-caption">Branding</figcaption>
+              </figure>
 
-              <div>
-                <div className="via-section-header">
-                  <h2 className="via-section-title">
-                    We used familiar navigation patterns to reduce the learning curve
-                  </h2>
+              <Image
+                src="/thrival/arrow-vector.svg"
+                alt=""
+                width={12}
+                height={20}
+                className="via-process-flow-arrow"
+                aria-hidden="true"
+              />
+
+              <figure className="via-process-flow-item">
+                <div className="via-process-figure">
+                  <Image
+                    src="/via/via-low-fidleity.jpg"
+                    alt="Low-fidelity Via process: hand-drawn sketches, user flow, and digital wireframe screens"
+                    width={1024}
+                    height={791}
+                    sizes="(max-width: 900px) 88vw, 42vw"
+                    className="via-process-figure-image"
+                  />
                 </div>
-                <p className="cs-body">
-                  As the interface evolved, we intentionally relied on recognizable map, search,
-                  location, and reporting interactions.
-                </p>
-                <p className="cs-body">
-                  This allowed the product to introduce new accessibility information without
-                  requiring users to learn an entirely new navigation system.
-                </p>
-              </div>
+                <figcaption className="via-process-flow-caption">Low fidelity</figcaption>
+              </figure>
+            </div>
+
+            <div className="via-process-midfi">
+              <Image
+                src="/thrival/arrow-vector.svg"
+                alt=""
+                width={12}
+                height={20}
+                className="via-process-midfi-arrow"
+                aria-hidden="true"
+              />
+              <p className="cs-section-label">Mid fidelity</p>
+              <p className="cs-body">
+                Mid-fidelity screens translated the core journey into a testable purple UI—onboarding
+                through navigation, reporting, updates, and profile.
+              </p>
+              <ViaMidFidelityCarousel />
+            </div>
+
+            <div className="via-process-midfi via-process-hifi">
+              <Image
+                src="/thrival/arrow-vector.svg"
+                alt=""
+                width={12}
+                height={20}
+                className="via-process-midfi-arrow"
+                aria-hidden="true"
+              />
+              <p className="cs-section-label">High fidelity</p>
+              <p className="cs-body">
+                High-fidelity screens polished visual hierarchy, map details, and accessibility
+                cues—the prototype we used for final presentation and usability walkthroughs.
+              </p>
+              <ViaHighFidelityCarousel />
             </div>
           </section>
 
@@ -485,22 +530,24 @@ export default function ViaCaseStudy() {
 
           <section className="via-section" aria-labelledby="via-final-label">
             <div className="via-section-header">
-              <p id="via-final-label" className="via-section-label">
+              <p id="via-final-label" className="cs-section-label">
                 Final Product
               </p>
               <h2 className="via-section-title">
                 A navigation experience built around confidence, context, and accessibility
               </h2>
             </div>
-            <p className="cs-body">
-              The final Via prototype brings route planning, destination accessibility, live
-              hazards, and community reporting into one experience.
-            </p>
-            <p className="cs-body">
-              Instead of treating accessibility as an additional filter, Via makes it part of the
-              information users see throughout their journey—helping them make more informed
-              decisions before they leave and adapt when conditions change along the way.
-            </p>
+
+            <div className="via-prototype-block">
+              <div className="via-prototype-stage">
+                <iframe
+                  title="Via high-fidelity Figma prototype"
+                  src={viaFigmaPrototypeEmbedUrl}
+                  className="via-prototype-iframe"
+                  allowFullScreen
+                />
+              </div>
+            </div>
           </section>
         </div>
       </div>

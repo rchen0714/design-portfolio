@@ -355,7 +355,7 @@ export default function SmataCaseStudy() {
         {/* Overview */}
         <section className="sm-section">
           <div className="sm-section-header">
-            <p className="sm-section-label">Overview</p>
+            <p className="cs-section-label">Overview</p>
             <h2 className="sm-section-title">
               Designing a study app to make productive habits feel social, motivating,
               and rewarding
@@ -401,7 +401,7 @@ export default function SmataCaseStudy() {
             </div>
 
             <div className="sm-problem-column">
-              <p className="sm-section-label">Background and problem</p>
+              <p className="cs-section-label">Background and problem</p>
               <h3 className="sm-problem-heading">
                 Students are struggling to stay focused when trying to be productive.
                 Why is that happening?
@@ -452,7 +452,7 @@ export default function SmataCaseStudy() {
         {/* Branding */}
         <section className="sm-section">
           <div className="sm-section-header">
-            <p className="sm-section-label">01 / THE BRANDING</p>
+            <p className="cs-section-label">01 / THE BRANDING</p>
             <h2 className="sm-section-title">Finding Smata&apos;s Visual Identity</h2>
             <h3 className="sm-section-kicker">REDESIGNING AND REBRANDING</h3>
           </div>
@@ -580,7 +580,7 @@ export default function SmataCaseStudy() {
       <div className="sm-page-container">
         {/* Features */}
         <section className="sm-section">
-          <p className="sm-section-label">01 / THE Features</p>
+          <p className="cs-section-label">01 / THE Features</p>
 
           {features.map((feature) => (
             <div
@@ -607,7 +607,7 @@ export default function SmataCaseStudy() {
         {/* Iterations */}
         <section className="sm-section">
           <div className="sm-section-header">
-            <p className="sm-section-label">Visual Strategy</p>
+            <p className="cs-section-label">Visual Strategy</p>
             <h2 className="sm-section-title">
               Iterations and improvements that helped strengthen Smata&apos;s social
               experience
@@ -653,7 +653,7 @@ export default function SmataCaseStudy() {
         {/* Beta */}
         <section className="sm-section">
           <div className="sm-section-header">
-            <p className="sm-section-label">Beta Insights</p>
+            <p className="cs-section-label">Beta Insights</p>
             <h2 className="sm-section-title">
               Our beta testers guided us on what to improve next
             </h2>
@@ -743,7 +743,7 @@ export default function SmataCaseStudy() {
         {/* Outcome */}
         <section className="sm-section">
           <div className="sm-section-header">
-            <p className="sm-section-label">The Outcome</p>
+            <p className="cs-section-label">The Outcome</p>
             <h2 className="sm-section-title">What I learned</h2>
           </div>
 

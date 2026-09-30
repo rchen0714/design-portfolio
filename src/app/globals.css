@@ -7,6 +7,7 @@
   --text-body-line-height: 1.6;
   --case-label-size: 0.7rem;
   --case-label-tracking: 0.02em;
+  --case-section-label-color: #9ca3af;
   --case-back-link-size: 0.815rem;
   --case-meta-value-size: 0.875rem;
   --case-title-size: clamp(1.75rem, 3.5vw, 2.33rem);
@@ -488,6 +489,10 @@ img.hero-hover-doodle {
   .work-card-content {
     gap: 1.5rem;
   }
+
+  .work-card-content .work-card-button {
+    align-self: flex-end;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 900px) {
@@ -941,12 +946,14 @@ img.hero-hover-doodle {
   gap: var(--case-header-gap);
 }
 
-.cs-section-label {
+.cs-section-label,
+.sm-section-label,
+.via-section-label {
   font-size: var(--case-label-size);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: var(--case-label-tracking);
-  color: var(--cs-label);
+  color: var(--case-section-label-color);
 }
 
 .cs-section-title {
@@ -2704,14 +2711,6 @@ body:has(#play-page) #site-footer {
   gap: var(--case-header-gap);
 }
 
-.sm-section-label {
-  font-size: var(--case-label-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: var(--case-label-tracking);
-  color: var(--sm-label);
-}
-
 .sm-section-title {
   font-family: var(--font-poppins), sans-serif;
   font-size: var(--case-title-size);
@@ -4251,14 +4250,6 @@ body:has(#play-page) #site-footer {
   gap: var(--case-header-gap);
 }
 
-.via-section-label {
-  font-size: var(--case-label-size);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: var(--case-label-tracking);
-  color: var(--via-label);
-}
-
 .via-section-title {
   font-family: var(--font-poppins), sans-serif;
   font-size: var(--case-title-size);
@@ -4328,14 +4319,6 @@ body:has(#play-page) #site-footer {
 .via-problem-card--solution {
   background: var(--via-purple);
   color: #fff;
-}
-
-#via-case-study .via-problem-card--challenge .via-section-label {
-  color: #9ca3af;
-}
-
-#via-case-study .via-problem-card--solution .via-section-label {
-  color: var(--via-label);
 }
 
 #via-case-study .via-problem-card--solution .via-problem-heading,
@@ -4425,6 +4408,32 @@ body:has(#play-page) #site-footer {
   margin: 0;
   font-size: var(--case-label-size);
   color: var(--via-muted);
+}
+
+#via-case-study .via-focus-map .cs-goal-map-heading {
+  color: var(--via-purple);
+}
+
+#via-case-study .via-focus-map .cs-goal-map-panel--goals {
+  border-color: var(--via-purple);
+}
+
+#via-case-study .via-focus-map .cs-goal-map-panel--solution {
+  background: var(--via-purple);
+}
+
+.via-focus-map-lead {
+  margin: 0 0 0.85rem;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+#via-case-study .via-focus-map .cs-goal-map-panel--goals .via-focus-map-lead {
+  color: var(--text-body);
+}
+
+#via-case-study .via-focus-map .cs-goal-map-panel--solution .via-focus-map-lead {
+  color: rgb(255 255 255 / 0.92);
 }
 
 .via-research-data-intro {
@@ -4792,16 +4801,368 @@ body:has(#play-page) #site-footer {
   aspect-ratio: 16 / 10;
 }
 
-.via-media-placeholder--persona {
+#via-case-study .via-persona-flows {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2.5vw, 1.35rem);
+  margin-top: clamp(0.75rem, 2vw, 1.25rem);
   width: 100%;
-  min-height: 14rem;
-  aspect-ratio: 4 / 5;
+}
+
+#via-case-study .via-persona-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+#via-case-study button.via-persona-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--via-border);
+  border-radius: 0.5rem;
+  background: #fff;
+  color: var(--via-heading);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  line-height: 1.25;
+  appearance: none;
+  -webkit-appearance: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+#via-case-study button.via-persona-tab:hover {
+  border-color: color-mix(in srgb, var(--via-purple) 35%, var(--via-border));
+}
+
+#via-case-study button.via-persona-tab--active {
+  border-color: var(--via-persona-accent, var(--via-purple));
+  box-shadow: 0 0 0 1px var(--via-persona-accent, var(--via-purple));
+}
+
+#via-case-study .via-persona-tab-name {
+  display: block;
+  font-family: var(--font-poppins), sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--via-heading);
+}
+
+#via-case-study .via-persona-tab-type {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--via-muted);
+}
+
+#via-case-study button.via-persona-tab--active .via-persona-tab-type {
+  color: var(--via-persona-accent, var(--via-purple));
+}
+
+#via-case-study .via-persona-panel {
+  padding: clamp(1.15rem, 2.5vw, 1.5rem);
+  border: 1px solid var(--via-border);
+  border-radius: 0.75rem;
+  background: var(--via-surface);
+  width: 100%;
+}
+
+#via-case-study .via-persona-split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.34fr) minmax(0, 0.66fr);
+  gap: clamp(1.25rem, 3vw, 2rem);
+  align-items: start;
+}
+
+#via-case-study .via-persona-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+#via-case-study .via-persona-avatar-wrap {
+  width: clamp(5.5rem, 14vw, 7.5rem);
+  margin: 0 auto 0.15rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--via-border);
+  background: #fff;
+  line-height: 0;
+}
+
+#via-case-study .via-persona-avatar {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#via-case-study .via-persona-context {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--via-muted);
+}
+
+#via-case-study .via-persona-context strong {
+  font-weight: 600;
+  color: var(--via-heading);
+}
+
+#via-case-study .via-persona-quote {
+  margin: 0;
+  padding: 0.75rem 0 0.75rem 0.85rem;
+  border-left: 3px solid var(--via-persona-accent, var(--via-purple));
+  font-size: 0.9375rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--text-body);
+}
+
+#via-case-study .via-persona-summary {
+  margin: 0;
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line-height);
+  color: var(--text-body);
+}
+
+#via-case-study .via-persona-journey {
+  margin-top: 0.35rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--via-border);
+}
+
+#via-case-study .via-persona-journey-label {
+  margin: 0 0 0.55rem;
+  font-size: var(--case-label-size);
+  font-weight: 600;
+  letter-spacing: var(--case-label-tracking);
+  text-transform: uppercase;
+  color: var(--case-section-label-color);
+}
+
+#via-case-study .via-persona-journey-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#via-case-study .via-persona-journey-steps li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--via-heading);
+}
+
+#via-case-study .via-persona-journey-steps li:not(:last-child)::after {
+  content: "→";
+  margin-left: 0.15rem;
+  font-size: 0.75rem;
+  color: var(--via-muted);
+  font-weight: 400;
+}
+
+#via-case-study .via-persona-diagram {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+#via-case-study .via-persona-diagram-frame {
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--via-border) 80%, #fff);
+}
+
+#via-case-study .via-persona-diagram-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#via-case-study .via-persona-diagram-caption {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--via-muted);
+}
+
+@media (max-width: 900px) {
+  #via-case-study button.via-persona-tab {
+    flex: 1 1 calc(33.333% - 0.5rem);
+    min-width: 7.5rem;
+  }
+
+  #via-case-study .via-persona-split {
+    grid-template-columns: 1fr;
+  }
+
+  #via-case-study .via-persona-avatar-wrap {
+    margin-inline: auto;
+  }
 }
 
 .via-media-placeholder--flow {
   width: 100%;
   min-height: clamp(12rem, 24vw, 18rem);
   margin-top: 0.5rem;
+}
+
+#via-case-study .via-process-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  width: 100%;
+  margin-top: clamp(0.35rem, 1vw, 0.65rem);
+}
+
+#via-case-study .via-process-flow-item {
+  flex: 1 1 min(18rem, 100%);
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+#via-case-study .via-process-flow-caption {
+  margin: 0;
+  font-size: var(--case-label-size);
+  font-weight: 600;
+  letter-spacing: var(--case-label-tracking);
+  text-transform: uppercase;
+  color: var(--case-section-label-color);
+  text-align: center;
+}
+
+#via-case-study .via-process-flow-arrow {
+  display: block;
+  width: 0.75rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  transform: rotate(-90deg);
+}
+
+@media (min-width: 768px) {
+  #via-case-study .via-process-flow {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  #via-case-study .via-process-flow-arrow {
+    transform: none;
+  }
+
+  #via-case-study .via-process-flow-caption {
+    text-align: left;
+  }
+}
+
+#via-case-study .via-process-figure {
+  width: 100%;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--via-border);
+  background: #fff;
+  line-height: 0;
+}
+
+#via-case-study .via-process-figure-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#via-case-study .via-process-midfi {
+  display: flex;
+  flex-direction: column;
+  gap: var(--case-header-gap);
+  width: 100%;
+  margin-top: clamp(0.5rem, 2vw, 1rem);
+}
+
+#via-case-study .via-process-midfi-arrow {
+  display: block;
+  width: 0.75rem;
+  height: 1.25rem;
+  margin: clamp(0.25rem, 1vw, 0.5rem) auto 0;
+  transform: rotate(90deg);
+}
+
+#via-case-study .via-process-hifi {
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+#via-case-study .via-fi-carousel .about-carousel-marquee {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 2%,
+    #000 98%,
+    transparent
+  );
+}
+
+#via-case-study .via-fi-carousel-item {
+  flex: 0 0 auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  width: clamp(8.5rem, 11vw, 11.25rem);
+}
+
+#via-case-study .via-fi-carousel-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1170 / 2532;
+  border-radius: 0.65rem;
+  overflow: hidden;
+  border: 1px solid var(--via-border);
+  background: #fff;
+  filter: drop-shadow(0.75rem 0.45rem 2rem rgba(9, 20, 50, 0.08));
+  line-height: 0;
+}
+
+#via-case-study .via-fi-carousel-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+#via-case-study .via-fi-carousel-caption {
+  margin: 0;
+  max-width: 100%;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+  color: var(--via-muted);
 }
 
 .via-process-grid {
@@ -4823,6 +5184,42 @@ body:has(#play-page) #site-footer {
   aspect-ratio: 1 / 1;
   max-width: 36rem;
   margin-inline: auto;
+}
+
+#via-case-study .via-prototype-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+  margin-top: clamp(0.35rem, 1vw, 0.65rem);
+}
+
+#via-case-study .via-prototype-title {
+  margin: 0;
+  font-family: var(--font-poppins), sans-serif;
+  font-size: clamp(1.125rem, 2vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #374151;
+}
+
+#via-case-study .via-prototype-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 100%;
+  background: #000;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  line-height: 0;
+}
+
+#via-case-study .via-prototype-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #000;
 }
 
 @media (max-width: 1024px) {

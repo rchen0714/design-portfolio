@@ -72,9 +72,9 @@ export const projects: ProjectLink[] = [
   {
     ...via,
     href: "/work/via",
-    cardImage: "/casebanners/vianewbanner.png",
-    cardImageWidth: 7524,
-    cardImageHeight: 4800,
+    cardImage: "/casebanners/viabanner.png",
+    cardImageWidth: 7020,
+    cardImageHeight: 3840,
     cardImageFit: "cover",
     tags: [
       { label: "UI/UX", variant: "ui-ux" },

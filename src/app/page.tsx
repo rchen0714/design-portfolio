@@ -256,26 +256,38 @@ export default function Home() {
 
             <article className="work-card work-card--media-right">
               <div className="work-card-content">
-                <h3>Talentora AI</h3>
+                <h3>Via</h3>
                 <p>
-                  Talentora is an AI-powered recruiting platform that helps HR teams streamline the hiring process through real-time interview analysis, sentiment insights, and
-                  ATS-integrated workflows.
+                  Accessibility-focused navigation for BU Forge&apos;s 2024 Catalyst Designathon—1st
+                  Place in the Accessibility Track. Via surfaces route ratings, hazards, and
+                  community updates so people can plan trips with confidence.
                 </p>
-                <button
-                  type="button"
-                  className="work-card-button work-card-button--coming-soon"
-                  disabled
-                >
-                  Coming soon!
-                </button>
+                <Link href="/work/via" className="work-card-button group relative">
+                  <HandwrittenSwap
+                    src="/handwritten-text/view-project-handwritten.png"
+                    width={180}
+                    height={50}
+                    variant="button"
+                  >
+                    View Project
+                    <Image
+                      src="/thrival/right-arrow-icon.svg"
+                      alt=""
+                      width={12}
+                      height={12}
+                      className="button-arrow"
+                      aria-hidden="true"
+                    />
+                  </HandwrittenSwap>
+                </Link>
               </div>
               <div className="work-card-media">
                 <Image
-                  src="/casebanners/talentoralaptop.png"
-                  alt="Talentora AI platform screens"
-                  width={3798}
-                  height={2202}
-                  className="work-card-media-laptop"
+                  src="/casebanners/viaphones.png"
+                  alt="Via mobile app screens showing accessible navigation and route planning"
+                  width={3132}
+                  height={3210}
+                  className="work-card-media-phones"
                 />
               </div>
             </article>
