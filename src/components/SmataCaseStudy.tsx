@@ -62,6 +62,27 @@ type IterationScreenPair = {
   afterAlt: [string, string];
 };
 
+function SmataIterationArrow() {
+  return (
+    <svg
+      width={12}
+      height={20}
+      viewBox="0 0 12 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="sm-iteration-arrow"
+      aria-hidden
+    >
+      <path
+        d="M1.60742 1.60742L9.64425 9.64425L1.60742 17.6811"
+        stroke="currentColor"
+        strokeWidth={3.21473}
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 function IterationFlow({
   beforeLabel = "Before",
   afterLabel = "After",
@@ -79,9 +100,7 @@ function IterationFlow({
         <p className="sm-iteration-label">{beforeLabel}</p>
         <PhonePair labels={screens.beforeAlt} screens={screens.before} stacked={widePair} />
       </div>
-      <span className="sm-iteration-arrow" aria-hidden="true">
-        →
-      </span>
+      <SmataIterationArrow />
       <div className="sm-iteration-group">
         <p className="sm-iteration-label">{afterLabel}</p>
         <PhonePair labels={screens.afterAlt} screens={screens.after} stacked={widePair} />
@@ -415,15 +434,6 @@ export default function SmataCaseStudy() {
                   </div>
                 ))}
               </div>
-
-              <Image
-                src="/smata/smata-app-store-stats.png"
-                alt="App Store Connect metrics for Smata including first-time downloads, conversion rate, and retention"
-                width={1024}
-                height={650}
-                className="sm-app-store-stats"
-                sizes="(max-width: 1024px) 100vw, 32rem"
-              />
             </div>
           </div>
 
@@ -762,9 +772,13 @@ export default function SmataCaseStudy() {
             </p>
           </div>
 
-          <Placeholder
-            className="sm-placeholder--montage"
-            label="Final product montage — polished final screens"
+          <Image
+            src="/smata/smata-app-store-stats.png"
+            alt="App Store Connect metrics for Smata including first-time downloads, conversion rate, and retention"
+            width={1024}
+            height={650}
+            className="sm-app-store-stats"
+            sizes="(max-width: 1024px) 100vw, 64rem"
           />
         </section>
       </div>

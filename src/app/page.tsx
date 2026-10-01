@@ -185,8 +185,7 @@ export default function Home() {
           <h2 id="selected-works" className="selected-works-title scroll-mt-[calc(var(--nav-height)+2rem)]">selected works.</h2>
 
           <div className="selected-works-list">
-
-          <article className="work-card work-card--media-right">
+            <article className="work-card work-card--media-right">
               <div className="work-card-content">
                 <h3>Smata</h3>
                 <p>A collaborative study app that helps students stay focused, connected, and motivated. Study Smata and making learning a fun, shared experience!</p>
@@ -221,40 +220,6 @@ export default function Home() {
             </article>
 
             <article className="work-card">
-              <div className="work-card-content">
-                <h3>Thrival Muscle Recovery</h3>
-                <p>A fitness and recovery platform that helps Thrival users discover guided workouts, mobility routines, and product education tailored to their needs.</p>
-                <Link href="/work/thrival" className="work-card-button group relative">
-                  <HandwrittenSwap
-                    src="/handwritten-text/view-project-handwritten.png"
-                    width={180}
-                    height={50}
-                    variant="button"
-                  >
-                    View Project
-                    <Image
-                      src="/thrival/right-arrow-icon.svg"
-                      alt=""
-                      width={12}
-                      height={12}
-                      className="button-arrow"
-                      aria-hidden="true"
-                    />
-                  </HandwrittenSwap>
-                </Link>
-              </div>
-              <div className="work-card-media">
-                <Image
-                  src="/casebanners/thrivalphonesagain.png"
-                  alt="Thrival Muscle Recovery app screens showing the fitness library and a guided recovery routine"
-                  width={1044}
-                  height={1070}
-                  className="work-card-media-phones"
-                />
-              </div>
-            </article>
-
-            <article className="work-card work-card--media-right">
               <div className="work-card-content">
                 <h3>Via</h3>
                 <p>
@@ -292,14 +257,14 @@ export default function Home() {
               </div>
             </article>
 
-            <article className="work-card">
+            <article className="work-card work-card--media-right">
               <div className="work-card-content">
-                <h3>Moodcast</h3>
+                <h3>Talentora</h3>
                 <p>
-                  A weather-driven music web app that lets you enter a city and get a playlist
-                  matched to the local forecast.
+                  An AI recruiting platform for early-stage candidate screening—co-founded and
+                  led design across recruiter configuration, AI interviews, and candidate insights.
                 </p>
-                <Link href="/work/moodcast" className="work-card-button group relative">
+                <Link href="/work/talentora-ai" className="work-card-button group relative">
                   <HandwrittenSwap
                     src="/handwritten-text/view-project-handwritten.png"
                     width={180}
@@ -320,8 +285,8 @@ export default function Home() {
               </div>
               <div className="work-card-media">
                 <Image
-                  src="/casebanners/moodcastlaptop.png"
-                  alt="Moodcast web app on laptop mockup"
+                  src="/casebanners/talentoralaptop.png"
+                  alt="Talentora recruiting platform on desktop and mobile"
                   width={3798}
                   height={2202}
                   className="work-card-media-laptop"
@@ -329,6 +294,39 @@ export default function Home() {
               </div>
             </article>
 
+            <article className="work-card">
+              <div className="work-card-content">
+                <h3>Thrival Muscle Recovery</h3>
+                <p>A fitness and recovery platform that helps Thrival users discover guided workouts, mobility routines, and product education tailored to their needs.</p>
+                <Link href="/work/thrival" className="work-card-button group relative">
+                  <HandwrittenSwap
+                    src="/handwritten-text/view-project-handwritten.png"
+                    width={180}
+                    height={50}
+                    variant="button"
+                  >
+                    View Project
+                    <Image
+                      src="/thrival/right-arrow-icon.svg"
+                      alt=""
+                      width={12}
+                      height={12}
+                      className="button-arrow"
+                      aria-hidden="true"
+                    />
+                  </HandwrittenSwap>
+                </Link>
+              </div>
+              <div className="work-card-media">
+                <Image
+                  src="/casebanners/thrivalphonesagain.png"
+                  alt="Thrival Muscle Recovery app screens showing the fitness library and a guided recovery routine"
+                  width={1044}
+                  height={1070}
+                  className="work-card-media-phones"
+                />
+              </div>
+            </article>
           </div>
         </div>
       </section>

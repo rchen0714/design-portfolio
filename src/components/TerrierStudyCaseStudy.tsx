@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import BackToWorksLink from "@/components/BackToWorksLink";
 
 function HighlightGif({
   src,
@@ -75,25 +76,7 @@ export default function TerrierStudyCaseStudy() {
     <main id="terrierstudy-case-study">
       <div className="ts-top">
         <div className="ts-content">
-          <Link href="/#selected-works" className="ts-back-link">
-            <span className="back-to-works-icon" aria-hidden="true">
-              <svg
-                width="12"
-                height="20"
-                viewBox="0 0 12 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.60742 1.60742L9.64425 9.64425L1.60742 17.6811"
-                  stroke="currentColor"
-                  strokeWidth="3.21473"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
-            Back to selected works
-          </Link>
+          <BackToWorksLink className="ts-back-link" />
 
           <header className="ts-hero-block">
             <div className="ts-hero-red ts-hero-red--art">

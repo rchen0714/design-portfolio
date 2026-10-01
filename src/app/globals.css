@@ -1302,6 +1302,22 @@ img.hero-hover-doodle {
   min-height: 100%;
 }
 
+@media (min-width: 1025px) {
+  .cs-three-col--stretch.cs-three-col--media-left {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 23.75rem);
+  }
+
+  .cs-three-col--stretch.cs-three-col--media-left .cs-three-col-right {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .cs-three-col--stretch.cs-three-col--media-left .cs-three-col-left {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
 .cs-onboarding-image-wrap {
   width: 100%;
   height: 100%;
@@ -1718,18 +1734,61 @@ img.hero-hover-doodle {
 }
 
 @media (max-width: 700px) {
-  #thrival-case-study {
+  #thrival-case-study,
+  #talentora-case-study,
+  #smata-case-study {
+    padding-inline: clamp(1.25rem, 5vw, 2rem);
     padding-bottom: 4rem;
+  }
+
+  #moodcast-case-study {
+    --mc-page-gutter: clamp(1.25rem, 5vw, 2rem);
+  }
+
+  #via-case-study {
+    --via-page-gutter: clamp(1.25rem, 5vw, 2rem);
+  }
+
+  #terrierstudy-case-study {
+    --ts-page-gutter: clamp(1.25rem, 5vw, 2rem);
+  }
+
+  .cs-meta-table {
+    padding: 1.25rem 1rem;
+    gap: 1.25rem;
+  }
+
+  .cs-meta-item {
+    flex-basis: 100%;
+    min-width: 0;
+  }
+
+  .cs-meta-item dd {
+    overflow-wrap: anywhere;
+  }
+
+  .cs-section {
+    gap: clamp(1.35rem, 4vw, var(--case-section-gap));
+  }
+
+  .cs-three-col--stretch {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-three-col--stretch .cs-three-col-left,
+  .cs-three-col--stretch .cs-three-col-right {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .cs-three-col-right .cs-placeholder--wide {
+    min-width: 0;
   }
 
   .cs-feature-columns,
   .cs-image-grid {
     flex-direction: column;
     align-items: center;
-  }
-
-  .cs-meta-item {
-    flex-basis: 100%;
   }
 }
 
@@ -2203,7 +2262,10 @@ img.hero-hover-doodle {
 .about-carousel-marquee-content {
   display: flex;
   width: max-content;
-  animation: about-carousel-scroll 45s linear infinite;
+  animation-name: about-carousel-scroll;
+  animation-duration: var(--carousel-duration, 45s);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 .about-carousel-marquee-set {
@@ -2265,7 +2327,7 @@ img.hero-hover-doodle {
 }
 
 .about-carousel--slow .about-carousel-marquee-content {
-  animation-duration: 90s;
+  animation-duration: var(--carousel-duration, 90s);
 }
 
 .about-life-polaroid-image {
@@ -3191,8 +3253,11 @@ body:has(#play-page) #site-footer {
 }
 
 .sm-iteration-arrow {
-  font-size: 1.25rem;
-  color: var(--sm-label);
+  display: block;
+  width: 0.75rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  color: var(--sm-green);
 }
 
 .sm-experience-banner {
@@ -3477,10 +3542,6 @@ body:has(#play-page) #site-footer {
 }
 
 @media (max-width: 700px) {
-  #smata-case-study {
-    padding-bottom: 4rem;
-  }
-
   .sm-meta-item {
     flex-basis: 100%;
   }
@@ -5222,6 +5283,17 @@ body:has(#play-page) #site-footer {
   background: #000;
 }
 
+@media (max-width: 700px) {
+  #via-case-study .via-content {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #via-case-study .via-prototype-stage {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 1024px) {
   .via-feature-row,
   .via-feature-row--reverse {
@@ -5246,5 +5318,391 @@ body:has(#play-page) #site-footer {
   .via-process-grid,
   .via-problem-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================
+   TALENTORA CASE STUDY
+========================== */
+
+#talentora-case-study {
+  --cs-teal: #cc58db;
+  --cs-cyan: #cc58db;
+  --cs-text: var(--text-body);
+  --cs-heading: #111827;
+  --cs-label: #9ca3af;
+  --cs-surface: #f9fafb;
+  --cs-border: #e5e7eb;
+
+  padding: clamp(2.5rem, 5vw, 4.65rem) clamp(2rem, 14vw, 13rem)
+    clamp(4rem, 7vw, 7rem);
+}
+
+#talentora-case-study .cs-section-title,
+#talentora-case-study .cs-subsection-title,
+#talentora-case-study .cs-experience-banner-title,
+#talentora-case-study .cs-goal-map-heading,
+#talentora-case-study .cs-process-line {
+  color: var(--cs-teal);
+}
+
+#talentora-case-study .cs-meta-item dt {
+  color: var(--cs-cyan);
+}
+
+.ta-hero-media {
+  margin-bottom: 2rem;
+  line-height: 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--cs-surface);
+}
+
+.ta-hero-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ta-overview-lead {
+  margin: 0;
+  max-width: 42rem;
+}
+
+.ta-section-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+#talentora-case-study .cs-three-col-left {
+  gap: clamp(1rem, 2.5vw, 1.35rem);
+}
+
+#talentora-case-study .ta-challenge-diagram {
+  width: 100%;
+  max-width: 100%;
+}
+
+.ta-section-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  background: #111827;
+}
+
+.ta-solution-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  gap: clamp(1.5rem, 3.5vw, 2.25rem);
+  width: 100%;
+  margin-top: clamp(0.35rem, 1.25vw, 0.85rem);
+  margin-bottom: clamp(0.85rem, 2.25vw, 1.5rem);
+}
+
+.ta-solution-intro .cs-body {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.ta-workflow-block {
+  display: block;
+  width: 100%;
+  gap: 0.75rem;
+}
+
+.ta-workflow-intro {
+  text-align: center;
+  width: min(100%, 36rem);
+  margin: 0;
+}
+
+.ta-workflow-stream {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  gap: clamp(0.35rem, 1.25vw, 0.85rem);
+  box-sizing: border-box;
+}
+
+.ta-workflow-stream-item {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.ta-workflow-stream-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: clamp(0.85rem, 2vw, 1.05rem) clamp(0.75rem, 1.75vw, 1.1rem);
+  font-size: var(--text-body-size);
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: center;
+  color: var(--cs-heading);
+  background: #fff;
+  border: 2px solid var(--cs-teal);
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+}
+
+.ta-workflow-stream-arrow {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  color: var(--cs-teal);
+  padding: 0;
+  line-height: 0;
+}
+
+.ta-chevron-arrow-icon {
+  display: block;
+  width: 0.75rem;
+  height: 1.25rem;
+}
+
+.ta-chevron-arrow-icon--down {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 767px) {
+  .ta-workflow-stream {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 22rem;
+    margin-inline: auto;
+    gap: 0.65rem;
+  }
+
+  .ta-workflow-stream-item {
+    flex: none;
+  }
+
+  .ta-workflow-stream-arrow .ta-chevron-arrow-icon:not(.ta-chevron-arrow-icon--down) {
+    transform: rotate(90deg);
+  }
+}
+
+.ta-solution-image-arrow {
+  display: flex;
+  justify-content: center;
+  color: var(--cs-teal);
+  line-height: 0;
+}
+
+.ta-solution-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(3rem, 8vw, 5.5rem);
+  row-gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+}
+
+.ta-solution-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.ta-solution-column .cs-subsection-title {
+  margin: 0;
+  text-align: center;
+}
+
+.ta-solution-image-stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1.5vw, 0.75rem);
+}
+
+.ta-solution-image-stack .ta-section-image {
+  width: 100%;
+  height: auto;
+}
+
+.ta-solution-column--recruiter .ta-solution-image-stack {
+  align-items: center;
+}
+
+.ta-solution-column--recruiter img.ta-section-image {
+  width: 92%;
+  max-width: 26rem;
+}
+
+.ta-solution-column--recruiter img.ta-section-image:first-of-type {
+  width: 88%;
+  max-width: 24rem;
+}
+
+@media (max-width: 900px) {
+  .ta-solution-columns {
+    grid-template-columns: 1fr;
+  }
+
+  #talentora-case-study .ta-solution-column--recruiter {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  #talentora-case-study .ta-solution-column--recruiter .ta-solution-image-stack {
+    align-items: stretch;
+    width: 100%;
+  }
+
+  #talentora-case-study .ta-solution-column--recruiter img.ta-section-image {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.ta-process-stages {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  margin-top: 0.25rem;
+}
+
+.ta-process-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ta-process-stage .cs-subsection-title {
+  margin: 0;
+}
+
+.ta-process-stage--carousel {
+  width: 100%;
+  min-width: 0;
+}
+
+#talentora-case-study .ta-fi-carousel .about-carousel-marquee {
+  padding: 0.25rem 0 0;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 2%,
+    #000 98%,
+    transparent
+  );
+}
+
+#talentora-case-study .ta-fi-carousel-item {
+  flex: 0 0 auto;
+  margin: 0;
+  width: clamp(11rem, 15vw, 14.5rem);
+  font-size: 0;
+  line-height: 0;
+}
+
+#talentora-case-study .ta-fi-carousel-item > :not(.ta-fi-carousel-frame) {
+  display: none !important;
+}
+
+#talentora-case-study .ta-fi-carousel figcaption,
+#talentora-case-study .ta-fi-carousel-caption {
+  display: none !important;
+}
+
+#talentora-case-study .ta-fi-carousel-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4320 / 3636;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid var(--cs-border);
+  background: #fff;
+  filter: drop-shadow(0.35rem 0.25rem 1rem rgba(9, 20, 50, 0.07));
+  line-height: 0;
+}
+
+#talentora-case-study .ta-fi-carousel-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  background: #f9fafb;
+}
+
+#talentora-case-study .ta-outcome-banner {
+  width: 100%;
+  max-width: none;
+  gap: 0.75rem;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#talentora-case-study .ta-outcome-photo {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  line-height: 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #f9fafb;
+}
+
+#talentora-case-study .ta-outcome-photo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: clamp(16rem, 48vw, 32rem);
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 0.75rem;
+}
+
+.ta-outcome-banner .ta-outcome-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0;
+  padding-left: 1.15rem;
+  list-style: disc;
+}
+
+.ta-outcome-list li {
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line-height);
+  color: var(--text-body);
+}
+
+@media (max-width: 900px) {
+  #talentora-case-study .ta-hero-media {
+    border-radius: 0.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  #talentora-case-study .cs-page-container,
+  #thrival-case-study .cs-page-container {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #talentora-case-study .ta-hero-banner {
+    width: 100%;
+    max-width: 100%;
   }
 }

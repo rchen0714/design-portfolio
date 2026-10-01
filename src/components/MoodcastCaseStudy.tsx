@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import BackToWorksLink from "@/components/BackToWorksLink";
 
 function MediaPlaceholder({ className = "" }: { className?: string }) {
   return (
@@ -85,25 +86,7 @@ export default function MoodcastCaseStudy() {
     <main id="moodcast-case-study">
       <div className="mc-top">
         <div className="mc-content">
-          <Link href="/#selected-works" className="mc-back-link">
-            <span className="back-to-works-icon" aria-hidden="true">
-              <svg
-                width="12"
-                height="20"
-                viewBox="0 0 12 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1.60742 1.60742L9.64425 9.64425L1.60742 17.6811"
-                  stroke="currentColor"
-                  strokeWidth="3.21473"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </span>
-            Back to selected works
-          </Link>
+          <BackToWorksLink className="mc-back-link" />
 
           <header className="mc-hero-block">
             <div className="mc-hero-panel mc-hero-panel--art">

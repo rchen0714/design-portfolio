@@ -3,20 +3,20 @@ import type { Project } from "./types";
 export const talentoraAi: Project = {
   title: "Talentora AI",
   description:
-    "Talentora is an AI-powered recruiting platform that helps HR teams streamline the hiring process through real-time interview analysis, sentiment insights, and ATS-integrated workflows.",
-  role: "Founding Designer",
+    "Designing an AI recruiting platform to make early-stage candidate screening more efficient—co-founded and led design from concept to a working product.",
+  role: "Co-Founder & Head of Design",
   mockup: "computer",
   heroImage: {
-    src: "/casebanners/talentoralaptop.png",
-    width: 3798,
-    height: 2202,
+    src: "/casebanners/talentorabanner.png",
+    width: 7524,
+    height: 4800,
   },
   overview:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Talentora AI helps recruiting teams move faster with AI-assisted screening, scheduling, and workflow automation.",
+    "Talentora was an AI-powered recruiting platform designed to help hiring teams evaluate candidates before traditional recruiter interviews through conversational AI screening.",
   problem:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Recruiters were juggling too many tools, leading to slow handoffs, missed follow-ups, and inconsistent candidate experiences.",
+    "Recruiters spend significant time screening candidates with limited information about how they communicate and respond before interviews.",
   solution:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. We designed a unified platform with clear screening states, automated scheduling, and recruiter-first workflows.",
+    "We designed connected recruiter and candidate experiences—configurable AI interviews, structured candidate flows, and recruiter dashboards for reviewing insights without replacing human judgment.",
   outcome:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. The result was a more efficient hiring pipeline with fewer manual steps and a clearer experience for both recruiters and candidates.",
+    "The team took Talentora from concept to a working platform, with Innovate@BU pathway participation, Launch Lab, Spark! Demo Day (Audience Choice Award), and funding.",
 };
