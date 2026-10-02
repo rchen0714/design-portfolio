@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import BackToWorksLink from "@/components/BackToWorksLink";
 
+const TERRIER_STUDY_LIVE_URL = "https://rchen0714.pythonanywhere.com";
+const TERRIER_STUDY_SOURCE_URL =
+  "https://github.com/rchen0714/cs412/tree/main/terrier_study";
+
 function HighlightGif({
   src,
   alt,
@@ -211,10 +215,20 @@ export default function TerrierStudyCaseStudy() {
           study spaces. Click the button below to interact with the full application.
         </p>
         <div className="ts-cta-actions">
-          <Link href="#" className="ts-cta-button ts-cta-button--primary">
+          <Link
+            href={TERRIER_STUDY_LIVE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ts-cta-button ts-cta-button--primary"
+          >
             Visit Live Site →
           </Link>
-          <Link href="#" className="ts-cta-button ts-cta-button--secondary">
+          <Link
+            href={TERRIER_STUDY_SOURCE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ts-cta-button ts-cta-button--secondary"
+          >
             View Source Code
           </Link>
         </div>
