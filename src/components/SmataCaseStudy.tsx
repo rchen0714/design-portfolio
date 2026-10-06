@@ -2,6 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import BackToWorksLink from "@/components/BackToWorksLink";
 
+function nameInitials(name: string) {
+  return name
+    .split(/\s+/)
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
+
 function Placeholder({
   className = "",
   label,
@@ -23,14 +32,15 @@ function PhonePair({
   screens,
   stacked,
 }: {
-  labels: [string, string];
-  screens?: [string, string];
+  labels: readonly string[];
+  screens?: readonly string[];
   stacked?: boolean;
 }) {
   if (screens) {
+    const isTriple = screens.length === 3;
     return (
       <div
-        className={`sm-phone-pair sm-phone-pair--side-by-side${stacked ? " sm-phone-pair--stacked" : ""}`.trim()}
+        className={`sm-phone-pair sm-phone-pair--side-by-side${stacked ? " sm-phone-pair--stacked" : ""}${isTriple ? " sm-phone-pair--triple" : ""}`.trim()}
       >
         {screens.map((src, index) => (
           <div key={src} className="sm-phone-pair-frame">
@@ -56,10 +66,10 @@ function PhonePair({
 }
 
 type IterationScreenPair = {
-  before: [string, string];
-  after: [string, string];
-  beforeAlt: [string, string];
-  afterAlt: [string, string];
+  before: readonly string[];
+  after: readonly [string, string];
+  beforeAlt: readonly string[];
+  afterAlt: readonly [string, string];
 };
 
 function SmataIterationArrow() {
@@ -192,18 +202,20 @@ const iterationCards = [
       "We added a clearer way for users to sign up with student status. We also made the onboarding more visually appealing.",
     why: "The goal was to reduce friction to get as many users on for testing and feedback so we decreased the amount of steps for regular email signup. We also added more visual graphics of Marty enforce the branding more.",
     screens: {
-      before: ["/smata/iteration1before-1.png", "/smata/iteration1before-2.png"] as [
-        string,
-        string,
+      before: [
+        "/smata/iteration1before-1.png",
+        "/smata/anothersignup.png",
+        "/smata/iteration1before-2.png",
       ],
       after: ["/smata/iteration1after-1.png", "/smata/iteration1after-2.png"] as [
         string,
         string,
       ],
       beforeAlt: [
-        "Smata signup flow before redesign — screen 1",
-        "Smata signup flow before redesign — screen 2",
-      ] as [string, string],
+        "Smata signup flow before redesign — Reap onboarding screen",
+        "Smata signup flow before redesign — alternate signup screen",
+        "Smata signup flow before redesign — Join a Campus screen",
+      ],
       afterAlt: [
         "Smata signup flow after redesign — screen 1",
         "Smata signup flow after redesign — screen 2",
@@ -241,68 +253,66 @@ const iterationCards = [
 
 const feedbackThemes = [
   {
-    title: "Activation and social discovery",
-    body: "Some testers wanted an easier way to find or invite friends immediately after creating an account.",
+    badge: "01",
+    title: "More intentional study sessions",
+    body: "Users wanted more control over how a session works, including goals, countdown timers, breaks, and different ways to structure their study time.",
   },
   {
-    title: "Starting a session",
-    body: "Some feedback suggested that beginning a study session could be made more visually prominent and easier to discover.",
+    badge: "02",
+    title: "Social studying & discovery",
+    body: "Testers repeatedly saw potential for Smata to help them study alongside friends, discover nearby users, and more easily invite people into sessions.",
   },
   {
-    title: "Lockdown Mode",
-    body: "Testers responded positively to this feature while also identifying opportunities around permission clarity, blocked-app messaging, and returning users to their active timer.",
+    badge: "03",
+    title: "Motivation & rewards",
+    body: "Users wanted stronger incentives for returning to Smata, especially through streaks, badges, achievements, progress tracking, and Marty customization.",
   },
   {
-    title: "Motivation and progress",
-    body: "Users also suggested deeper reward systems, streaks, achievements, character-based encouragement, and additional ways to visualize progress.",
+    badge: "04",
+    title: "Clearer core interactions",
+    body: "While users generally liked the interface, several important actions felt too small or visually unclear, especially starting sessions, following users, and granting permissions.",
   },
   {
-    title: "Map and community",
-    body: "Feedback suggested that the users saw potential for the map to better support nearby studying and community discovery.",
+    badge: "05",
+    title: "Marty & AI as a meaningful companion",
+    body: "Users liked Smata’s encouraging personality, but wanted the AI experience to provide more value or feel more closely tied to Marty as a character.",
   },
 ];
 
 const testimonials = [
   {
-    initials: "SL",
-    name: "Sophia L.",
-    date: "Oct 7",
-    quote:
-      "I had to dig around to find how to invite my friends. It would be great to see that right after signing up!",
-    upvotes: 3,
+    name: "Eleanor Janotta",
+    quote: "I just studied w it for like an hour… I liked it.",
+    themeLabel: "Core study experience",
   },
   {
-    initials: "JM",
-    name: "Jason M.",
-    date: "Oct 8",
+    name: "Maya Thompson",
     quote:
-      "Starting a session works, but the start button is kind of small. I almost missed it the first few times.",
-    upvotes: 2,
+      "I appreciate how you can choose what apps to block and start or stop whenever you want so you aren’t tied down to a specific time.",
+    themeLabel: "Lockdown Mode",
   },
   {
-    initials: "AK",
-    name: "Aisha K.",
-    date: "Oct 9",
-    quote:
-      "Lockdown Mode is super helpful. A couple things though - the permission prompt was confusing, and it was not clear why apps were blocked. Also easy way back to my timer if I exit the app?",
-    upvotes: 4,
+    name: "Jordan Lee",
+    quote: "The AI message at end is funny but could prob be slightly more useful.",
+    themeLabel: "Marty & AI",
   },
   {
-    initials: "ER",
-    name: "Ethan R.",
-    date: "Oct 10",
-    quote:
-      "Love the concept! More rewards would be awesome - streaks, achievements, maybe even leveling up Marty or something.",
-    upvotes: 2,
+    name: "Alex Morgan",
+    quote: "Character or avatar would be huge, let people customize Marty.",
+    themeLabel: "Motivation & rewards",
   },
 ];
 
 const betaThemes = [
-  "Reduce activation friction",
-  "Make study actions easier to discover",
-  "Strengthen social discovery",
-  "Deepen motivation and progress",
+  "Make study sessions more intentional",
+  "Strengthen social accountability",
+  "Reward continued progress",
+  "Improve discoverability of key actions",
+  "Give Marty a more meaningful role",
 ];
+
+const SMATA_APP_STORE_URL =
+  "https://apps.apple.com/us/app/smata-study-smarter/id6775473971";
 
 export default function SmataCaseStudy() {
   return (
@@ -341,7 +351,7 @@ export default function SmataCaseStudy() {
               <dt>Status</dt>
               <dd>
                 <a
-                  href="https://apps.apple.com/us/app/smata-study-smarter/id6775473971"
+                  href={SMATA_APP_STORE_URL}
                   className="cs-live-link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -462,7 +472,7 @@ export default function SmataCaseStudy() {
         {/* Branding */}
         <section className="sm-section">
           <div className="sm-section-header">
-            <p className="cs-section-label">01 / THE BRANDING</p>
+            <p className="cs-section-label">THE BRANDING</p>
             <h2 className="sm-section-title">Finding Smata&apos;s Visual Identity</h2>
             <h3 className="sm-section-kicker">REDESIGNING AND REBRANDING</h3>
           </div>
@@ -590,7 +600,7 @@ export default function SmataCaseStudy() {
       <div className="sm-page-container">
         {/* Features */}
         <section className="sm-section">
-          <p className="cs-section-label">01 / THE Features</p>
+          <p className="cs-section-label">THE Features</p>
 
           {features.map((feature) => (
             <div
@@ -623,14 +633,6 @@ export default function SmataCaseStudy() {
               experience
             </h2>
           </div>
-
-          <p>
-            The UI went through low, mid, and high-fidelity stages, but the most critical
-            challenges were not addressed by simply polishing the product. Throughout the
-            project, we continuously refined key areas of the experience to reduce
-            friction, strengthen the social experience, and stay aligned with Smata&apos;s
-            core mission: helping students build productive study habits.
-          </p>
 
           <div className="sm-iteration-cards">
             {iterationCards.map((card) => (
@@ -665,33 +667,32 @@ export default function SmataCaseStudy() {
           <div className="sm-section-header">
             <p className="cs-section-label">Beta Insights</p>
             <h2 className="sm-section-title">
-              Our beta testers guided us on what to improve next
+              Beta testing validated the core experience and revealed what to improve next
             </h2>
+          </div>
+
+          <div className="sm-beta-summary">
+            <h3 className="sm-beta-heading">
+              Approximately 50 users tested Smata before launch
+            </h3>
+            <p>
+              We invited approximately 50 users to test Smata before launch and share
+              feedback on the experience.
+              I reviewed feedback directly from testers as well as notes collected by the
+              founders, then grouped recurring comments into several themes that could
+              guide future product decisions.
+            </p>
           </div>
 
           <div className="sm-beta-grid">
             <div className="sm-beta-themes">
-              <h3 className="sm-beta-heading">
-                Approximately 50 users began testing Smata before launch
-              </h3>
-              <p>
-                We collected about 50 users began testing Smata before launch and asked
-                them to provide feedback so we could get a meaningful look at how people
-                were responding to the product in use.
-              </p>
-              <p>
-                I reviewed feedback directly from testers as well as feedback collected by
-                the founders. I noticed several themes emerging:
-              </p>
-
               <div className="sm-feedback-list">
                 {feedbackThemes.map((item) => (
-                  <div className="sm-feedback-row" key={item.title}>
-                    <span className="sm-feedback-icon" aria-hidden="true" />
-                    <div>
-                      <h4>{item.title}</h4>
-                      <p>{item.body}</p>
-                    </div>
+                  <div className="sm-feedback-row" key={item.badge}>
+                    <h4>
+                      {item.badge} — {item.title}
+                    </h4>
+                    <p>{item.body}</p>
                   </div>
                 ))}
               </div>
@@ -700,29 +701,25 @@ export default function SmataCaseStudy() {
             <div className="sm-beta-quotes">
               <div className="sm-quote-panel">
                 <h3>Real user feedback</h3>
-                <p className="sm-quote-panel-sub">
-                  A small sample of feedback received during beta testing.
-                </p>
 
                 <div className="sm-testimonial-grid">
                   {testimonials.map((item) => (
                     <blockquote className="sm-testimonial-card" key={item.name}>
                       <div className="sm-testimonial-top">
-                        <span className="sm-testimonial-avatar">{item.initials}</span>
-                        <div>
-                          <p className="sm-testimonial-name">{item.name}</p>
-                          <p className="sm-testimonial-date">{item.date}</p>
-                        </div>
+                        <span className="sm-testimonial-avatar" aria-hidden="true">
+                          {nameInitials(item.name)}
+                        </span>
+                        <p className="sm-testimonial-name">{item.name}</p>
                       </div>
-                      <p>&ldquo;{item.quote}&rdquo;</p>
-                      <p className="sm-testimonial-upvotes">{item.upvotes} upvotes</p>
+                      <p className="sm-testimonial-quote">&ldquo;{item.quote}&rdquo;</p>
+                      <p className="sm-testimonial-theme">{item.themeLabel}</p>
                     </blockquote>
                   ))}
                 </div>
               </div>
 
               <div className="sm-themes-box">
-                <p className="sm-themes-box-label">Emerging beta themes:</p>
+                <p className="sm-themes-box-label">Emerging beta themes</p>
                 <ol className="sm-themes-list">
                   {betaThemes.map((theme, index) => (
                     <li key={theme}>
@@ -730,22 +727,20 @@ export default function SmataCaseStudy() {
                     </li>
                   ))}
                 </ol>
-                <p className="sm-themes-note">
-                  Retrospective grouping of early beta feedback
-                </p>
               </div>
             </div>
           </div>
 
-          <p>
-            At this stage, Smata has moved from an early visual concept into a working
-            product with a cohesive interface and design system. The social feed,
-            Lockdown Mode, friend leaderboard, and core study experience are implemented,
-            while broader location sharing, campus-based competition, and monetization
-            features remain future opportunities. The next phase will focus on synthesizing
-            beta feedback and using real product usage to guide the next round of design
-            decisions.
-          </p>
+          <div className="sm-beta-takeaway-breakout">
+            <p className="sm-beta-takeaway">
+              The beta gave us our first look at how people behaved with Smata outside of
+              the design process. Testers responded positively to the core study experience
+              and Lockdown Mode, while also identifying opportunities around session
+              structure, social accountability, interaction clarity, and long-term
+              motivation. I synthesized these recurring patterns to help prioritize the next
+              round of product improvements.
+            </p>
+          </div>
         </section>
 
         <hr className="sm-divider" />
@@ -758,30 +753,53 @@ export default function SmataCaseStudy() {
           </div>
 
           <div className="sm-outcome-columns">
-            <p>
-              Since joining Smata in November 2025, I have helped move the product from
-              an early visual concept into a cohesive interface and design system now being
-              used in the working beta.
+            <p className="sm-outcome-learned">
+              Working on Smata taught me how to design with ambiguity and move quickly in a
+              fast-paced startup environment. It also taught me how important it is to stay
+              adaptable and collaborate with people who bring different roles, perspectives,
+              and ways of working to the product. While speed and impact matter, user and
+              beta testing are essential for understanding whether a product actually meets
+              the needs of its audience. If a polished feature creates friction or lacks real
+              value, then it&apos;s not successful or useful for the user. Smata reinforced
+              the importance of listening closely, coordinating effectively, and using
+              feedback to make more thoughtful product decisions.
             </p>
-            <p>
-              Today: ~50 users have participated in beta testing. The redesigned product
-              has progressed into its August 2026 launch window. The social feed is
-              implemented. Lockdown Mode is fully functional. The current leaderboard
-              supports competition between friends. Beta feedback is actively being
-              collected and reviewed.
-            </p>
-          </div>
 
-          <Image
-            src="/smata/smata-app-store-stats.png"
-            alt="App Store Connect metrics for Smata including first-time downloads, conversion rate, and retention"
-            width={1024}
-            height={650}
-            className="sm-app-store-stats"
-            sizes="(max-width: 1024px) 100vw, 64rem"
-          />
+            <figure className="sm-outcome-analytics">
+              <Image
+                src="/smata/smata-app-store-stats.png"
+                alt="App Store Connect analytics for Smata showing first-time downloads, conversion rate, impressions, and average retention"
+                width={1024}
+                height={777}
+                className="sm-app-store-stats"
+                sizes="(max-width: 1024px) 100vw, 32rem"
+              />
+            </figure>
+          </div>
         </section>
       </div>
+
+      <section className="sm-cta" aria-labelledby="sm-cta-title">
+        <p className="sm-cta-eyebrow">Try the product</p>
+        <h2 id="sm-cta-title" className="sm-cta-title">
+          See Smata on the App Store
+        </h2>
+        <p className="sm-cta-body">
+          Download the live app to explore the interactive, social study timer.
+          Help us shape experience for future students!
+        </p>
+        <div className="sm-cta-actions">
+          <Link
+            href={SMATA_APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="sm-cta-button sm-cta-button--primary"
+          >
+            Download on the App Store →
+          </Link>
+        </div>
+        <p className="sm-cta-footnote">Available on iOS · Live on the App Store</p>
+      </section>
     </main>
   );
 }

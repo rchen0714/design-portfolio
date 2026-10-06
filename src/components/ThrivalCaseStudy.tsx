@@ -290,8 +290,8 @@ export default function ThrivalCaseStudy() {
             <h2 className="cs-section-title">Using onboarding to find routines that match each user's personal needs</h2>
           </div>
 
-          <div className="cs-three-col cs-three-col--stretch">
-            <div className="cs-three-col-left">
+          <div className="cs-onboarding-block">
+            <div className="cs-split cs-onboarding-intro">
               <div className="cs-split-text">
                 <p className="cs-body">
                   I was initially instructed to create a simple onboarding experience to
@@ -305,24 +305,6 @@ export default function ThrivalCaseStudy() {
                 </p>
               </div>
 
-              <div className="cs-callout-stack">
-                <CalloutWithIcon iconSrc="/thrival/equptmenticon.svg">
-                  <h3>What Thrival equipment does the user already own?</h3>
-                  <p>
-                    Knowing which attachments a user has helped the app highlight the
-                    routines relevant to them.
-                  </p>
-                </CalloutWithIcon>
-                <CalloutWithIcon iconSrc="/thrival/sorenessicon.svg">
-                  <h3>Where does the user commonly experience soreness?</h3>
-                  <p>
-                    Thrival will recommend the areas and muscles relevant to the user.
-                  </p>
-                </CalloutWithIcon>
-              </div>
-            </div>
-
-            <div className="cs-three-col-right">
               <div className="cs-onboarding-image-wrap">
                 <Image
                   src="/thrival/thrival-onboarding.png"
@@ -333,6 +315,22 @@ export default function ThrivalCaseStudy() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
+            </div>
+
+            <div className="cs-split cs-onboarding-callouts">
+              <CalloutWithIcon iconSrc="/thrival/equptmenticon.svg">
+                <h3>What Thrival equipment does the user already own?</h3>
+                <p>
+                  Knowing which attachments a user has helped the app highlight the
+                  routines relevant to them.
+                </p>
+              </CalloutWithIcon>
+              <CalloutWithIcon iconSrc="/thrival/sorenessicon.svg">
+                <h3>Where does the user commonly experience soreness?</h3>
+                <p>
+                  Thrival will recommend the areas and muscles relevant to the user.
+                </p>
+              </CalloutWithIcon>
             </div>
           </div>
         </section>
