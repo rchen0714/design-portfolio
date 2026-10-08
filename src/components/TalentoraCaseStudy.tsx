@@ -313,7 +313,8 @@ export default function TalentoraCaseStudy() {
                 src="/talentora/recruiter-interview-config.mov"
                 controls
                 playsInline
-                preload="metadata"
+                preload="none"
+                poster="/talentora/recruiter-interview-config-poster.jpg"
                 aria-label="Recruiter workflow walkthrough configuring AI interview assessments"
               >
                 Your browser does not support the video tag.
@@ -353,7 +354,8 @@ export default function TalentoraCaseStudy() {
                 src="/talentora/candidate-ai-interview.mp4"
                 controls
                 playsInline
-                preload="metadata"
+                preload="none"
+                poster="/talentora/candidate-ai-interview-poster.jpg"
                 aria-label="Candidate onboarding and AI-led interview experience walkthrough"
               >
                 Your browser does not support the video tag.
@@ -393,7 +395,8 @@ export default function TalentoraCaseStudy() {
                 src="/talentora/candidate-insights.mp4"
                 controls
                 playsInline
-                preload="metadata"
+                preload="none"
+                poster="/talentora/candidate-insights-poster.jpg"
                 aria-label="Recruiter dashboard walkthrough showing candidate insights and AI analysis"
               >
                 Your browser does not support the video tag.

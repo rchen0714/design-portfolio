@@ -135,7 +135,7 @@ export default function MoodcastCaseStudy() {
           <hr className="cs-divider" />
 
           <section className="cs-section" aria-labelledby="mc-challenge-title">
-            <p className="cs-section-label">01 / The challenge</p>
+            <p className="cs-section-label">The challenge</p>
             <h2 id="mc-challenge-title" className="cs-section-title">
               How might we bring more personality and fun to the everyday weather
               experience?
@@ -165,7 +165,7 @@ export default function MoodcastCaseStudy() {
           <hr className="cs-divider" />
 
           <section className="cs-section" aria-labelledby="mc-role-title">
-            <p className="cs-section-label">02 / My role</p>
+            <p className="cs-section-label">My role</p>
             <h2 id="mc-role-title" className="cs-section-title">
               I created a weather experience that connects forecasts with playlists for each
               mood
@@ -224,7 +224,7 @@ export default function MoodcastCaseStudy() {
           <hr className="cs-divider" />
 
           <section className="cs-section" aria-labelledby="mc-components-title">
-            <p className="cs-section-label">03 / Component design</p>
+            <p className="cs-section-label">Component design</p>
             <h2 id="mc-components-title" className="cs-section-title">
               Card Components
             </h2>
@@ -250,7 +250,7 @@ export default function MoodcastCaseStudy() {
           <hr className="cs-divider" />
 
           <section className="cs-section mc-final-section" aria-labelledby="mc-final-title">
-            <p className="cs-section-label">04 / The final look</p>
+            <p className="cs-section-label">The final look</p>
             <h2 id="mc-final-title" className="cs-section-title">
               See MoodCast in action
             </h2>

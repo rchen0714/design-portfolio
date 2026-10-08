@@ -407,7 +407,7 @@ export default function ViaCaseStudy() {
                 Defining the Experience
               </p>
               <h2 className="via-section-title">
-                Each persona points to a different moment in the journey
+                Designing for different types of mobility needs/personas
               </h2>
             </div>
             <p className="cs-body">
@@ -426,7 +426,7 @@ export default function ViaCaseStudy() {
                 Design Process
               </p>
               <h2 className="via-section-title">
-                A tight designathon timeline meant branding first, then low-fidelity exploration
+                Moving from branding to fully developed UI under a tight deadline
               </h2>
             </div>
             <p className="cs-body">
@@ -435,18 +435,15 @@ export default function ViaCaseStudy() {
             </p>
 
             <div className="via-process-flow" aria-label="Branding to low fidelity">
-              <figure className="via-process-flow-item">
-                <div className="via-process-figure">
-                  <Image
-                    src="/via/branding.png"
-                    alt="Via branding exploration: name options, typeface candidates, and selected Poppins and Avenir Next pairing"
-                    width={808}
-                    height={542}
-                    sizes="(max-width: 900px) 88vw, 42vw"
-                    className="via-process-figure-image"
-                  />
-                </div>
-                <figcaption className="via-process-flow-caption">Branding</figcaption>
+              <figure className="via-process-figure via-process-figure--branding">
+                <Image
+                  src="/via/branding.png"
+                  alt="Via branding exploration: name options, typeface candidates, and selected Poppins and Avenir Next pairing"
+                  width={808}
+                  height={542}
+                  sizes="(max-width: 900px) 88vw, 42vw"
+                  className="via-process-figure-image"
+                />
               </figure>
 
               <Image
@@ -458,30 +455,24 @@ export default function ViaCaseStudy() {
                 aria-hidden="true"
               />
 
-              <figure className="via-process-flow-item">
-                <div className="via-process-figure">
-                  <Image
-                    src="/via/via-low-fidleity.jpg"
-                    alt="Low-fidelity Via process: hand-drawn sketches, user flow, and digital wireframe screens"
-                    width={1024}
-                    height={791}
-                    sizes="(max-width: 900px) 88vw, 42vw"
-                    className="via-process-figure-image"
-                  />
-                </div>
-                <figcaption className="via-process-flow-caption">Low fidelity</figcaption>
+              <figure className="via-process-figure via-process-figure--lofi">
+                <Image
+                  src="/via/via-low-fidleity.jpg"
+                  alt="Low-fidelity Via process: hand-drawn sketches, user flow, and digital wireframe screens"
+                  width={1024}
+                  height={791}
+                  sizes="(max-width: 900px) 88vw, 42vw"
+                  className="via-process-figure-image"
+                />
               </figure>
+
+              <div className="via-process-flow-labels">
+                <p className="via-process-flow-caption">Branding</p>
+                <p className="via-process-flow-caption">Low fidelity</p>
+              </div>
             </div>
 
             <div className="via-process-midfi">
-              <Image
-                src="/thrival/arrow-vector.svg"
-                alt=""
-                width={12}
-                height={20}
-                className="via-process-midfi-arrow"
-                aria-hidden="true"
-              />
               <p className="cs-section-label">Mid fidelity</p>
               <p className="cs-body">
                 Mid-fidelity screens translated the core journey into a testable purple UI—onboarding

@@ -491,21 +491,14 @@ export default function ThrivalCaseStudy() {
             <div className="cs-split-text cs-split-text--tight">
               <h4 className="cs-iteration-kicker">Iteration and Refinement</h4>
               <p className="cs-body">
-                My first redesign focused on making more information available. I
-                introduced a scrollable routine list, readable step descriptions,
-                recommended timing, video controls, timer access, and additional exercise
-                information.
-              </p>
-              <p className="cs-body">
-                This addressed some of the original gaps, but during stakeholder review,
-                they stated the instructional media was still too small and that showing
-                the full routine alongside timer and extra info created unnecessary
-                redundancy.
+                My first redesign added clearer instructions, timing, and easier access to
+                the full routine. Stakeholder feedback pointed out that the exercise video
+                was still too small and the screen felt crowded.
               </p>
               <h4 className="cs-iteration-kicker">Prioritizing User Needs</h4>
               <p className="cs-body">
-                I gave the active exercise substantially more visual priority and kept
-                only the most important information visible during the movement.
+                I enlarged the exercise video and simplified the screen so users could focus
+                on the current movement/core feature as opposed to extra optional features.
               </p>
             </div>
           </div>
@@ -514,37 +507,29 @@ export default function ThrivalCaseStudy() {
             <h3 className="cs-subsection-title">
               Learning the importance of Design Hierarchy and Information Architecture
             </h3>
-            <div className="cs-split cs-split--routine-phones">
-              <div className="cs-split-text">
-              <div className="cs-feature-columns">
-                <div>
+            <div className="cs-hierarchy-layout">
+              <div className="cs-hierarchy-copy">
+                <div className="cs-hierarchy-col">
                   <h3>Features always visible</h3>
-                  <p>
-                    Current step + progress
-                    <br />
-                    Exercise name
-                    <br />
-                    Recommended hold duration
-                    <br />
-                    Previous / Next navigation
-                  </p>
+                  <ul className="cs-hierarchy-list">
+                    <li>Current step + progress</li>
+                    <li>Exercise name</li>
+                    <li>Recommended hold duration</li>
+                    <li>Previous / Next navigation</li>
+                  </ul>
                 </div>
-                <div>
+                <div className="cs-hierarchy-col">
                   <h3>Available On Demand</h3>
-                  <p>
-                    Timer
-                    <br />
-                    Detailed step instructions
-                    <br />
-                    Full step-by-step routine
-                  </p>
+                  <ul className="cs-hierarchy-list">
+                    <li>Timer</li>
+                    <li>Detailed step instructions</li>
+                    <li>Full step-by-step routine</li>
+                  </ul>
                 </div>
-              </div>
-
-              <p className="cs-body">
-                This kept the primary screen focused on the routine itself while still
-                giving users access to deeper guidance whenever they needed it.
-              </p>
+                <p className="cs-body cs-hierarchy-col cs-hierarchy-summary">
+                  This kept the primary screen focused on the routine itself while still
+                  giving users access to deeper guidance whenever they needed it.
+                </p>
               </div>
 
               <div className="cs-phone-row">
@@ -658,56 +643,34 @@ export default function ThrivalCaseStudy() {
             <h2 className="cs-section-title">Launching the redesign in the app store</h2>
           </div>
 
-          <div className="cs-split">
-            <div className="cs-split-text">
+          <div className="cs-split cs-outcome-intro">
+            <div className="cs-outcome-intro-col">
+              <h3 className="cs-subsection-title">From design to launch</h3>
               <p className="cs-body">
-                The product evolved through a continuous review and handoff process
-                rather than one final design presentation.
-              </p>
-              <p className="cs-process-line">
-                Design → Stakeholder review → Revision → Approved frames → Developer
-                handoff → Product update
-              </p>
-              <p className="cs-body">
-                Once a feature was approved, I moved the latest high-fidelity screens into
-                a dedicated final frame library in Figma. That library served as a
-                reference for the developer and was updated as new revisions were
-                approved.
-              </p>
-
-              <h3 className="cs-subsection-title">Early outcomes and metrics</h3>
-              <p className="cs-body">
-                Thrival Muscle Recovery is now live in the App Store and continues to
-                evolve through ongoing releases.
-              </p>
-              <p className="cs-body">Since launch, the app has reached:</p>
-              <div className="cs-metric-row">
-                <div className="cs-metric-card">
-                  <p className="cs-metric-value">1.44K</p>
-                  <p className="cs-metric-label">first-time downloads</p>
-                  <p className="cs-metric-date">May 29–Aug 26</p>
-                </div>
-                <div className="cs-metric-card">
-                  <p className="cs-metric-value">5.0</p>
-                  <p className="cs-metric-label">across 3 ratings at time of writing</p>
-                </div>
-              </div>
-              <p className="cs-body">
-                The app also currently holds a 5.0 rating across 3 ratings, with early
-                reviews mentioning the usefulness of the instructional videos,
-                organization by body area, and ability to favorite routines.
+                I worked with stakeholders and the developer to refine, approve, and launch
+                the redesign. I kept approved designs organized in Figma to support
+                development and ongoing updates.
               </p>
             </div>
-
-            <div className="cs-quote-stack">
-              <blockquote>
-                &ldquo;The short instructional videos are very helpful…&rdquo;
-              </blockquote>
-              <blockquote>
-                &ldquo;…broken down by body area so you can quickly find what you
-                need.&rdquo;
-              </blockquote>
+            <div className="cs-outcome-intro-col">
+              <h3 className="cs-subsection-title">Early Results</h3>
+              <p className="cs-body">
+                Thrival Muscle Recovery launched in the App Store, with early reviews
+                highlighting helpful videos, easy navigation by body area, and saved
+                routines.
+              </p>
             </div>
+          </div>
+
+          <div className="cs-outcome-stats-breakout">
+            <Image
+              src="/thrival/thrival-app-store-stats.png"
+              alt="App Store Connect analytics for Thrival Muscle Recovery showing downloads, conversion, impressions, and retention"
+              width={1024}
+              height={659}
+              className="cs-outcome-stats-image"
+              sizes="(max-width: 1024px) 100vw, 64rem"
+            />
           </div>
         </section>
 

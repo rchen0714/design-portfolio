@@ -3,7 +3,7 @@ import type { Project } from "./types";
 export const talentoraAi: Project = {
   title: "Talentora AI",
   description:
-    "Designing an AI recruiting platform to make early-stage candidate screening more efficient—co-founded and led design from concept to a working product.",
+    "An AI recruiting platform that helps hiring teams streamline candidate screening through AI interviews and candidate insights.",
   role: "Co-Founder & Head of Design",
   mockup: "computer",
   heroImage: {

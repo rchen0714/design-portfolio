@@ -1,11 +1,12 @@
-export type PlayGalleryItem = {
+export type PlayGalleryItemBase = {
   id: string;
   alt: string;
+  /** Original asset path (used by scripts only; not loaded in /play). */
   src: string;
   aspectRatio: string;
 };
 
-export const playGalleryItems: PlayGalleryItem[] = [
+export const playGalleryItems: PlayGalleryItemBase[] = [
   {
     id: "1",
     alt: "",

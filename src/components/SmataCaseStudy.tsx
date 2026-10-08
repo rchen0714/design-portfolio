@@ -67,9 +67,9 @@ function PhonePair({
 
 type IterationScreenPair = {
   before: readonly string[];
-  after: readonly [string, string];
+  after: readonly string[];
   beforeAlt: readonly string[];
-  afterAlt: readonly [string, string];
+  afterAlt: readonly string[];
 };
 
 function SmataIterationArrow() {
@@ -235,18 +235,15 @@ const iterationCards = [
         "/smata/iteration2cardbefore.png",
         "/smata/iteration2card-before2.gif",
       ] as [string, string],
-      after: [
-        "/smata/iteration2cardafter.png",
-        "/smata/iteration2card-after2.gif",
-      ] as [string, string],
+      after: ["/smata/newiterationcard.png", "/smata/iteration2card-after2.gif"],
       beforeAlt: [
         "Smata feed card before redesign",
         "Smata feed experience before redesign",
-      ] as [string, string],
+      ],
       afterAlt: [
         "Smata feed card after redesign",
         "Smata feed experience after redesign",
-      ] as [string, string],
+      ],
     },
   },
 ];

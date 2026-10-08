@@ -1,10 +1,10 @@
 import PlayCanvas from "@/components/PlayCanvas";
-import { playGalleryItems } from "@/data/play-gallery";
+import { playGalleryItemsOptimized } from "@/data/play-gallery-merged";
 
 export default function PlayPage() {
   return (
     <main id="play-page">
-      <PlayCanvas items={playGalleryItems} />
+      <PlayCanvas items={playGalleryItemsOptimized} />
     </main>
   );
 }

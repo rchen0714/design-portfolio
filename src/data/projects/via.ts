@@ -3,7 +3,7 @@ import type { Project } from "./types";
 export const via: Project = {
   title: "Via",
   description:
-    "Accessibility-focused navigation concept for BU Forge’s 2024 Catalyst Designathon—1st Place in the Accessibility Track.",
+    "An accessible navigation app that helps people plan trips with route ratings, hazard alerts, and community updates. Created for BU Forge’s 2024 Catalyst Designathon, it won 1st Place in the Accessibility Track.",
   role: "UX/UI Designer, UX Researcher, Prototyper",
   mockup: "phone",
   overview:
