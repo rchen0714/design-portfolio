@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/navbar";
 import "./globals.css";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Ruby Chen",
+    template: "%s | Ruby Chen",
+  },
+  description: "Product design portfolio — Ruby Chen",
+};
 
 const poppins = Poppins({
   subsets: ["latin"],
