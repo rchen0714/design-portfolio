@@ -164,17 +164,28 @@ function ViaFeatureScreens({
 }) {
   return (
     <div className="via-feature-screens">
-      {screens.map((screen) => (
-        <div key={screen.src} className="via-feature-screen-frame">
-          <img
-            src={screen.src}
-            alt={screen.alt}
-            width={screen.width}
-            height={screen.height}
-            className="via-feature-screen-image"
-          />
-        </div>
-      ))}
+      {screens.map((screen) => {
+        const isLoop = screen.src.endsWith(".gif");
+        return (
+          <div
+            key={screen.src}
+            className={
+              isLoop
+                ? "via-feature-screen-frame via-feature-screen-frame--loop"
+                : "via-feature-screen-frame"
+            }
+          >
+            <img
+              src={screen.src}
+              alt={screen.alt}
+              width={screen.width}
+              height={screen.height}
+              className="via-feature-screen-image"
+              decoding="async"
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -5240,10 +5240,21 @@ body:has(#play-page) #site-footer {
 .via-feature-screen-frame {
   position: relative;
   flex: 1 1 0;
+  width: 0;
   min-width: 0;
   aspect-ratio: 1080 / 1920;
   line-height: 0;
   filter: drop-shadow(0.75rem 0.45rem 3rem rgba(9, 20, 50, 0.1));
+}
+
+#via-case-study .via-feature-screen-frame--loop {
+  filter: none;
+  background: transparent;
+}
+
+#via-case-study .via-feature-screen-frame--loop .via-feature-screen-image {
+  background: transparent;
+  object-position: center center;
 }
 
 .via-feature-screen-image {
@@ -5800,6 +5811,7 @@ body:has(#play-page) #site-footer {
 
   #via-case-study .via-feature-screen-frame {
     flex: 1 1 min(30%, 10.5rem);
+    width: auto;
     max-width: 13.5rem;
   }
 
